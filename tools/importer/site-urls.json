@@ -9,65 +9,16 @@
       "id": "62f57c314aea00f2b362d1c34d568e673e5ed3a7"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa",
-      "id": "c1c7080851cb5fbd85a15aa1d4417a109ebea5aa",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/accessories",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/accessories",
       "id": "b24a506fc080eb791926a258b2bfc68829c92135"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/accessories-collections/accessories-collections-running-accessories",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/accessories-collections/accessories-collections-running-accessories",
-      "id": "90d0f6d81928f6829a89e9d66166088b9d9c1ec4",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/accessories-collections/accessories-collections-training-equipment",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/accessories-collections/accessories-collections-training-equipment",
-      "id": "c285cd2eb1e464f0b8e4f4509da80fc1cf455377",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/accessories/accessories-collections/accessories-collections-yoga",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/accessories/accessories-collections/accessories-collections-yoga",
       "id": "37cff78e112f4fbb7556de59dfcf26cb3745646a"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/back-pack",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/back-pack",
-      "id": "def57667728428e9258fb52ab114006d24adbd6c",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/bags",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/bags",
-      "id": "2c72fd2398d7dd3b6f928d91db51264b7b1927f2",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/belt-bags",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/belt-bags",
-      "id": "f3710d3306cac634ad984ab33138d1814017fc5b",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/cross-body-bags",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/cross-body-bags",
-      "id": "c6e75fbf6abbfcf0ba5ce1a0bd43355e0e22ea5e",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/accessories/equipment",
@@ -100,34 +51,6 @@
       "id": "b9a95d282d6835b0215dfc03430bbb6386a845b7"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/totebags",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/totebags",
-      "id": "97b0063bb001fc140ed56ac4d090614c224890e7",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/water-bottles",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/water-bottles",
-      "id": "047dde4ea0bd7134aa58bd86adef0d2ce00466b8",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/accessories/yoga-mats",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/accessories/yoga-mats",
-      "id": "5addaa095e3f5ff9e10145717594694f2b75fe34",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/bestsellers",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/bestsellers",
-      "id": "8a53d81de47010463115c26e78005fdd17ddcef2",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/brands",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/brands",
@@ -152,13 +75,6 @@
       "id": "0d5544b650fd27a89fd696895b8905282578f11c"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/cyber-monday",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/cyber-monday",
-      "id": "847a502e194f8f1787700c96085f49d326707859",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/edits",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits",
@@ -171,66 +87,10 @@
       "id": "80067467acb5a928141fb5d33df7aebfde621b37"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/back-to-school-accessories",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/back-to-school-accessories",
-      "id": "cf65a89c224b053ec051ee4290488fd35dd83d9e",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/edits/back-to-school-men",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits/back-to-school-men",
       "id": "9c59116db0bf564e80e0ed9ac4b620d1ef6b5064"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/back-to-school-women",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/back-to-school-women",
-      "id": "864bc2a0ab32048679840c6e1a8ff0df6e34e97b",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/back-to-work",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/back-to-work",
-      "id": "87f9172a9e82c29eba1c43d94580564cc5de15eb",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/casual-gifts",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/casual-gifts",
-      "id": "a5d47f8e80c5e0731379eb4180984d3e9d453ccb",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/color-focus",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/color-focus",
-      "id": "8af538ab2aacf193f91c615eb68cd0b06d5fd91a",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/eid-picks",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/eid-picks",
-      "id": "9904f13e8033ee72b9f79d6953531d1839c397d5",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/fathers-day",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/fathers-day",
-      "id": "80c03aa3bc8addf9f3b018136824fbd54715c7e3",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/flacko",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/flacko",
-      "id": "1652a04b368926a9a55c8d048ed529065131abc1",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/edits/ghost-sale",
@@ -263,31 +123,10 @@
       "id": "ee3f13e3275072bc387a53b760fd039dca44abc9"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/mothers-day",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/mothers-day",
-      "id": "0886fa7b7373026454fc4203c38e78f3933935ee",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/edits/new-years-eve",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits/new-years-eve",
       "id": "3e15c6f0744c062a2c2c8aba3571f5ab76568d86"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/ramadan-picks",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/ramadan-picks",
-      "id": "15abd5e052fb6ca2a18cc66172e67f096887e574",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/summer-shop",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/summer-shop",
-      "id": "390252dc7e8df31de67f3a855b863421f754cda3",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/edits/testing",
@@ -296,31 +135,10 @@
       "id": "b3ea432ff42f81066a4765e0589e383c78d5ca42"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/the-essentials",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/the-essentials",
-      "id": "ffb1518e8a5cae6bb7143e4ea66b9e8587ba1b67",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/the-essentials/men-essential-pants",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/the-essentials/men-essential-pants",
-      "id": "a36d997f272deec6947060e8f7f78e18a021c542",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/edits/the-essentials/men-essential-shoes",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits/the-essentials/men-essential-shoes",
       "id": "9e73f4b9ab69a57ef012dff7d0b6dc182f9b5acc"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/the-essentials/men-essential-tops",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/the-essentials/men-essential-tops",
-      "id": "38ba0b49fb24c0ef869e5be9acdb3b99fdb77f78",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/edits/the-essentials/women-essential-leggings",
@@ -339,13 +157,6 @@
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits/the-fall-edit",
       "id": "d93df33b8ef396f2e8de8211fca1f6cb27c7073a"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/the-pink-edit",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/the-pink-edit",
-      "id": "e6da6004e89565b4bf418fde85c74c232012f643",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/edits/the-spring-edit",
@@ -390,31 +201,10 @@
       "id": "a12c3ba0bc4ae7911f12a627f73eeaa01e95488f"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/women-ramadan-picks",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/women-ramadan-picks",
-      "id": "f83fd58c8c05d142623a9dbead51ce2bc4dc3077",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/edits/women-winter-essentials",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/edits/women-winter-essentials",
-      "id": "928eca3745e8a636efc7cfae7eb244cc4842761d",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/edits/workout-gifts",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/edits/workout-gifts",
       "id": "9072974bd7203d64e2514e1dd84da3ac75dc16e5"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/gifts",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/gifts",
-      "id": "d1d32960af8e39486f3cc03dd7e0feed38a39e28",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/gifts/ambassador-picks",
@@ -453,13 +243,6 @@
       "id": "c75fc20abe289d240529b8be96c95036bd66abae"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/gifts/gift-ideas",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/gifts/gift-ideas",
-      "id": "d6dadc02208cce76b2273a90469052a101da4d69",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/gifts/gift-ideas/cosy-gifts",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/gifts/gift-ideas/cosy-gifts",
@@ -484,38 +267,10 @@
       "id": "a54d55543b324d302693a1d12dff7f441bf9cb39"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/gifts/gifts-for-her",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/gifts/gifts-for-her",
-      "id": "98730f44dd4eab70936abfb66d999aca2ea46aee",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/gifts/gifts-for-him",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/gifts/gifts-for-him",
-      "id": "74a3348bf65c31f8c44c402e915deec704460452",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/gifts/gifts-for-them",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/gifts/gifts-for-them",
       "id": "b181bf3e384308bc03c3c4775daf6a6e9556d70e"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men",
-      "id": "4f6299db63e0d20ba9aaedf76cf4b22c347fcc1a",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity",
-      "id": "31e58ce1c90ae79fc2cae1e628afdddce09de07c",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-golf",
@@ -534,20 +289,6 @@
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-activity/men-activity-hiking",
       "id": "bdf58ca7c9e6921b825cfd111f32941034a05e56"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-on-the-move",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-on-the-move",
-      "id": "2814a2a108f141134a661388416f98fe59eed38e",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-running",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-running",
-      "id": "80147c6173f7bb2033f0dc170d845966acad95ba",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-running/menrunning-accessories",
@@ -580,41 +321,6 @@
       "id": "ea8d41d1c41a84c657e46cc5d82ffdc6450a420b"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-training",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-training",
-      "id": "c6e7b2fb03fc71460a1fc9e31db791c383b63130",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-training/mentraining-accessories",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-training/mentraining-accessories",
-      "id": "c4dca4f565fa51275c8d331ab569e362316dce36",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-training/mentraining-bottoms",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-training/mentraining-bottoms",
-      "id": "1babb57a29ada4589a70318606b8851453813034",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-training/mentraining-tops",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-training/mentraining-tops",
-      "id": "aa901109971d9f124649a2e349b9bde8332bfcea",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-yoga",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-activity/men-activity-yoga",
-      "id": "d4c6afbdd10b9ae23a650285015be98b7923ce73",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-activity/men-activity-yoga/menyoga-accessories",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-activity/men-activity-yoga/menyoga-accessories",
@@ -631,13 +337,6 @@
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-collections",
       "id": "264d4a87afdc3517d5a247f1ee3650916d2327e4"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/abc-collection",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-collections/abc-collection",
-      "id": "64daa77e315ee3df860fee815c347201b36d7ea5",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/drysense-collection",
@@ -664,20 +363,6 @@
       "id": "3cec1f8f53d7a5db2303c2fbfb7e9739495a0dae"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/men-collection-matching-sets",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-collections/men-collection-matching-sets",
-      "id": "e44eefa697f3aa746dda76060bacb3a2a925fa1e",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/men-collections-bestsellers",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-collections/men-collections-bestsellers",
-      "id": "0ffc1fdd608247b81984772fc1915aaf8a60545c",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/men-collections-metal-vent-tech-shop",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-collections/men-collections-metal-vent-tech-shop",
@@ -690,13 +375,6 @@
       "id": "1ff1a9dd549288e1468a0168d2a31d920406720f"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-collections/zeroed-in",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-collections/zeroed-in",
-      "id": "458f51141737e387eeb947ce56de08d16b633697",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-tops",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-tops",
@@ -707,13 +385,6 @@
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/men-tops/men-tops-tanks",
       "id": "d7cef136239451f8b4c17330243440c112751b9e"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/men-tops/mens-polo-shirts",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/men-tops/mens-polo-shirts",
-      "id": "cf19a8d2c2282c5b7572207e8e24a2735820c798",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/men/men-tops/mens-shirts",
@@ -746,13 +417,6 @@
       "id": "89cb088376b87f4a620a8baf8c1d5e205e764e67"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/men/mens-pants",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/mens-pants",
-      "id": "1ea0a5c63b67d3b26c00a91a134d7d1465b06e46",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/men/mens-pants/mens-joggers",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/mens-pants/mens-joggers",
@@ -783,31 +447,10 @@
       "id": "45f3ff1f9749db74f1ddac41e880850f7fba7aef"
     },
     {
-      "url": "https://www.lululemon.me/ar-qa/c/men/mens-shorts",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/mens-shorts",
-      "id": "c9cbdee4b204b935e190d0ee85177a9f4d4b794b",
-      "status": "EXCLUDED"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/mens-socks",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/mens-socks",
-      "id": "015e8c4e1d61bf37ed0fdc6e258b22adf6f8d5b3",
-      "status": "EXCLUDED"
-    },
-    {
       "url": "https://www.lululemon.me/ar-qa/c/men/mens-swimwear",
       "source": "SITEMAPS",
       "targetPath": "/ar-qa/c/men/mens-swimwear",
       "id": "e03691d1430018234c19b884c9a2f7d0f49a961a"
-    },
-    {
-      "url": "https://www.lululemon.me/ar-qa/c/men/mens-underwear",
-      "source": "SITEMAPS",
-      "targetPath": "/ar-qa/c/men/mens-underwear",
-      "id": "1496b0a262404e1b10a343e1f3246a4ab13dc51f",
-      "status": "EXCLUDED"
     },
     {
       "url": "https://www.lululemon.me/ar-qa/c/mens",
