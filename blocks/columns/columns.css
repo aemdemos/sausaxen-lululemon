@@ -76,6 +76,192 @@
   max-width: 740px;
 }
 
+.columns.columns3 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 0 40px;
+}
+
+.columns.columns3 > div > div:first-child {
+  flex: 0 0 120px;
+  width: 120px;
+  height: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #eaeaea;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns3 > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.columns.columns3 > div > div:last-child {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  max-width: 900px;
+}
+
+.columns.columns3 > div > div:last-child h1 {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #222;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.15;
+  padding-left: 0;
+}
+
+.columns.columns3 > div > div:last-child h1::before {
+  display: block;
+  background: #24B8C8;
+  width: 4px;
+  height: 36px;
+  border-radius: 2px;
+  margin-right: 12px;
+  align-self: flex-start;
+  content: "";
+}
+
+.columns.columns3 > div > div:last-child > p {
+  max-width: 100%;
+}
+
+.columns.columns3 > div > div:last-child > p:first-of-type {
+  color: #24B8C8;
+  font-size: 1.07rem;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 1.1em;
+}
+
+.columns.columns3 > div > div:last-child > p:nth-of-type(2),
+.columns.columns3 > div > div:last-child > p:nth-of-type(3) {
+  color: #666;
+  font-size: 1.02rem;
+  margin-bottom: 1.1em;
+  margin-top: 0;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+.columns.columns3 > div > div:last-child .button-container {
+  margin-top: 22px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.columns.columns3 > div > div:last-child .button-container .button {
+  background-color: #24B8C8;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.08rem;
+  font-weight: 500;
+  padding: 14px 36px;
+  border: none;
+  box-shadow: 0 2px 8px rgb(36 184 200 / 6%);
+  margin: 0;
+  text-align: left;
+  display: inline-block;
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.columns.columns3 > div > div:last-child .button-container .button:hover,
+.columns.columns3 > div > div:last-child .button-container .button:focus {
+  background-color: #1da9b1;
+  color: #fff;
+}
+
+.columns.columns9 > div > div {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  min-height: 56px;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  display: block;
+  text-align: left;
+}
+
+.columns.columns9 > div > div h5 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #28b5b5;
+  margin: 0;
+  font-family: var(--body-font-family);
+  text-align: left;
+  line-height: 1.25;
+}
+
+.columns.columns9 > div > div h5 a {
+  color: #28b5b5;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.columns.columns9 .button-container {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.columns.columns9 .button-container .button {
+  background: none;
+  color: #38b6b6;
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-align: left;
+  display: inline;
+  line-height: 1.2;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.columns.columns9 > div > div:nth-child(2),
+.columns.columns9 > div > div:nth-child(3) {
+  flex: 1 1 0;
+  min-width: 210px;
+  max-width: 320px;
+}
+
+.columns.columns9 > div > div:first-child {
+  flex: 3 1 0;
+  min-width: 400px;
+  max-width: 740px;
+}
+
 .columns.columns10 > div {
   display: flex;
   flex-direction: row;
@@ -201,73 +387,6 @@
   text-align: left;
 }
 
-.columns.columns9 > div > div {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: none;
-  min-height: 56px;
-  padding: 16px 24px;
-  box-sizing: border-box;
-  display: block;
-  text-align: left;
-}
-
-.columns.columns9 > div > div h5 {
-  font-size: 12px;
-  font-weight: 400;
-  color: #28b5b5;
-  margin: 0;
-  font-family: var(--body-font-family);
-  text-align: left;
-  line-height: 1.25;
-}
-
-.columns.columns9 > div > div h5 a {
-  color: #28b5b5;
-  font-weight: 400;
-  text-decoration: none;
-}
-
-.columns.columns9 .button-container {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-}
-
-.columns.columns9 .button-container .button {
-  background: none;
-  color: #38b6b6;
-  border: none;
-  border-radius: 0;
-  font-size: 13px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-  box-shadow: none;
-  text-align: left;
-  display: inline;
-  line-height: 1.2;
-  text-decoration: none;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-.columns.columns9 > div > div:nth-child(2),
-.columns.columns9 > div > div:nth-child(3) {
-  flex: 1 1 0;
-  min-width: 210px;
-  max-width: 320px;
-}
-
-.columns.columns9 > div > div:first-child {
-  flex: 3 1 0;
-  min-width: 400px;
-  max-width: 740px;
-}
-
 .columns.columns27 > div {
   display: grid;
   grid-template-columns: 3fr 2fr;
@@ -326,125 +445,6 @@
   margin: 0 auto;
   max-width: 1200px;
   box-sizing: border-box;
-}
-
-.columns.columns3 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 56px 0 40px;
-}
-
-.columns.columns3 > div > div:first-child {
-  flex: 0 0 120px;
-  width: 120px;
-  height: 120px;
-  min-width: 120px;
-  min-height: 120px;
-  max-width: 120px;
-  max-height: 120px;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #eaeaea;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.columns.columns3 > div > div:first-child img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
-}
-
-.columns.columns3 > div > div:last-child {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-width: 0;
-  max-width: 900px;
-}
-
-.columns.columns3 > div > div:last-child h1 {
-  position: relative;
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-  color: #222;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-  line-height: 1.15;
-  padding-left: 0;
-}
-
-.columns.columns3 > div > div:last-child h1::before {
-  display: block;
-  background: #24B8C8;
-  width: 4px;
-  height: 36px;
-  border-radius: 2px;
-  margin-right: 12px;
-  align-self: flex-start;
-  content: "";
-}
-
-.columns.columns3 > div > div:last-child > p {
-  max-width: 100%;
-}
-
-.columns.columns3 > div > div:last-child > p:first-of-type {
-  color: #24B8C8;
-  font-size: 1.07rem;
-  font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 1.1em;
-}
-
-.columns.columns3 > div > div:last-child > p:nth-of-type(2),
-.columns.columns3 > div > div:last-child > p:nth-of-type(3) {
-  color: #666;
-  font-size: 1.02rem;
-  margin-bottom: 1.1em;
-  margin-top: 0;
-  line-height: 1.65;
-  font-weight: 400;
-}
-
-.columns.columns3 > div > div:last-child .button-container {
-  margin-top: 22px;
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-.columns.columns3 > div > div:last-child .button-container .button {
-  background-color: #24B8C8;
-  color: #fff;
-  border-radius: 6px;
-  font-size: 1.08rem;
-  font-weight: 500;
-  padding: 14px 36px;
-  border: none;
-  box-shadow: 0 2px 8px rgb(36 184 200 / 6%);
-  margin: 0;
-  text-align: left;
-  display: inline-block;
-  min-width: 0;
-  line-height: 1.2;
-}
-
-.columns.columns3 > div > div:last-child .button-container .button:hover,
-.columns.columns3 > div > div:last-child .button-container .button:focus {
-  background-color: #1da9b1;
-  color: #fff;
 }
 
 .columns > div.l-shape {
@@ -976,4 +976,12 @@
   .columns.columns34 > div > div:first-child li {
     font-size: 14px;
   }
+}
+
+/* --- MERGED SELECTOR --- */
+
+.columns.columns35 {
+  background: #f4f4f4;
+  width: 100%;
+  box-sizing: border-box;
 }
