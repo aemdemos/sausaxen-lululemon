@@ -25,3 +25,107 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+.cards.cards11 {
+  background: #eee;
+  padding: 0;
+  max-width: fit-content;
+}
+
+/* Tabs row, left-aligned, no gap */
+.cards.cards11 > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: stretch;
+  background: transparent;
+  border: none;
+  width: 100%;
+}
+
+/* Remove card-like borders and spacing from each li */
+.cards.cards11 > ul > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  box-shadow: none;
+}
+
+/* Hide the first (empty) .cards-card-body in each li */
+.cards.cards11 > ul > li > .cards-card-body:first-child {
+  display: none;
+}
+
+/* Visually compact, precisely centered tab with tight letter spacing */
+.cards.cards11 > ul > li > .cards-card-body:last-child {
+  display: block;
+  min-width: 0;
+  width: auto;
+  height: 32px;
+  margin: 0;
+  padding: 0 4px;
+  font-family: "Roboto Arial Narrow"rial Narrow, Arial, sans-serif;
+  font-stretch: condensed;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  line-height: 32px;
+  letter-spacing: -0.03em;
+  text-align: center;
+  background: transparent;
+  box-sizing: border-box;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* First tab: light gray background, dark text */
+.cards.cards11 > ul > li:first-child > .cards-card-body:last-child {
+  background: #eee;
+  color: #444;
+}
+
+/* Second tab: blue background, white text */
+.cards.cards11 > ul > li:last-child > .cards-card-body:last-child {
+  background: #2381a7;
+  color: #fff;
+}
+
+/* Ensure the p is perfectly vertically centered, no extra space */
+.cards.cards11 > ul > li > .cards-card-body:last-child > p {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: center;
+  line-height: 32px;
+  letter-spacing: inherit;
+  font-family: inherit;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Responsive: stack vertically on very small screens */
+@media (width <= 400px) {
+  .cards.cards11 > ul {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cards.cards11 > ul > li > .cards-card-body:last-child {
+    width: 100%;
+  }
+}
