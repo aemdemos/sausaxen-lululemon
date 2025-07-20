@@ -1,0 +1,881 @@
+{
+  "originUrl": "https://www.adaniports.com",
+  "lastCrawled": "https://www.adaniports.com/",
+  "urls": [
+    {
+      "url": "https://www.adaniports.com/",
+      "source": "SITEMAPS",
+      "targetPath": "/",
+      "id": "91f2dbf120a422a7f594a7e0ebf37e8bed2124c6"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us",
+      "id": "5e0bb9db888ae8f31ed9b503380742606587204a"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors",
+      "id": "2ea533d405d96272ccda3d2d11a634302420741d"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Bharat-Sheth",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors/bharat-sheth",
+      "id": "d278f1706f84f509ca9cc7bd20ffd42032307a36"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Gautam-Adani",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors/gautam-adani",
+      "id": "0292034ebdc9d8b81d51b7a991b788fec67d5373"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Karan-Adani",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors/karan-adani",
+      "id": "f8fd80abc70b45249daaddc5dcd8587844683e18"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/PS-Jayakumar",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors/ps-jayakumar",
+      "id": "958f1ed3c2bb12f2c86bf49598b8205783f40379"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Rajesh-Adani",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/board-of-directors/rajesh-adani",
+      "id": "93f5ecbff3fa29c96bcaaa53032e88cd2b7eb4a8"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Chairman-Message",
+      "source": "SITEMAPS",
+      "targetPath": "/about-us/chairman-message",
+      "id": "c14686d23312fe3f40644a2f0c0ed396ebbf33e9"
+    },
+    {
+      "url": "https://www.adaniports.com/account-registration",
+      "source": "SITEMAPS",
+      "targetPath": "/account-registration",
+      "id": "88a13ad2aa21faf1c2f3571cdcd2b3bc9f255eea"
+    },
+    {
+      "url": "https://www.adaniports.com/Commercials",
+      "source": "SITEMAPS",
+      "targetPath": "/commercials",
+      "id": "93b8c7e1682706360920e5daa866df9bc46b74aa"
+    },
+    {
+      "url": "https://www.adaniports.com/Contact-Us",
+      "source": "SITEMAPS",
+      "targetPath": "/contact-us",
+      "id": "d99babb2bb9de79e15a8d59e96bab9140eac59ec"
+    },
+    {
+      "url": "https://www.adaniports.com/disclaimer",
+      "source": "SITEMAPS",
+      "targetPath": "/disclaimer",
+      "id": "57010d7f74975e43f8b2354942e42aa4549aab30"
+    },
+    {
+      "url": "https://www.adaniports.com/downloads",
+      "source": "SITEMAPS",
+      "targetPath": "/downloads",
+      "id": "0cdd399c80ee1f2a6a356d963c234ccd4b14fbce"
+    },
+    {
+      "url": "https://www.adaniports.com/Downloads",
+      "source": "SITEMAPS",
+      "targetPath": "/downloads",
+      "id": "7eea80466752e1ec303f1caeafad69651b92d737"
+    },
+    {
+      "url": "https://www.adaniports.com/Dredging",
+      "source": "SITEMAPS",
+      "targetPath": "/dredging",
+      "id": "425fbd061beeb47b22ad47800138b960846ce7d7"
+    },
+    {
+      "url": "https://www.adaniports.com/Grievance",
+      "source": "SITEMAPS",
+      "targetPath": "/grievance",
+      "id": "d4fe759963ca7bcda28d8f75e84d9a10b3c381e1"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors",
+      "source": "SITEMAPS",
+      "targetPath": "/investors",
+      "id": "8cfcb35bbbffad53979ba8c46b38ad51cbbcc581"
+    },
+    {
+      "url": "https://www.adaniports.com/investors/Analyst-Coverage",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/analyst-coverage",
+      "id": "112823b4a8cb5253c5b9ada145166a3be303e4e6"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Analyst-Coverage",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/analyst-coverage",
+      "id": "d22feb60f720eabc8cd3a190f5ab3d81b7733d79"
+    },
+    {
+      "url": "https://www.adaniports.com/investors/corporate-governance",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/corporate-governance",
+      "id": "084c83f4a420e29d7835f668a0edcecda290b00e"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Corporate-Governance",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/corporate-governance",
+      "id": "d84e1f57eb85b820ac148e9162912b26564ceec4"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Corporate-Governance/Corporate-Announcement",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/corporate-governance/corporate-announcement",
+      "id": "b73b57a61c3d4145d3e00d283bbb413928647c98"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Corporate-Governance/Other-Download",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/corporate-governance/other-download",
+      "id": "c203b8663ca40283112cef3a6d98ffa7cfb638b0"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/corporate-governance/Scheme-of-Arrangement",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/corporate-governance/scheme-of-arrangement",
+      "id": "cc4ffa31e942ff8213d713d50ee47256f47d79a5"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/credit-Information",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/credit-information",
+      "id": "d966cc13213da2a43d56fc6907cff7f16582f678"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/credit-rating",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/credit-rating",
+      "id": "b84fde69343d0f836cd8d8e8ba1d8636c3134b34"
+    },
+    {
+      "url": "https://www.adaniports.com/investors/Investor-Downloads",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/investor-downloads",
+      "id": "e88447215110e50408dd34487d067b46ac3d4d87"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Investor-Downloads",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/investor-downloads",
+      "id": "b3fe46de2384b50f0029c437b776c959968e2055"
+    },
+    {
+      "url": "https://www.adaniports.com/investors/Investor-FAQs",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/investor-faqs",
+      "id": "9d5320bafa634882da9c0a5b8b6ca5c0e4c9d2d8"
+    },
+    {
+      "url": "https://www.adaniports.com/Investors/Investor-FAQs",
+      "source": "SITEMAPS",
+      "targetPath": "/investors/investor-faqs",
+      "id": "f36aae033b357841b093375c69ca1b993e0a4307"
+    },
+    {
+      "url": "https://www.adaniports.com/logistics",
+      "source": "SITEMAPS",
+      "targetPath": "/logistics",
+      "id": "eccb49700fe12127f88ad1a0890de25a270fa962"
+    },
+    {
+      "url": "https://www.adaniports.com/Logistics",
+      "source": "SITEMAPS",
+      "targetPath": "/logistics",
+      "id": "544aa84041ded56943a534ccd4629caad3d4361e"
+    },
+    {
+      "url": "https://www.adaniports.com/Logistics/download",
+      "source": "SITEMAPS",
+      "targetPath": "/logistics/download",
+      "id": "25ea8148aef3e957dd6129263d2d302c393ea407"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom",
+      "id": "36fdfc1c338c13de3e90e2bf2a3197882144f0a5"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Coverages",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-coverages",
+      "id": "bb02215777b96ca4595b234401179206307aa0bf"
+    },
+    {
+      "url": "https://www.adaniports.com/newsroom/media-library",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-library",
+      "id": "6e898b98c602fb5e5d194313f006dd0125398fb0"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Library",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-library",
+      "id": "5b09da5425c2606b75f0e6541c6bd4a6751cc0db"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases",
+      "id": "48b93ac704a56b3935ac1558d081a9dd1221ced9"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/2020_07_13-First-Container-vessel-carrying-Export-Cargo-from-India-to-Bangladesh",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/2020-07-13-first-container-vessel-carrying-export-cargo-from-india-to-bangladesh",
+      "id": "bc87f092f5a2d305395a13686b3ce72dca46f189"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/2020_07_22-APSEZ-SBTi",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/2020-07-22-apsez-sbti",
+      "id": "3336ff4c5df7a53f0bc058b65b517e6aa9abf33a"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-and-Total-Join-Forces",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-and-total-join-forces",
+      "id": "2864c21a1cf96989e632b233f0775631d898ada2"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-becomes-1st-Indian-port-operator",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-becomes-1st-indian-port-operator",
+      "id": "b6058a6c0d06f3f89e9227069d1f677c09268ee2"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-begins-development-of-India-First-Transhipment-Port-at-Vizhinjam",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-begins-development-of-india-first-transhipment-port-at-vizhinjam",
+      "id": "80db11d70652f90f89fe95859a4388f2031615c6"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Forays-into-Cold-Chain-Logistics-with-INR-296-Cr-acquisition-of-Snowman-Logistics",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-forays-into-cold-chain-logistics-with-inr-296-cr-acquisition-of-snowman-logistics",
+      "id": "f71a8ff1611b7b50824ed07e26f06ef0aee35b0d"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Group-commits-Rs-25-Crore-to-Odisha-for-rehabilitation-in-the-aftermath-of-Fani",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-group-commits-rs-25-crore-to-odisha-for-rehabilitation-in-the-aftermath-of-fani",
+      "id": "7a7cc38eb25a856a14d40d95398949074773245f"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Group-eyes-global-expansion",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-group-eyes-global-expansion",
+      "id": "4ece559b99c8e650798838e001baafeaf3d9b117"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Logistics-commissions-multimodal",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-logistics-commissions-multimodal",
+      "id": "9176f5b27318adf3fee69e71e879399faad6be4f"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Logistics-Ltd-and-NYK-Auto-Logistics",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-logistics-ltd-and-nyk-auto-logistics",
+      "id": "e2d27461d97962897a78baaa817c6320c1d33ab4"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Logistics-set-to-acquire-agrilogistics",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-logistics-set-to-acquire-agrilogistics",
+      "id": "5a36b7a57e87444e3894add27f283e74191f8896"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-acquires-Dighi-Port-earmarks-INR-10000-Cr-to-build-new-gateway-into-Mahrashtra",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-acquires-dighi-port-earmarks-inr-10000-cr-to-build-new-gateway-into-mahrashtra",
+      "id": "2f651df4f3d5652d82a105c6012fcba2c66fdadc"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-acquires-stacks-in-Gangavaram-Port-from-Warburg-Pincus",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-acquires-stacks-in-gangavaram-port-from-warburg-pincus",
+      "id": "401a94b7a01c0a39867354ae60f9fbb41a136482"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-and-Logistics-announces-H1FY20-Result",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-and-logistics-announces-h1fy20-result",
+      "id": "c87b8f1be0126adfa48941c8562f42dc9f0f0c7a"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-and-SEZ-Ltd-completes-Rs-12000-cr-acquisition-of-Krishnapatnam-Port-Company-Ltd-KPCL",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-and-sez-ltd-completes-rs-12000-cr-acquisition-of-krishnapatnam-port-company-ltd-kpcl",
+      "id": "14b31e15e427ec3e022a8d469fef9f7e79309423"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-and-SEZ-Ltd-to-acquire-controlling-stake-of-75-in-Krishnapatnam-Port-Company-Ltd",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-and-sez-ltd-to-acquire-controlling-stake-of-75-in-krishnapatnam-port-company-ltd",
+      "id": "c610ee3935360855e6615307cc43b067abca0070"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-and-Terminal-Investment-to-jointly-develop-a-major-transhipment-hub-at-Mundra",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-and-terminal-investment-to-jointly-develop-a-major-transhipment-hub-at-mundra",
+      "id": "80673da4e11c8ba18b93114cfc3268aa6543193e"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-announces-Q1FY20-Result",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-announces-q1fy20-result",
+      "id": "d3e3e89d9139f9a07b587977338fd86aec26556b"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-begins-Berth-Construction",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-begins-berth-construction",
+      "id": "36c6fe6ae5afec3f1df651534372c62adbe3fd68"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-commissions-Tuna-Tekra-bulk-terminal-at-Kandla-in-a-record-time-of-24-months",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-commissions-tuna-tekra-bulk-terminal-at-kandla-in-a-record-time-of-24-months",
+      "id": "5b0bd41871b2518fd3adb1b694e3efe84e83e44a"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-consolidated-PAT-increases-by-33",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-consolidated-pat-increases-by-33",
+      "id": "4a39dac320c3b9140cbc41e6684c8a7d700db993"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-consolidated-total-income-increases-by-15-PAT-up-by-18-for-the-nine-months",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-consolidated-total-income-increases-by-15-pat-up-by-18-for-the-nine-months",
+      "id": "81262a2cd54a086a3cc6f3f42918528f30920e30"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-dredging-fleet",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-dredging-fleet",
+      "id": "29eebd091803c319f694647655a7e6f65975041a"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-Expands-Dhamra-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-expands-dhamra-port",
+      "id": "15fe32db7a1776ef81282a40f45d34ebee54a7ba"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-form-JV-with-France",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-form-jv-with-france",
+      "id": "6ca4c1e44fd3f58d4eb33e8df4f021822caebcd2"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-ports-FY17-Revenue-up-19",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-fy17-revenue-up-19",
+      "id": "e0c85cfc093bdeee383e708d1908848f1578b8fc"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-ports-FY18-Revenue-up-34",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-fy18-revenue-up-34",
+      "id": "b9d8635734a3535a2a677011122c1768a8efa5d6"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-Mundra-set-National-Record",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-mundra-set-national-record",
+      "id": "d67912f764e11d5f969cf25c35e343eba4c25c82"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-PAT-grows-by-38",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-pat-grows-by-38",
+      "id": "45c39885acb3a6ca37df1114e2e7a26b327369f0"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-PAT-grows-by-61-in-Q2-FY17",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-pat-grows-by-61-in-q2-fy17",
+      "id": "a9ff720fbf7f65b03ba12bf48beacce586ac657d"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-Profit-grows-by-31-in-Q1-FY17",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-profit-grows-by-31-in-q1-fy17",
+      "id": "83296e181770c999f5e9dad54db11879aa2c3ae6"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-Q2-consolidated-net-profit-Rs-992-crore",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-q2-consolidated-net-profit-rs-992-crore",
+      "id": "6824f612ef2766cab1a5da58fe2352bdc5117ae1"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-Q3-profit-pushes-up",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-q3-profit-pushes-up",
+      "id": "b7ecb58a3587c22bc24d0a04eff115df79207b4e"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-raises-10-year-bullet-USD-500-mn",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-raises-10-year-bullet-usd-500-mn",
+      "id": "c586b7ca08df832b333c2e932d4b6e180fb49453"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-signs-a-long-term-GAIL",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-signs-a-long-term-gail",
+      "id": "86f54e6c0a596103d3b4756ab680dc3a22c4ca2c"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Adani-Ports-signs-a-long-term-Indian-Oil",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adani-ports-signs-a-long-term-indian-oil",
+      "id": "a83cdc1d82eb7d04d17f616aea40a92e884719a9"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/ADNOC-Adani-BASF-and-Borealis-sign-Memorandum-of-Understanding-to-further-evaluate-collaboration",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/adnoc-adani-basf-and-borealis-sign-memorandum-of-understanding-to-further-evaluate-collaboration",
+      "id": "56f55df8d8f0727f8cfbbb7f105a66133b640029"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-and-Wilhelmshaven-Freight-Village-Container-Terminal-to-jointly-promote-trade-and-shipping",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-and-wilhelmshaven-freight-village-container-terminal-to-jointly-promote-trade-and-shipping",
+      "id": "ae099c5159574a1082b3641040cc6e5d2176955d"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-announces-9M-and-Q3-FY20-Results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-announces-9m-and-q3-fy20-results",
+      "id": "ab8c8d2e0e8585d47d5d5056e2d4d0e7c622a2b0"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-announces-FY19-results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-announces-fy19-results",
+      "id": "697c63429a59dc3d9b06f8f0fc2724621c53f098"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-announces-FY20--Q4-FY20-Results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-announces-fy20-q4-fy20-results",
+      "id": "1b42def65d93240e34c48c9ce322effda1f4df9d"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-announces-Q3-FY21-Results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-announces-q3-fy21-results",
+      "id": "da35d4b32becd1d32fa98481c9aa54ccdc1cd18b"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-announces-Q3FY19-results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-announces-q3fy19-results",
+      "id": "4f6cfc1f230755ffcc2371e016e637c82441af77"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-completes-acquisition-of-Kattupalli-port",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-completes-acquisition-of-kattupalli-port",
+      "id": "559f80a476c17f6340a245664852b2a8c379609f"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-enhances-its-operational-foothold-Signs",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-enhances-its-operational-foothold-signs",
+      "id": "c3d6aec142fd51204289f07dfd397db4c2c3cd88"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-H1FY19-Results",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-h1fy19-results",
+      "id": "ceef23ba5bbcc8449579c5c721387972a1a5fb10"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-Media-Release",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-media-release",
+      "id": "fb0d4a47b520589f5cd59993a37f38a3e8d542de"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-profits-Rs-697-cr-in-Q1FY19",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-profits-rs-697-cr-in-q1fy19",
+      "id": "75c013041a489f10577fe50e1e6f80161fbe389f"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-Q2-FY21",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-q2-fy21",
+      "id": "eebaf7bb23acbe2eca97b499fee62eae7ebc910e"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/APSEZ-Ranks-14th-in-the-Transportation-and-Transportation-Infrastructure-Sector",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/apsez-ranks-14th-in-the-transportation-and-transportation-infrastructure-sector",
+      "id": "89e50bde3c9cf4b16a0038dbf9e8e8bf5cf24ff3"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/B2B-Logistics-Solutions",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/b2b-logistics-solutions",
+      "id": "dadb626486f632c064107f1eddabcc9773a7175f"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Fitch-Affirms-Indias-Adani-Ports-and-SEZ-at-BBB-Outlook-Stable",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/fitch-affirms-indias-adani-ports-and-sez-at-bbb-outlook-stable",
+      "id": "e6f9693789eb56cdc177bd19640dd99e8768282c"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Media-Release---APSEZ",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/media-release-apsez",
+      "id": "b600ce57696984aea2954295d0edb0fdd368f7be"
+    },
+    {
+      "url": "https://www.adaniports.com/Newsroom/Media-Releases/Q1FY21-Adani-Ports-announces-Result",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/media-releases/q1fy21-adani-ports-announces-result",
+      "id": "ac74d01fdd1473f64c77f6daf5ecd433b16e8742"
+    },
+    {
+      "url": "https://www.adaniports.com/newsroom/social-media",
+      "source": "SITEMAPS",
+      "targetPath": "/newsroom/social-media",
+      "id": "3a9c12be1dffdd6f4cc3df4514951cf739842eed"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fganesan-raghuram&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "ec070a0003fa30ad625f878f8f21dabf47a1a198"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fgopal-krishna-pillai&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "abd3d66ce08e43c5f376b971e65efa07a8ddd337"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fmalay-mahadevia&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "af9f394047a9da80ab9964db06402274ca4afd62"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fnirupama-rao&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "269552f7683fc1d0f6ceb1f19dad153dcc423920"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fceo-message&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "0ab49dab2ca81942e2a29d6a046d52230fa0e22e"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fabout-us%2fceo+message&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "bc380759ea9cd1d793cfedbb3bfe331f1b457f48"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fports-and-terminals%2fvizag-terminal&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "ce95abc1693f0cdc8a0c3e93a8b18eacdd586e4d"
+    },
+    {
+      "url": "https://www.adaniports.com/page-not-found?item=%2fports-and-terminals%2fvizag-terminal%2fdownload&user=default%5cAnonymous&site=Ports",
+      "source": "SITEMAPS",
+      "targetPath": "/page-not-found",
+      "id": "43720f30dd6647b287d4d8e80a60f9214e0dbdb8"
+    },
+    {
+      "url": "https://www.adaniports.com/payment-advice-form",
+      "source": "SITEMAPS",
+      "targetPath": "/payment-advice-form",
+      "id": "feb342fc252ed0591514ffc0dc5ff0b570a37487"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals",
+      "id": "a7832886061998939b825a6ad5d2b5a1fe6f7ccb"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Dahej-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dahej-port",
+      "id": "3dceb6c41cbe76eae24b8b887d0f8ca8790f35e5"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Dahej-Port/Download",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dahej-port/download",
+      "id": "4fb1a7149d5261b6cc8a51b9de8d0835ef780701"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Dahej-Port/VesselSchedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dahej-port/vesselschedule",
+      "id": "9c9c113f7cb8db676631f94048ad2dc9290f718f"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/dhamra-port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dhamra-port",
+      "id": "12b379beaa8dd8c97235dfaedde9618c3b35b7a5"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/dhamra-port/Download",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dhamra-port/download",
+      "id": "4d065cdf63fe936ca5be9a2549c907efd6c4d001"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/dhamra-port/vesselschedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/dhamra-port/vesselschedule",
+      "id": "0aea4c19e4f8f263ba2aaad1d22e6e4b4e4cabf4"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Ennore-Terminal",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/ennore-terminal",
+      "id": "565f36b6cafc8dbdd0cfbf97097a4a3a4387387c"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Ennore-Terminal/download",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/ennore-terminal/download",
+      "id": "fe27c1306e5286244b876ffb50bfb8d1f93e914e"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Hazira-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/hazira-port",
+      "id": "7174a643d1ca043d6338b0a69da879ac8c3d3a0d"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Hazira-Port/vesselschedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/hazira-port/vesselschedule",
+      "id": "4c1b3c13fdb5a42cb165ac0cd6a59f88cca1f0dd"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Kattupalli-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/kattupalli-port",
+      "id": "6c700c814cf4c680ac1a8c683179b22e71884174"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Kattupalli-Port/VesselSchedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/kattupalli-port/vesselschedule",
+      "id": "f8250a430a15c012e970d351efaf2b0678c81b6d"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Mormugao--Terminal",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/mormugao-terminal",
+      "id": "b5150b3bfb9ff4c946344ce637867f7bbe86d8c5"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Mormugao--Terminal/Download",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/mormugao-terminal/download",
+      "id": "a66617f3d7a297b5e93b6a2958f8b5c59e88ded8"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Mormugao--Terminal/vesselschedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/mormugao-terminal/vesselschedule",
+      "id": "524e769588ca208cfe78506314c9dc0029d4b2e4"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Mundra-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/mundra-port",
+      "id": "d952040ed00ca9c2bc42a6bb865670c072a7d04b"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Tuna-Terminal",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/tuna-terminal",
+      "id": "bcc83ed873cb8cb45c0f5b43f823cc52138073db"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Tuna-Terminal/Download",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/tuna-terminal/download",
+      "id": "78a262f6da16156f81003560d710acecd51ffdc7"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Tuna-Terminal/vesselschedule",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/tuna-terminal/vesselschedule",
+      "id": "563778d5113e32b5b2d962ae8a390abc12ba5f41"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Vizhinjam-Port",
+      "source": "SITEMAPS",
+      "targetPath": "/ports-and-terminals/vizhinjam-port",
+      "id": "5fe28cbef345d2650785fc3593131de6138b6c1a"
+    },
+    {
+      "url": "https://www.adaniports.com/privacy-policy",
+      "source": "SITEMAPS",
+      "targetPath": "/privacy-policy",
+      "id": "8721f95f310fa5eb65d9ec420a5a4a0478db35f7"
+    },
+    {
+      "url": "https://www.adaniports.com/sustainability",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability",
+      "id": "9d78eb087c55602f9deae824469d5a27befe1f80"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability",
+      "id": "2b5de9302bcbaa11238ae9b05476d2c24df6612f"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Climate-Resilience",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/climate-resilience",
+      "id": "b8c61a051ebe50980bf6b8515d124d64656ca7c3"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Communities",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/communities",
+      "id": "26fa53b3e3b4360a7bc23f199fee5e218a87effb"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Customer",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/customer",
+      "id": "f950c565be375ee91e838f856f24a0dc4667db50"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Ethical-Supply-Chain",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/ethical-supply-chain",
+      "id": "e7cca7b41323357729bf4f36f32c0a7290f570a0"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Maintaining-Coastal-Ecosystem",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/maintaining-coastal-ecosystem",
+      "id": "4457d03e623e7e2b6370e8b602f62ce345b28789"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Safety-as-a-Value",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/safety-as-a-value",
+      "id": "37aed3817a99ee610adfd3a38a69bfe7b5069041"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Valuing-Talent",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/valuing-talent",
+      "id": "d9e3441bd77928f4a38c5e101c6421c0cd0cd735"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Waste-Management",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/waste-management",
+      "id": "e4ba4b88478ac9f13c0245498c1666c116006ef7"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/water",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/water",
+      "id": "7b785ea5169051dcd46fd76aa1acc81f3a300b65"
+    },
+    {
+      "url": "https://www.adaniports.com/Sustainability/Water",
+      "source": "SITEMAPS",
+      "targetPath": "/sustainability/water",
+      "id": "52bc43a2198003ac9ad9c89c89b9763dff796bd1"
+    },
+    {
+      "url": "https://www.adaniports.com/terms-and-conditions",
+      "source": "SITEMAPS",
+      "targetPath": "/terms-and-conditions",
+      "id": "8e57801a9931166ec8f172be1041bcbd422b4f44"
+    }
+  ],
+  "crawlOptions": {
+    "timeout": 64800000,
+    "inclusionPatterns": [],
+    "exclusionPatterns": [],
+    "limit": -1,
+    "sameDomain": true,
+    "keepHash": false,
+    "strategy": "sitemaps",
+    "logger": {},
+    "strategiesAttempted": [
+      "SITEMAPS"
+    ]
+  },
+  "extractionErrors": [
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Ganesan-Raghuram",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fganesan-raghuram&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Gopal-Krishna-Pillai",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fgopal-krishna-pillai&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Malay-Mahadevia",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fmalay-mahadevia&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/Board-of-Directors/Nirupama-Rao",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fboard-of-directors%2fnirupama-rao&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/CEO-Message",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fceo-message&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/About-us/CEO%20Message",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fabout-us%2fceo+message&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Vizag-Terminal",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fports-and-terminals%2fvizag-terminal&user=default%5cAnonymous&site=Ports"
+    },
+    {
+      "url": "https://www.adaniports.com/Ports-and-Terminals/Vizag-Terminal/Download",
+      "status": "302 Moved Temporarily Redirect: https://www.adaniports.com/page-not-found?item=%2fports-and-terminals%2fvizag-terminal%2fdownload&user=default%5cAnonymous&site=Ports"
+    }
+  ]
+}
