@@ -1,8 +1,35 @@
-
 /* Base columns styles */
 .columns {
   background: #eaeaea;
   padding: 24px 0;
+  box-sizing: border-box;
+}
+
+.columns.columns9 {
+  background: #ededed;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+.columns.columns3 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 0 40px;
+}
+
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -20,10 +47,6 @@
   box-sizing: border-box;
 }
 
-.columns img {
-  width: 100%;
-}
-
 .columns > div > div {
   background: #fff;
   border-radius: 14px;
@@ -38,14 +61,11 @@
   order: 1;
 }
 
-.columns.columns3 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 24px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 56px 0 40px;
+.columns > div > div:nth-child(2),
+.columns > div > div:nth-child(3) {
+  flex: 1 1 0;
+  min-width: 210px;
+  max-width: 320px;
 }
 
 .columns > div > div:first-child {
@@ -54,11 +74,12 @@
   max-width: 740px;
 }
 
-.columns > div > div:nth-child(2),
-.columns > div > div:nth-child(3) {
-  flex: 1 1 0;
-  min-width: 210px;
-  max-width: 320px;
+.columns > div > .columns-img-col {
+  order: 0;
+}
+
+.columns > div > .columns-img-col img {
+  display: block;
 }
 
 .columns > div > div h5 {
@@ -81,57 +102,10 @@
   text-align: left;
 }
 
-.columns > div > .columns-img-col {
-  order: 0;
-}
-
-.columns > div > .columns-img-col img {
-  display: block;
-}
-
-/* Responsive: stack cards vertically on mobile and reduce padding */
-@media (width <= 900px) {
-  .columns > div {
-    flex-direction: column;
-    gap: 18px;
-    max-width: 98vw;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 8px;
-  }
-
-  .columns > div > div {
-    padding: 18px 12px 18px 16px;
-    min-width: 0;
-    max-width: 100%;
-  }
-}
-
-/* Optional: subtle hover effect for cards */
 .columns > div > div:hover {
   box-shadow: 0 4px 24px rgb(0 0 0 / 13%);
 }
 
-@media (width <= 1100px) {
-  .columns.columns3 > div {
-    max-width: 96vw;
-  }
-}
-
-@media (width <= 900px) {
-  .columns.columns3 > div {
-    flex-direction: column;
-    gap: 20px;
-    padding: 32px 0 24px;
-    max-width: 98vw;
-  }
-
-  .columns.columns3 > div > div:first-child {
-    margin: 0 auto;
-  }
-}
-
-/* Image: fixed square, never stretch */
 .columns.columns3 > div > div:first-child {
   flex: 0 0 120px;
   width: 120px;
@@ -158,18 +132,6 @@
   display: block;
 }
 
-@media (width <= 900px) {
-  .columns.columns3 > div > div:first-child {
-    width: 100px;
-    height: 100px;
-    min-width: 100px;
-    min-height: 100px;
-    max-width: 100px;
-    max-height: 100px;
-  }
-}
-
-/* Content column */
 .columns.columns3 > div > div:last-child {
   flex: 1 1 0;
   display: flex;
@@ -228,7 +190,6 @@
   font-weight: 400;
 }
 
-/* Button container and button */
 .columns.columns3 > div > div:last-child .button-container {
   margin-top: 22px;
   margin-bottom: 20px;
@@ -257,31 +218,21 @@
   color: #fff;
 }
 
-/* Generated CSS */
-
-.columns > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding: 0 24px;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.columns > div > div {
+.columns.columns9 > div > div {
   background: #fff;
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 8px 14px 16px;
-  min-height: 100px;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: none;
+  min-height: 56px;
+  padding: 16px 24px;
   box-sizing: border-box;
+  display: block;
+  text-align: left;
 }
 
-.columns > div > div h5 {
+.columns.columns9 > div > div h5 {
   font-size: 12px;
   font-weight: 400;
   color: #28b5b5;
@@ -291,29 +242,89 @@
   line-height: 1.25;
 }
 
-.columns > div > div h5 a {
+.columns.columns9 > div > div h5 a {
   color: #28b5b5;
   font-weight: 400;
   text-decoration: none;
 }
 
+.columns.columns9 .button-container {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.columns.columns9 .button-container .button {
+  background: none;
+  color: #38b6b6;
+  border: none;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  text-align: left;
+  display: inline;
+  line-height: 1.2;
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+@media (width <= 1100px) {
+  .columns.columns3 > div {
+    max-width: 96vw;
+  }
+}
+
 @media (width <= 900px) {
   .columns > div {
-    grid-template-columns: 1fr;
-    gap: 10px;
+    flex-direction: column;
+    gap: 18px;
+    max-width: 98vw;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0 8px;
   }
 
   .columns > div > div {
-    min-height: 56px;
-    padding: 8px 10px 12px 12px;
+    padding: 18px 12px 18px 16px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .columns.columns3 > div {
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px 0 24px;
+    max-width: 98vw;
+  }
+
+  .columns.columns3 > div > div:first-child {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .columns.columns3 > div > div:first-child img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .columns.columns3 > div > div:last-child {
+    max-width: 100%;
   }
 }
 
-/* Merged .columns selector */
-
-.columns {
-  background: #eaeaea;
-  padding: 24px 0;
-  box-sizing: border-box;
+@media (width <= 700px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 14px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
 }
