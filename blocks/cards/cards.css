@@ -68,6 +68,63 @@
   line-height: 1.4;
 }
 
+.cards.cards45 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 104px;
+  max-width: 104px;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cards.cards45 .cards-card-image {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.cards.cards45 .cards-card-image img,
+.cards.cards45 .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cards.cards45 .cards-card-body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.cards.cards45 .cards-card-body p {
+  color: #333;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.cards.cards45 .cards-card-body strong {
+  font-weight: 500;
+}
+
 .cards.cards29 .cards-card-body p strong {
   color: #19b3ad;
   font-size: 17px;
@@ -144,6 +201,18 @@
   box-shadow: none;
 }
 
+.cards.cards51 {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  min-height: 32px;
+  background: #f1f1f2;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .cards.cards51 > ul {
   display: flex;
   flex-direction: row;
@@ -160,7 +229,7 @@
   border: none;
   overflow: hidden;
   color: #fff;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, Helvetica Neue, Arial, sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -308,7 +377,7 @@
   height: 32px;
   margin: 0;
   padding: 0 4px;
-  font-family: Roboto, "Arial Narrow", Arial, sans-serif;
+  font-family: Roboto, Arial Narrow, Arial, sans-serif;
   font-stretch: condensed;
   font-size: 13px;
   font-weight: 700;
@@ -406,6 +475,85 @@
   box-sizing: border-box;
 }
 
+.cards.cards45 {
+  background: #ededed;
+  padding: 36px 0;
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  min-height: 152px;
+  display: flex;
+  align-items: center;
+}
+
+.cards.cards45 > ul {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 32px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: auto visible;
+  width: 100%;
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc #ededed;
+  justify-content: flex-start;
+}
+
+.cards.cards45 .cards-card-image {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.cards.cards45 .cards-card-image img,
+.cards.cards45 .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cards.cards45 .cards-card-body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.cards.cards45 .cards-card-body p {
+  color: #333;
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.cards.cards45 .cards-card-body strong {
+  font-weight: 500;
+}
+
+.cards.cards29 .cards-card-body p strong {
+  color: #19b3ad;
+  font-size: 17px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
 @media (width <= 700px) {
   .cards.cardsnoimages32 > ul {
     min-width: 0;
@@ -416,6 +564,26 @@
     padding: 8px 10px;
     font-size: 14px;
   }
+
+  .cards.cards45 {
+    padding: 18px 0;
+    min-height: 0;
+  }
+  .cards.cards45 > ul {
+    gap: 18px;
+  }
+  .cards.cards45 > ul > li {
+    min-width: 70px;
+    max-width: 70px;
+  }
+  .cards.cards45 .cards-card-image {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 6px;
+  }
+  .cards.cards45 .cards-card-body p {
+    font-size: 11px;
+  }
 }
 
 @media (width <= 400px) {
@@ -423,7 +591,6 @@
     flex-direction: column;
     width: 100%;
   }
-
   .cards.cards11 > ul > li > .cards-card-body:last-child {
     width: 100%;
   }
@@ -453,7 +620,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
-
   .cards.cards29 .cards-card-image picture,
   .cards.cards29 .cards-card-image img {
     height: 140px;
@@ -465,12 +631,10 @@
     grid-template-columns: 1fr;
     gap: 12px;
   }
-
   .cards.cards29 .cards-card-image picture,
   .cards.cards29 .cards-card-image img {
     height: 96px;
   }
-
   .cards.cards29 .cards-card-body {
     padding: 12px 10px 14px;
   }
@@ -667,65 +831,20 @@
   .cards.cardsnoimages49 > ul {
     flex-direction: column;
   }
-
   .cards.cardsnoimages49 > ul > li:first-child,
   .cards.cardsnoimages49 > ul > li:last-child {
     max-width: none;
     min-width: 0;
     width: 100%;
   }
-
   .cards.cardsnoimages49 .cards-card-body {
     padding: 20px 14px 16px;
   }
-
   .cards.cardsnoimages49 .cards-card-image {
     min-height: 160px;
     max-height: 260px;
     height: auto;
   }
-}
-
-/* --------- End Cards Styles --------- */
-
-/* --------- Begin Generated CSS --------- */
-
-/* --- .cards.cards51 block to be replaced by merged version --- */
-
-/* Render the left vertical gradient bar */
-.cards.cards51 > ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 146px;
-  min-width: 100px;
-  max-width: 200px;
-  height: 32px;
-  background: linear-gradient(90deg, #1fa2a6 0%, #2578b3 100%);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 14px;
-  list-style: none;
-  border: none;
-  overflow: hidden;
-  color: #fff;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  white-space: nowrap;
-  justify-content: flex-start;
-}
-
-.cards.cards51 > ul > li {
-  display: none;
-  margin: 0;
-  padding: 0;
-}
-
-.cards.cards51 > ul::marker {
-  display: none;
 }
 
 @media (width <= 600px) {
@@ -737,28 +856,7 @@
     font-size: 12px;
     height: 28px;
   }
-
   .cards.cards51 {
     min-height: 28px;
   }
 }
-
-/* --- End .cards.cards51 block --- */
-
-/* --------- End Generated CSS --------- */
-
-/* --------- Begin Merged .cards.cards51 Block --------- */
-
-.cards.cards51 {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  width: 100%;
-  min-height: 32px;
-  background: #f1f1f2;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-/* --------- End Merged .cards.cards51 Block --------- */
