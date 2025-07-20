@@ -1,7 +1,10 @@
+
 /* Base columns styles */
 .columns {
-  background: #eaeaea;
-  padding: 24px 0;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
   box-sizing: border-box;
 }
 
@@ -482,4 +485,110 @@
     max-width: 98vw;
     padding: 0 8px;
   }
+}
+
+/* --- Generated CSS --- */
+
+/* L-shape grid, left-aligned and visible at the top */
+.columns > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 24px;
+  place-content: start start;
+  padding: 40px 0 0 40px;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 0;
+}
+
+.columns > div > div {
+  background: #ddd;
+  border-radius: 0;
+  box-shadow: none;
+  width: 320px;
+  min-width: 220px;
+  max-width: 360px;
+  height: 320px;
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Assign cards to L-shape grid cells */
+.columns > div > div:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.columns > div > div:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.columns > div > div:nth-child(3) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Center h5 text */
+.columns > div > div h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00acee;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  line-height: 1.2;
+  font-family: var(--heading-font-family);
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.columns > div > div h5 a {
+  color: #00acee;
+  text-decoration: none;
+  font-weight: inherit;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (width <= 900px) {
+  .columns {
+    max-width: 98vw;
+    margin: 0;
+  }
+
+  .columns > div {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 8vw;
+    width: 100%;
+  }
+
+  .columns > div > div {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: 160px;
+    min-height: 90px;
+  }
+}
+
+/* --- Merged .columns selector (replaces both above) --- */
+.columns {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
