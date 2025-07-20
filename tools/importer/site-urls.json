@@ -138,7 +138,8 @@
       "url": "https://www.adaniports.com/Investors/Corporate-Governance/Corporate-Announcement",
       "source": "SITEMAPS",
       "targetPath": "/investors/corporate-governance/corporate-announcement",
-      "id": "b73b57a61c3d4145d3e00d283bbb413928647c98"
+      "id": "b73b57a61c3d4145d3e00d283bbb413928647c98",
+      "status": "excluded"
     },
     {
       "url": "https://www.adaniports.com/Investors/Corporate-Governance/Other-Download",
@@ -168,13 +169,15 @@
       "url": "https://www.adaniports.com/investors/Investor-Downloads",
       "source": "SITEMAPS",
       "targetPath": "/investors/investor-downloads",
-      "id": "e88447215110e50408dd34487d067b46ac3d4d87"
+      "id": "e88447215110e50408dd34487d067b46ac3d4d87",
+      "status": "excluded"
     },
     {
       "url": "https://www.adaniports.com/Investors/Investor-Downloads",
       "source": "SITEMAPS",
       "targetPath": "/investors/investor-downloads",
-      "id": "b3fe46de2384b50f0029c437b776c959968e2055"
+      "id": "b3fe46de2384b50f0029c437b776c959968e2055",
+      "status": "excluded"
     },
     {
       "url": "https://www.adaniports.com/investors/Investor-FAQs",
