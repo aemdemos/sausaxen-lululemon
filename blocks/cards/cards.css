@@ -35,6 +35,28 @@
   line-height: 1.5;
 }
 
+.cards.cardsnoimages32 .cards-card-body {
+  margin: 0;
+  padding: 0;
+}
+
+.cards.cardsnoimages32 .cards-card-body strong {
+  color: #333;
+  font-weight: 400;
+  font-size: 15px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.cards.cards29 .cards-card-body p strong {
+  color: #19b3ad;
+  font-size: 17px;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
 .cards > ul {
   list-style: none;
   margin: 0;
@@ -47,6 +69,8 @@
 .cards > ul > li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
 }
 
 .cards .cards-card-image {
@@ -189,6 +213,23 @@
 }
 
 /* Ensure the p is perfectly vertically centered, no extra space */
+.cards.cardsnoimages32 .cards-card-body p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 10px 32px;
+  font-size: 15px;
+  background: transparent;
+  box-sizing: border-box;
+  min-height: 40px;
+}
+
+.cards.cardsnoimages32 .cards-card-body p + p {
+  margin-top: 0;
+}
+
 .cards.cards11 > ul > li > .cards-card-body:last-child > p {
   margin: 0;
   padding: 0;
@@ -204,7 +245,95 @@
   vertical-align: middle;
 }
 
-/* Responsive: stack vertically on very small screens */
+.cards.cardsnoimages32 > ul {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  max-width: 900px;
+  min-width: 320px;
+  box-shadow: none;
+  border-radius: 0;
+  display: block;
+}
+
+.cards.cards20 > ul > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  overflow: hidden;
+  min-height: 196px;
+  height: 196px;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.cards.cardsnoimages32 > ul > li {
+  border: none;
+  border-bottom: 1px solid #ededed;
+  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.cardsnoimages32 > ul > li:last-child {
+  border-bottom: none;
+}
+
+.cards.cardsnoimages32 .cards-card-body p br {
+  display: none;
+}
+
+.cards.cardsnoimages32 .cards-card-body a {
+  color: #39b8c9;
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+  margin-left: 28px;
+  white-space: nowrap;
+  background: none;
+  padding: 0;
+  line-height: 1.4;
+  display: inline-block;
+  transition: color 0.15s;
+}
+
+.cards.cardsnoimages32 .cards-card-body a:hover,
+.cards.cardsnoimages32 .cards-card-body a:focus {
+  color: #277d86;
+  text-decoration: underline;
+}
+
+.cards.cardsnoimages32 {
+  background: #ededed;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (width <= 700px) {
+  .cards.cardsnoimages32 > ul {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .cards.cardsnoimages32 .cards-card-body p {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
 @media (width <= 400px) {
   .cards.cards11 > ul {
     flex-direction: column;
@@ -242,9 +371,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
   }
-}
 
-@media (width <= 700px) {
   .cards.cards20 > ul > li {
     min-height: 140px;
     height: 140px;
@@ -268,21 +395,6 @@
   }
 }
 
-.cards.cards20 > ul > li {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: none;
-  border: none;
-  overflow: hidden;
-  min-height: 196px;
-  height: 196px;
-  border-radius: 0;
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-}
-
 .cards.cards29 {
   background: #f5f6fa;
   padding: 32px 0;
@@ -300,14 +412,6 @@
   width: 100%;
   box-sizing: border-box;
   justify-items: stretch;
-}
-
-.cards.cards29 .cards-card-body p strong {
-  color: #19b3ad;
-  font-size: 17px;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
 }
 
 @media (width <= 1200px) {
