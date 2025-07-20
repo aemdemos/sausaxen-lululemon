@@ -1,3 +1,5 @@
+/* ====== CAROUSEL STYLES ====== */
+
 .carousel .carousel-slides-container {
   position: relative;
 }
@@ -30,6 +32,13 @@
   position: relative;
   width: 100%;
   min-height: min(50vw, calc(100dvh - var(--header-height)));
+}
+
+/* .carousel.carousel14 .carousel-slide moved above :has selectors to fix specificity order */
+.carousel.carousel14 .carousel-slide {
+  min-height: 56vw;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 .carousel .carousel-slide:has(.carousel-slide-content[data-align='center']) {
@@ -71,6 +80,18 @@
   line-height: 0;
 }
 
+/* .carousel .carousel-navigation-buttons button moved above .carousel .carousel-slide-indicator button:disabled to fix specificity order */
+.carousel .carousel-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border-radius: 50%;
+  padding: 0;
+  background-color: rgb(19 19 19 / 25%);
+  transition: background-color 0.2s;
+}
+
 .carousel .carousel-slide-indicator button {
   width: 24px;
   height: 24px;
@@ -99,17 +120,6 @@
   z-index: 1;
 }
 
-.carousel .carousel-navigation-buttons button {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  border-radius: 50%;
-  padding: 0;
-  background-color: rgb(19 19 19 / 25%);
-  transition: background-color 0.2s;
-}
-
 .carousel .carousel-navigation-buttons button:hover,
 .carousel .carousel-navigation-buttons button:focus-visible {
   background-color: rgb(19 19 19 / 75%);
@@ -134,6 +144,8 @@
   left: calc(50% - 2px);
 }
 
+/* ======= MERGED .carousel.carousel14 BLOCK BELOW ======= */
+
 .carousel.carousel14 {
   margin-left: 0;
   margin-right: 0;
@@ -145,14 +157,12 @@
   transform: translateX(-50%);
 }
 
-.carousel.carousel14 .carousel-slides {
-  margin: 0;
+.carousel.carousel14 .carousel-navigation-buttons {
+  display: none;
 }
 
-.carousel.carousel14 .carousel-slide {
-  min-height: 56vw;
-  align-items: flex-end;
-  justify-content: flex-end;
+.carousel.carousel14 .carousel-slides {
+  margin: 0;
 }
 
 .carousel.carousel14 .carousel-slide .carousel-slide-content {
@@ -169,6 +179,8 @@
   text-align: left;
   display: flex;
   align-items: center;
+  margin-bottom: 24px;
+  margin-right: 300px;
 }
 
 .carousel.carousel14 .carousel-slide .carousel-slide-content p {
@@ -178,34 +190,56 @@
 
 .carousel.carousel14 .carousel-slide-indicators {
   position: absolute;
-  inset: auto 56px 48px auto;
-  padding: 0;
-  margin: 0;
-  background: none;
+  right: 40px;
+  bottom: 44px;
   display: flex;
   flex-direction: column;
-  gap: 13px 0;
+  align-items: flex-end;
+  gap: 12px;
+  background: none;
+  padding: 0;
+  margin: 0;
   z-index: 3;
+  pointer-events: none;
 }
 
 .carousel.carousel14 .carousel-slide-indicator {
   margin: 0;
+  pointer-events: none;
 }
 
 .carousel.carousel14 .carousel-slide-indicator button {
+  pointer-events: auto;
   width: 34px;
   height: 34px;
-  border: none;
-  border-radius: 0;
   background: none;
+  border: none;
+  margin: 0;
   padding: 0;
-  display: block;
+  border-radius: 0;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  outline: none;
+  display: block;
   cursor: pointer;
 }
 
-.carousel.carousel14 .carousel-slide-indicator button::before {
+.carousel.carousel14 .carousel-slide-indicator button::before,
+.carousel.carousel14 .carousel-slide-indicator button::after {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 19px;
+  height: 13px;
+  border: none;
+  border-radius: 0 0 7px 7px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button::before {
   left: 50%;
   top: 50%;
   width: 24px;
@@ -220,9 +254,68 @@
 }
 
 .carousel.carousel14 .carousel-slide-indicator button:disabled::before {
+  border-bottom: 5px solid #fff;
   border-left: 3px solid #fff;
-  border-bottom: 3px solid #fff;
   opacity: 1;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button::after {
+  transform: translate(-50%, -50%) rotate(34deg);
+  border-bottom: 4px solid rgb(255 255 255 / 40%);
+  width: 17px;
+  height: 13px;
+  border-radius: 0 0 0 7px;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button:disabled::after {
+  border-bottom: 5px solid #fff;
+  opacity: 1;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button:not(:disabled)::before,
+.carousel.carousel14 .carousel-slide-indicator button:not(:disabled)::after {
+  opacity: 0.65;
+}
+
+.carousel.carousel14 .carousel-slide-indicator button:focus,
+.carousel.carousel14 .carousel-slide-indicator button:hover {
+  background: none;
+  outline: none;
+}
+
+@media (width <= 900px) {
+  .carousel.carousel14 .carousel-slide .carousel-slide-content {
+    margin-right: 0;
+    margin-bottom: 0;
+    right: 18px;
+    bottom: 18px;
+    padding: 12px 16px;
+    max-width: 80vw;
+  }
+
+  .carousel.carousel14 .carousel-slide-indicators {
+    right: 10px;
+    bottom: 95px;
+    gap: 8px;
+  }
+
+  .carousel.carousel14 .carousel-slide-indicator button {
+    width: 22px;
+    height: 16px;
+  }
+
+  .carousel.carousel14 .carousel-slide-indicator button::before,
+  .carousel.carousel14 .carousel-slide-indicator button::after {
+    width: 10px;
+    height: 7px;
+    border-radius: 0 0 3px 3px;
+    border-bottom-width: 2.5px;
+  }
+
+  .carousel.carousel14 .carousel-slide-indicator button:disabled::before,
+  .carousel.carousel14 .carousel-slide-indicator button:disabled::after {
+    border-bottom-width: 3px;
+  }
 }
 
 @media (width >= 600px) {
