@@ -1,14 +1,178 @@
+.accordion {
+  /* base styles for .accordion if needed */
+}
+
 .accordion details {
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
 
 .accordion details p {
   margin-bottom: 0.8em;
+}
+
+.accordion details .accordion-item-body {
+  padding: 0 16px;
+}
+
+.accordion details[open] .accordion-item-body {
+  border-top: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
+.accordion.accordion16 details .accordion-item-body {
+  padding: 10px 18px 14px;
+  background: #fff;
+  border-top: 1px solid #ededed;
+  font-size: 14px;
+  color: #232323;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.accordion.accordion37 {
+  background: #fff;
+  border-radius: 8px;
+  max-width: 700px;
+  margin: 40px auto 0;
+  box-shadow: none;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion.accordion37 .accordion-item-body {
+  background: #fff;
+  padding: 16px 28px 14px;
+  font-size: 15px;
+  color: #424242;
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+/* Simulate the light gray background behind the card */
+body, .accordion.accordion37::before {
+  background-color: #ececec;
+}
+
+/* Remove default browser gap/padding from each details */
+.accordion.accordion37 .accordion-item {
+  margin: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Each row: flex row for horizontal alignment, slightly reduced vertical padding for pixel match */
+.accordion.accordion37 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 44px;
+  padding: 13px 28px;
+  background: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  font-size: 15px;
+  color: #424242;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  outline: none;
+  box-sizing: border-box;
+  transition: background 0.13s;
+  position: relative;
+  gap: 0;
+  line-height: 1.45;
+}
+
+.accordion.accordion37 .accordion-item:last-child .accordion-item-label {
+  border-bottom: none;
+}
+
+/* Question text plain appearance and left alignment */
+.accordion.accordion37 .button-container {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.accordion.accordion37 .button-container .button {
+  background: none;
+  color: #424242;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 0;
+  min-width: 0;
+  min-height: 0;
+  line-height: 1.5;
+  white-space: normal;
+  overflow: visible;
+  display: block;
+  pointer-events: none;
+  cursor: default;
+  background-color: transparent;
+  appearance: none;
+}
+
+/* Hide browser default marker (triangle) */
+.accordion.accordion37 .accordion-item-label::-webkit-details-marker,
+.accordion.accordion37 .accordion-item-label::marker {
+  display: none;
+}
+
+.accordion.accordion37 .accordion-item:last-child .accordion-item-body {
+  border-bottom: none;
+}
+
+/* Typography in answer */
+.accordion.accordion37 .accordion-item-body p,
+.accordion.accordion37 .accordion-item-body ul {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Card corners rounded on first and last detail */
+.accordion.accordion37 .accordion-item:first-child .accordion-item-label {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.accordion.accordion37 .accordion-item:last-child .accordion-item-label,
+.accordion.accordion37 .accordion-item:last-child .accordion-item-body {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (width <= 900px) {
+  .accordion.accordion37 {
+    max-width: 98vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+  }
+}
+
+@media (width <= 600px) {
+  .accordion.accordion37 .accordion-item-label,
+  .accordion.accordion37 .accordion-item-body {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .accordion details summary {
@@ -49,15 +213,6 @@
 
 .accordion details[open] summary::after {
   transform: translateY(-50%) rotate(-45deg);
-}
-
-.accordion details .accordion-item-body {
-  padding: 0 16px;
-}
-
-.accordion details[open] .accordion-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
 }
 
 /* Merged selector for .accordion.accordion16 */
@@ -185,16 +340,6 @@
 .accordion.accordion16 details summary:focus,
 .accordion.accordion16 details summary:hover {
   background: #f5f5f5;
-}
-
-.accordion.accordion16 details .accordion-item-body {
-  padding: 10px 18px 14px;
-  background: #fff;
-  border-top: 1px solid #ededed;
-  font-size: 14px;
-  color: #232323;
-  box-sizing: border-box;
-  line-height: 1.5;
 }
 
 @media (width <= 900px) {
