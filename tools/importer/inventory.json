@@ -1300,12 +1300,6 @@
       "cluster": 4,
       "instances": [
         {
-          "url": "https://www.adaniports.com/Logistics",
-          "urlHash": "544aa84041ded56943a534ccd4629caad3d4361e",
-          "uuid": "544aa840-04-aca142cba6d4a139f243d1280c02a0e953c00477",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/section[3]"
-        },
-        {
           "url": "https://www.adaniports.com/logistics",
           "urlHash": "eccb49700fe12127f88ad1a0890de25a270fa962",
           "uuid": "eccb4970-04-aca142cba6d4a139f243d1280c02a0e953c00477",
@@ -4393,6 +4387,18 @@
           "uuid": "36fdfc1c-03-ca8712c1b8a873222ab45e96f65d719ac9cb297b",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[2]",
           "section": "section-3"
+        }
+      ]
+    },
+    {
+      "name": "Cards",
+      "cluster": 66,
+      "instances": [
+        {
+          "url": "https://www.adaniports.com/Logistics",
+          "urlHash": "544aa84041ded56943a534ccd4629caad3d4361e",
+          "uuid": "544aa840-04-aca142cba6d4a139f243d1280c02a0e953c00477",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/section[3]"
         }
       ]
     }
