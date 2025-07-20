@@ -9,6 +9,18 @@
   padding: 0;
 }
 
+/* MERGED .hero.hero2 SELECTOR */
+.hero.hero2 {
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 260px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
 .hero {
   position: relative;
   padding: 40px 24px;
@@ -52,7 +64,47 @@
   }
 }
 
-/* Order adjusted: .hero.hero1 > div:last-child now comes before .hero.hero1 > div:first-child > div */
+/* Order adjusted: .hero.hero1 > div:last-child and .hero.hero1 > div:first-child come before .hero.hero2 > div:first-child > div */
+.hero.hero1 > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero.hero1 > div:first-child {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  min-width: 16px;
+  margin-right: 0;
+}
+
+.hero.hero2 > div:first-child > div {
+  width: 100%;
+}
+
+.hero.hero2 > div:first-child > div > picture,
+.hero.hero2 > div:first-child > div > picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: left bottom;
+  margin: 0;
+  padding: 0;
+}
+
+/* Teal accent line styling */
+.hero.hero1 > div:first-child > div {
+  width: 3px;
+  height: 36px;
+  background: #1bc3a9;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
 .hero.hero1 {
   max-width: 820px;
   margin: 48px auto;
@@ -67,31 +119,26 @@
   gap: 32px;
 }
 
-/* Main content column */
-.hero.hero1 > div:last-child {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-width: 0;
+.hero.hero2 > div:nth-child(2) {
+  position: relative;
+  z-index: 2;
+  padding-top: 48px;
+  padding-left: 48px;
+  max-width: 700px;
+  flex: 0 0 auto;
+}
+
+.hero.hero2 > div:first-child {
   width: 100%;
-}
-
-/* Left vertical accent container */
-.hero.hero1 > div:first-child {
+  min-height: 120px;
+  margin-top: auto;
   display: flex;
-  align-items: flex-start;
-  flex-shrink: 0;
-  min-width: 16px;
-  margin-right: 0;
-}
-
-/* Teal accent line styling */
-.hero.hero1 > div:first-child > div {
-  width: 3px;
-  height: 36px;
-  background: #1bc3a9;
-  border-radius: 2px;
-  margin-top: 5px;
+  align-items: flex-end;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0;
+  background: none;
+  position: relative;
 }
 
 /* Heading tweaks for visual hierarchy and alignment */
@@ -124,6 +171,28 @@
   max-width: 100%;
 }
 
+.hero.hero2 > div:nth-child(2) h1,
+.hero.hero2 > div:nth-child(2) p {
+  color: #f6f6f6;
+  opacity: 0.87;
+  margin: 0 0 18px;
+  line-height: 1.15;
+}
+
+.hero.hero2 > div:nth-child(2) h1 {
+  font-size: 2.7rem;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero.hero2 > div:nth-child(2) p {
+  font-size: 1.18rem;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 /* Responsive adjustments for card and columns */
 @media (width <= 700px) {
   .hero.hero1 {
@@ -140,5 +209,31 @@
 
   .hero.hero1 > div:last-child {
     width: 100%;
+  }
+}
+
+.hero-container > .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+@media (width <= 900px) {
+  .hero.hero2 > div:nth-child(2) {
+    padding-top: 22px;
+    padding-left: 14px;
+    max-width: 98vw;
+  }
+
+  .hero.hero2 > div:nth-child(2) h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .hero.hero2 > div:nth-child(2) p {
+    font-size: 1rem;
+  }
+
+  .hero.hero2 {
+    min-height: 140px;
   }
 }
