@@ -9,61 +9,7 @@
   padding: 0;
 }
 
-/* MERGED .hero.hero2 SELECTOR */
-.hero.hero2 {
-  background: #f3f3f3;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 260px;
-  overflow: hidden;
-  padding: 0;
-  position: relative;
-}
-
-.hero {
-  position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-}
-
-.hero h1,
-.hero h2,
-.hero h3,
-.hero h4,
-.hero h5,
-.hero h6,
-.hero p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero.no-image * {
-  color: var(--text-color);
-}
-
-.hero picture {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
-}
-
-.hero img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-@media (width >= 900px) {
-  .hero {
-    padding: 40px 32px;
-  }
-}
-
+/* --- Begin ordering fix for no-descending-specificity and duplicates --- */
 .hero.hero1 > div:last-child {
   display: flex;
   flex-direction: column;
@@ -80,7 +26,6 @@
   margin-right: 0;
 }
 
-/* Move .hero.hero17 selectors above to resolve no-descending-specificity */
 .hero.hero17 > div:first-child {
   position: absolute;
   inset: 0;
@@ -167,6 +112,44 @@
   overflow-wrap: break-word;
 }
 
+.hero.hero21 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: block;
+  background: linear-gradient(rgb(0 0 0 / 58%), rgb(0 0 0 / 58%));
+}
+
+.hero.hero21 > div:first-child picture,
+.hero.hero21 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  min-height: 330px;
+  mix-blend-mode: multiply;
+  background: none;
+}
+
+.hero.hero21 > div:last-child {
+  position: absolute;
+  z-index: 2;
+  inset: auto auto 64px 40px;
+  max-width: 540px;
+  min-width: 220px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: none;
+  box-sizing: border-box;
+}
+
 .hero.hero2 > div:nth-child(2) {
   position: relative;
   z-index: 2;
@@ -202,6 +185,55 @@
   object-position: left bottom;
   margin: 0;
   padding: 0;
+}
+/* --- End ordering fix for no-descending-specificity and duplicates --- */
+
+.hero.hero2 {
+  background: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 260px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+
+.hero {
+  position: relative;
+  padding: 40px 24px;
+  min-height: 300px;
+}
+
+.hero h1,
+.hero h2,
+.hero h3,
+.hero h4,
+.hero h5,
+.hero h6,
+.hero p {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--background-color);
+}
+
+.hero.no-image * {
+  color: var(--text-color);
+}
+
+.hero picture {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  object-fit: cover;
+  box-sizing: border-box;
+}
+
+.hero img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /* Teal accent line styling */
@@ -279,6 +311,12 @@
   margin-bottom: 0;
 }
 
+@media (width >= 900px) {
+  .hero {
+    padding: 40px 32px;
+  }
+}
+
 @media (width <= 700px) {
   .hero.hero1 {
     flex-direction: column;
@@ -295,11 +333,6 @@
   .hero.hero1 > div:last-child {
     width: 100%;
   }
-}
-
-.hero-container > .hero-wrapper {
-  max-width: unset;
-  padding: 0;
 }
 
 @media (width <= 900px) {
@@ -320,6 +353,26 @@
 
   .hero.hero2 {
     min-height: 140px;
+  }
+
+  .hero.hero21 > div:last-child {
+    left: 16px;
+    bottom: 26px;
+    max-width: 95vw;
+  }
+
+  .hero.hero21 > div:last-child h1,
+  .hero.hero21 > div:last-child #newsroom {
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+  }
+
+  .hero.hero21 > div:last-child p {
+    font-size: 0.96rem;
+  }
+
+  .hero.hero21 {
+    min-height: 160px;
   }
 }
 
@@ -381,4 +434,18 @@
   background: transparent;
   padding: 0;
   overflow: hidden;
+}
+
+/* Generated CSS - removed duplicate .hero.hero21 rules at EOF */
+.hero.hero21 {
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: stretch;
+  background: none;
 }
