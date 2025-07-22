@@ -1958,20 +1958,18 @@
   font-family: Adani-Regular, sans-serif;
 }
 
-/* Ensure the direct child is a flex row for horizontal stat alignment */
 .columns.columns35 > div {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 40px; /* Spacing between stats */
+  gap: 40px;
   height: 338px;
   padding: 32px 24px;
   background: transparent;
   box-sizing: border-box;
 }
 
-/* Each stat block: no cards, no circles, center content */
 .columns.columns35 > div > div {
   background: transparent;
   border-radius: 0;
@@ -1989,7 +1987,6 @@
   position: relative;
 }
 
-/* Remove any possible pseudo-element backgrounds/circles */
 .columns.columns35 > div > div::before,
 .columns.columns35 > div > div::after,
 .columns.columns35 > div > div *::before,
@@ -2000,7 +1997,6 @@
   border-radius: 0;
 }
 
-/* Ensure all nested backgrounds are transparent (fixes inherited card styles) */
 .columns.columns35 > div > div *,
 .columns.columns35 > div > div *:not(img) {
   background: transparent;
@@ -2008,7 +2004,6 @@
   border-radius: 0;
 }
 
-/* Icon styling: center, size, spacing */
 .columns.columns35 img {
   display: block;
   margin: 0 auto 14px;
@@ -2017,7 +2012,6 @@
   filter: none;
 }
 
-/* Stat text: Large, teal colored number, then gray label, both centered */
 .columns.columns35 p {
   text-align: center;
   color: #009688;
@@ -2030,7 +2024,6 @@
   word-break: break-word;
 }
 
-/* Visually separate label on second line if possible */
 .columns.columns35 p br + span,
 .columns.columns35 p br + em,
 .columns.columns35 p br + strong {
@@ -2042,7 +2035,6 @@
   margin-bottom: 0;
 }
 
-/* Responsive: stack vertically on narrow screens */
 @media (width <= 900px) {
   .columns.columns35 > div {
     flex-direction: column;
@@ -2064,4 +2056,234 @@
   .columns.columns35 p {
     font-size: 22px;
   }
+}
+
+
+.columns.columns36 {
+  background: #f5f6fa;
+  padding: 48px 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  color: #212529;
+}
+
+/* Use flex for side-by-side columns */
+.columns.columns36 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Left content card: grow with content, all inside */
+.columns.columns36 > div > div:first-child {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 18px rgb(0 0 0 / 11%);
+  padding: 48px 36px;
+  flex: 2 1 0;
+  min-width: 360px;
+  max-width: 670px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+
+  /* allow the card to grow with its content */
+  height: auto;
+}
+
+/* Remove any unwanted pseudo-elements/circles */
+.columns.columns36 > div > div:first-child::after,
+.columns.columns36 > div > div:first-child::before {
+  display: none;
+}
+
+/* Visual hierarchy: section headings */
+.columns.columns36 h2 {
+  color: #22bbb2;
+  font-size: 1.22em;
+  font-weight: 700;
+  margin-top: 36px;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+  line-height: 1.24;
+}
+
+.columns.columns36 h2:first-child {
+  margin-top: 0;
+}
+
+/* Main page title (if present) */
+.columns.columns36 h1 {
+  font-size: 2.25em;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 34px;
+  margin-top: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+/* Paragraph and text styling */
+.columns.columns36 p {
+  color: #212529;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 18px;
+  line-height: 1.68;
+  background: none;
+  border: none;
+  padding: 0;
+  word-break: break-word;
+  font-weight: 400;
+}
+
+/* Section spacing: more vertical margin above each section heading */
+.columns.columns36 h2:not(:first-child) {
+  margin-top: 40px;
+}
+
+/* Simulate form fields with background and spacing if needed for certain p's */
+
+/* (use JS or future refinements for more granular targeting) */
+
+/* Download column: vertical stack, full width buttons */
+.columns.columns36 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 48px 0 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-width: 220px;
+  max-width: 320px;
+  flex: 1 1 0;
+  margin-top: 0;
+  box-sizing: border-box;
+}
+
+/* Download links as buttons, vertical */
+.columns.columns36 > div > div:last-child a {
+  display: block;
+  width: 100%;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+  padding: 18px 24px;
+  font-size: 1em;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-align: left;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  text-decoration: none;
+  line-height: 1.28;
+  border: none;
+  box-sizing: border-box;
+}
+
+.columns.columns36 > div > div:last-child a:last-child {
+  margin-bottom: 0;
+}
+
+.columns.columns36 > div > div:last-child a:hover {
+  background: #444;
+}
+
+/* Email link appearance */
+.columns.columns36 a[href^="mailto"] {
+  color: #22bbb2;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* Simulated button for "+ Add More Invoice" */
+.columns.columns36 p:contains('+ Add More Invoice') {
+  display: inline-block;
+  background: #22b6a4;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 22px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  border: none;
+  letter-spacing: 0.02em;
+}
+
+/* Disclaimer/footnote at the bottom of left card */
+.columns.columns36 > div > div:first-child p:last-of-type {
+  color: #777;
+  font-size: 0.97em;
+  line-height: 1.6;
+  margin-top: 38px;
+  margin-bottom: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Responsive: stack columns on small screens, adjust padding */
+@media (width <= 900px) {
+  .columns.columns36 > div {
+    flex-direction: column;
+    gap: 32px;
+    max-width: 98vw;
+    padding: 0 8px;
+    align-items: stretch;
+  }
+
+  .columns.columns36 > div > div {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .columns.columns36 > div > div:first-child,
+  .columns.columns36 > div > div:last-child {
+    padding: 28px 10px;
+  }
+}
+
+@media (width <= 600px) {
+  .columns.columns36 > div {
+    gap: 16px;
+    padding: 0 2vw;
+  }
+
+  .columns.columns36 > div > div:first-child,
+  .columns.columns36 > div > div:last-child {
+    padding: 14px 2vw;
+  }
+}
+
+/* Prevent any overflow/overlap */
+.columns.columns36 > div > div,
+.columns.columns36 > div > div * {
+  position: static;
+  overflow: visible;
+  box-shadow: none;
+}
+
+/* Tighten up first/last child margins */
+.columns.columns36 > div > div:first-child > *:first-child {
+  margin-top: 0;
+}
+
+.columns.columns36 > div > div:first-child > *:last-child {
+  margin-bottom: 0;
 }
