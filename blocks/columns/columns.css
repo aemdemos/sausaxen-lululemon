@@ -1,4 +1,3 @@
-/* Order of selectors has been adjusted for no-descending-specificity */
 .columns {
   background: #fff;
   margin: 0;
@@ -104,7 +103,6 @@
   }
 }
 
-/* Profile image column */
 .columns.columns3 > div > div:first-child {
   width: 120px;
   height: 120px;
@@ -122,7 +120,6 @@
   box-shadow: none;
 }
 
-/* Content column */
 .columns.columns3 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -136,7 +133,6 @@
   padding: 0;
 }
 
-/* Heading and accent bar */
 .columns.columns3 > div > div:last-child > h1 {
   display: flex;
   align-items: flex-start;
@@ -162,7 +158,6 @@
   content: "";
 }
 
-/* Subtitle (Chairman) */
 .columns.columns3 > div > div:last-child > p:first-of-type {
   font-size: 17px;
   color: #6c757d;
@@ -171,7 +166,6 @@
   padding: 0;
 }
 
-/* Main paragraphs */
 .columns.columns3 > div > div:last-child > p:not(:first-of-type, .button-container) {
   color: #222;
   font-family: var(--body-font-family);
@@ -183,13 +177,11 @@
   max-width: 100%;
 }
 
-/* Button container */
 .columns.columns3 > div > div:last-child > .button-container {
   margin: 16px 0 0;
   padding: 0;
 }
 
-/* Button styling */
 .columns.columns3 > div > div:last-child > .button-container > .button {
   background-image: linear-gradient(to right, #1b9f94 0%, #316db3 100%);
   background-color: transparent;
@@ -218,7 +210,6 @@
   color: #fff;
 }
 
-/* Responsive: stack vertically and full width on small screens */
 @media (width <= 900px) {
   .columns.columns3 > div > div:last-child > h1,
   .columns.columns3 > div > div:last-child > p:first-of-type,
@@ -983,4 +974,128 @@
   background: #f4f4f4;
   width: 100%;
   box-sizing: border-box;
+}
+
+
+.columns {
+  background: #ededed;
+  padding: 48px 0;
+  min-height: 340px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Main row: left and right columns side by side */
+.columns > div {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  align-items: flex-start;
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Left card */
+.columns > div > div:first-child {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 7%);
+  padding: 32px;
+  min-height: 220px;
+  flex: 2 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* ----------- RIGHT "MERGED" CARD VISUAL EFFECT ----------- */
+
+/* Remove gap between right two cards */
+.columns > div > div:nth-child(2),
+.columns > div > div:nth-child(3) {
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 32px;
+  margin: 0;
+  max-width: 380px;
+  min-width: 260px;
+  flex: 1 1 0;
+}
+
+/* Top card: only top corners rounded, shadow */
+.columns > div > div:nth-child(2) {
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 7%);
+  margin-bottom: -4px; /* Visually "merge" with lower card, avoid gap */
+  position: relative;
+  z-index: 1;
+}
+
+/* Bottom card: only bottom corners rounded, NO shadow */
+.columns > div > div:nth-child(3) {
+  border-radius: 0 0 8px 8px;
+  box-shadow: none;
+  margin-top: 0;
+  position: relative;
+  z-index: 0;
+}
+
+/* Headings: all black, bold, left aligned */
+.columns > div > div h5 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.columns > div > div h5 a {
+  color: #222;
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .columns {
+    padding: 28px 0;
+    min-height: unset;
+  }
+
+  .columns > div {
+    flex-direction: column;
+    gap: 24px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+
+  .columns > div > div:first-child,
+  .columns > div > div:nth-child(2),
+  .columns > div > div:nth-child(3) {
+    max-width: 100%;
+    padding: 20px 12px 20px 16px;
+    min-width: 0;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 7%);
+    margin-bottom: 0;
+  }
+
+  /* On mobile, don't try to visually merge the two right cards */
+  .columns > div > div:nth-child(2),
+  .columns > div > div:nth-child(3) {
+    box-shadow: 0 1px 4px rgb(0 0 0 / 7%);
+    margin-bottom: 24px;
+  }
+}
+
+/* Ensure all text is left-aligned in all cards */
+.columns > div > div,
+.columns > div > div * {
+  text-align: left;
 }
