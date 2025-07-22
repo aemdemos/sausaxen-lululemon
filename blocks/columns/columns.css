@@ -396,12 +396,6 @@
   }
 }
 
-.columns.columns35 {
-  background: #f4f4f4;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 
 .columns {
   background: #ededed;
@@ -1835,7 +1829,6 @@
   min-height: 380px;
 }
 
-/* Ensure text is LEFT and image is RIGHT */
 .columns.columns34 > div > div:first-child {
   order: 0;
 }
@@ -1844,7 +1837,6 @@
   order: 1;
 }
 
-/* LEFT COLUMN: bulleted list */
 .columns.columns34 > div > div:first-child {
   flex: 0 0 52%;
   max-width: 52%;
@@ -1878,7 +1870,6 @@
   }
 }
 
-/* List style refinement */
 .columns.columns34 > div > div:first-child ul {
   margin: 0;
   padding-left: 22px;
@@ -1899,7 +1890,6 @@
   margin-bottom: 0;
 }
 
-/* RIGHT COLUMN: image area */
 .columns.columns34 > div > .columns-img-col {
   order: 1;
   flex: 1 1 48%;
@@ -1926,7 +1916,6 @@
   }
 }
 
-/* Remove overlay and border radius on image and prevent any pseudo-elements that could add overlays */
 .columns.columns34 > div > .columns-img-col::after,
 .columns.columns34 > div > .columns-img-col .main-image-overlay,
 .columns.columns34 > div > .columns-img-col *::after,
@@ -1956,5 +1945,123 @@
     width: 100%;
     height: auto;
     min-height: 160px;
+  }
+}
+
+
+.columns.columns35 {
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: Adani-Regular, sans-serif;
+}
+
+/* Ensure the direct child is a flex row for horizontal stat alignment */
+.columns.columns35 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px; /* Spacing between stats */
+  height: 338px;
+  padding: 32px 24px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Each stat block: no cards, no circles, center content */
+.columns.columns35 > div > div {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  min-width: 0;
+  max-width: 220px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  height: auto;
+  position: relative;
+}
+
+/* Remove any possible pseudo-element backgrounds/circles */
+.columns.columns35 > div > div::before,
+.columns.columns35 > div > div::after,
+.columns.columns35 > div > div *::before,
+.columns.columns35 > div > div *::after {
+  display: none;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Ensure all nested backgrounds are transparent (fixes inherited card styles) */
+.columns.columns35 > div > div *,
+.columns.columns35 > div > div *:not(img) {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Icon styling: center, size, spacing */
+.columns.columns35 img {
+  display: block;
+  margin: 0 auto 14px;
+  width: 48px;
+  height: 48px;
+  filter: none;
+}
+
+/* Stat text: Large, teal colored number, then gray label, both centered */
+.columns.columns35 p {
+  text-align: center;
+  color: #009688;
+  font-size: 28px;
+  font-family: Adani-Regular, sans-serif;
+  font-weight: 600;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  word-break: break-word;
+}
+
+/* Visually separate label on second line if possible */
+.columns.columns35 p br + span,
+.columns.columns35 p br + em,
+.columns.columns35 p br + strong {
+  display: block;
+  color: #757575;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Responsive: stack vertically on narrow screens */
+@media (width <= 900px) {
+  .columns.columns35 > div {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 0;
+    gap: 24px;
+  }
+
+  .columns.columns35 > div > div {
+    max-width: 100%;
+    padding: 0 8px;
+    height: auto;
+  }
+
+  .columns.columns35 img {
+    margin-bottom: 8px;
+  }
+
+  .columns.columns35 p {
+    font-size: 22px;
   }
 }
