@@ -1641,8 +1641,6 @@
   border-radius: 0;
   box-shadow: none;
   box-sizing: border-box;
-
-  /* Center the card vertically in the section */
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -1671,7 +1669,6 @@
   padding: 0;
 }
 
-/* Right panel (text) */
 .columns.columns31 > div > div:last-child {
   flex: 0 0 390px;
   width: 390px;
@@ -1686,7 +1683,6 @@
   box-sizing: border-box;
 }
 
-/* Headline styles */
 .columns.columns31 > div > div:last-child h3 {
   font-family: var(--heading-font-family);
   font-weight: 600;
@@ -1698,7 +1694,6 @@
   letter-spacing: 0;
 }
 
-/* Paragraph styles */
 .columns.columns31 > div > div:last-child p:not(.button-container) {
   font-family: var(--body-font-family);
   font-size: 1rem;
@@ -1710,7 +1705,6 @@
   padding: 0;
 }
 
-/* "Read More" link styles */
 .columns.columns31 > div > div:last-child .button-container .button {
   font-family: var(--body-font-family);
   font-weight: 400;
@@ -1739,7 +1733,6 @@
   padding: 0;
 }
 
-/* Responsive: stack vertically on smaller screens */
 @media (width <= 900px) {
   .columns.columns31 > div {
     flex-direction: column;
@@ -1780,5 +1773,175 @@
   .columns.columns31 > div > div:first-child img {
     width: 100vw;
     height: auto;
+  }
+}
+
+
+.columns {
+  background: #fff;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+}
+
+/* Layout: side-by-side columns */
+.columns > div {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Left: Large media block */
+.columns > div > div:nth-child(1) {
+  flex: 1.35 1 0;
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  background: #e7e7e7;
+  border-radius: 18px;
+  aspect-ratio: 16/9;
+  min-height: 290px;
+  max-height: 360px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px 0 rgb(60 60 60 / 4.5%);
+}
+
+/* "Downloads" label: top left with ample padding */
+.columns > div > div:nth-child(1) > * {
+  position: absolute;
+  left: 28px;
+  top: 22px;
+  z-index: 2;
+  font-size: var(--heading-font-size-s);
+  color: var(--link-color);
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Centered play icon for left block */
+.columns > div > div:nth-child(1)::after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 52px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 48% 48%;
+  content: "";
+}
+
+/* Right: Two compact, nearly-square media cards stacked */
+.columns > div > div:nth-child(n+2) {
+  flex: 0.85 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+  max-width: 265px;
+}
+
+/* Simulate "media card" aspect and compact sizing */
+.columns > div > div:nth-child(n+2) > * {
+  position: relative;
+  background: #e7e7e7;
+  border-radius: 16px;
+  min-height: 0;
+  aspect-ratio: 1/1;
+  box-shadow: 0 2px 8px 0 rgb(60 60 60 / 4%);
+  margin: 0;
+  font-size: var(--heading-font-size-xs);
+  color: var(--link-color);
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 17px 16px 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Centered play icon for right cards */
+.columns > div > div:nth-child(n+2) > *::after {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 94%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 9%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 58% 58%;
+  content: "";
+}
+
+/* Make sure the label/link stays at the top left, clear of the icon */
+.columns > div > div:nth-child(n+2) > * > a,
+.columns > div > div:nth-child(n+2) > * > span,
+.columns > div > div:nth-child(n+2) > * > h5 {
+  position: relative;
+  z-index: 2;
+  font-size: var(--heading-font-size-xs);
+  color: var(--link-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default spacing for headings/links */
+.columns h5 {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.columns h5 a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+/* Responsive: stack columns vertically on smaller screens */
+@media (width <= 900px) {
+  .columns > div {
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 8px;
+    max-width: 98vw;
+  }
+
+  .columns > div > div:nth-child(1) {
+    min-height: 120px;
+    aspect-ratio: 16/9;
+    max-height: unset;
+  }
+
+  .columns > div > div:nth-child(n+2) {
+    max-width: unset;
+    gap: 8px;
+  }
+
+  .columns > div > div:nth-child(n+2) > * {
+    aspect-ratio: 1/1;
+    font-size: var(--heading-font-size-xs);
+    padding: 11px 10px 0;
   }
 }
