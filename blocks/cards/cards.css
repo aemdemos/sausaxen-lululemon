@@ -1,3 +1,5 @@
+/* Ensure empty line before first rule */
+
 .cards > ul > li img {
   width: 100%;
   aspect-ratio: 4/3;
@@ -184,14 +186,6 @@
   margin: 0;
 }
 
-.cards.cards20 {
-  width: 100%;
-  background: transparent;
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
 .cards.cardsnoimages32 {
   background: #ededed;
   padding: 12px 0;
@@ -283,27 +277,6 @@
 
 .cards.cards51 > ul > li {
   display: none;
-}
-
-.cards.cards20 > ul > li {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: stretch;
-  overflow: hidden;
-  border: none;
-  border-radius: 9px;
-  background: transparent;
-  min-width: 0;
-  min-height: 0;
-  box-shadow: 0 3px 14px rgb(0 0 0 / 9%);
-  aspect-ratio: 1.35 / 1;
-  position: relative;
-  transition: box-shadow 0.2s;
-}
-
-.cards.cards20 > ul > li:hover {
-  box-shadow: 0 6px 24px rgb(0 0 0 / 15%);
 }
 
 .cards.cards47 > ul > li:first-child {
@@ -875,7 +848,6 @@
   text-align: left;
 }
 
-
 .cards.cards11 {
   background: #f2f2f2;
   padding: 0;
@@ -981,5 +953,101 @@
   .cards.cards11 > ul > li > .cards-card-body:last-child {
     width: 100%;
     min-width: 0;
+  }
+}
+
+.cards.cards20 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Grid: left-aligned, fixed width container, 4 columns, NO centering */
+.cards.cards20 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  padding: 0;
+  margin: 0;
+  width: 1084px;
+  max-width: 100%;
+  place-content: start start;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/* Each card: fixed height, fills cell, always visible */
+.cards.cards20 > ul > li {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: #e0e0e0;
+  transition: box-shadow 0.2s;
+}
+
+/* Remove margin/padding/background from card body wrappers */
+.cards.cards20 .cards-card-body {
+  margin: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* Overlay bar on card bottom */
+.cards.cards20 > ul > li > .cards-card-body:last-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 36px;
+  background: rgb(0 0 0 / 70%);
+  color: #fff;
+  font-family: Adani-Regular, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 0;
+  z-index: 1;
+  box-shadow: none;
+}
+
+/* Hide any <img> inside cards to force visibility of card background */
+.cards.cards20 > ul > li img {
+  display: none;
+}
+
+/* Responsive: 2 columns for medium screens, 1 for small */
+@media (width <= 1150px) {
+  .cards.cards20 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards20 > ul {
+    grid-template-columns: 1fr;
+    width: 100%;
+    max-width: 100%;
   }
 }
