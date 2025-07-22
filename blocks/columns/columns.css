@@ -1489,7 +1489,6 @@
 
 
 .columns.columns27 {
-  /* Outer container appearance */
   background: #fff;
   border-radius: 0;
   box-shadow: none;
@@ -1550,8 +1549,6 @@
   max-width: 600px;
   min-width: 320px;
   width: 100%;
-
-  /* wide text block */
   flex: 1 1 600px;
   padding-top: 0;
   padding-bottom: 0;
@@ -1626,6 +1623,150 @@
 
   .columns.columns27 > div > div .columns-img-col img,
   .columns.columns27 > div > div .columns-img-col picture {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.columns.columns30 {
+  background: #fff;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns30 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Even tighter vertical gap */
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px 0 18px;
+  box-sizing: border-box;
+}
+
+/* One row: text left, image right */
+.columns.columns30 > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; /* Ensures image and text column fill the row */
+  justify-content: flex-start;
+  gap: 32px;
+  width: 100%;
+  min-height: 220px; /* Slightly smaller minimum, allows for slightly more compact blocks */
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Left text column */
+.columns.columns30 > div > div > div:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 520px; /* Balanced, readable text column */
+  padding-right: 8px;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Right image column */
+.columns.columns30 > div > div > .columns-img-col {
+  flex: 0 0 432px;
+  width: 432px;
+  min-width: 180px;
+  max-width: 432px;
+  height: 220px;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-end;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.columns.columns30 .columns-img-col picture,
+.columns.columns30 .columns-img-col img {
+  width: 432px;
+  height: 220px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  background: transparent;
+  display: block;
+  margin: 0;
+}
+
+/* Headings */
+.columns.columns30 h4,
+.columns.columns30 h5 {
+  font-size: 24px;
+  font-family: var(--heading-font-family), Adani-Regular, sans-serif;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 8px;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+/* List style */
+.columns.columns30 ul {
+  font-family: var(--body-font-family), Adani-Regular, sans-serif;
+  font-size: 16px;
+  color: #212529;
+  line-height: 1.6;
+  margin: 0 0 0 20px;
+  padding: 0;
+  list-style-type: circle;
+}
+
+.columns.columns30 li {
+  margin-bottom: 4px;
+}
+
+/* Responsive: stack on narrow screens */
+@media (width <= 950px) {
+  .columns.columns30 {
+    max-width: 100%;
+    padding: 0 8px;
+  }
+
+  .columns.columns30 > div {
+    padding: 8px 0;
+    gap: 12px;
+  }
+
+  .columns.columns30 > div > div {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    min-height: unset;
+  }
+
+  .columns.columns30 > div > div > div:first-child,
+  .columns.columns30 > div > div > .columns-img-col {
+    max-width: 100%;
+    width: 100%;
+    padding-right: 0;
+    height: auto;
+  }
+
+  .columns.columns30 .columns-img-col picture,
+  .columns.columns30 .columns-img-col img {
     width: 100%;
     height: auto;
   }
