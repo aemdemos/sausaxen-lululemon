@@ -1,4 +1,4 @@
-/* --------- Begin Cards Styles --------- */
+/* --- ORDERED TO FIX no-descending-specificity ERRORS --- */
 
 .cards > ul > li img {
   width: 100%;
@@ -119,26 +119,13 @@
   border: none;
   overflow: hidden;
   color: #fff;
-  font-family: Inter, Helvetica Neue, Arial, sans-serif;
+  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.2;
   white-space: nowrap;
   justify-content: flex-start;
-}
-
-.cards.cards11 > ul {
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-  justify-content: flex-start;
-  align-items: stretch;
-  background: transparent;
-  border: none;
-  width: 100%;
 }
 
 .cards.cardsnoimages32 > ul {
@@ -298,18 +285,6 @@
 
 .cards.cards51 > ul > li {
   display: none;
-}
-
-.cards.cards11 > ul > li {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  border: none;
-  background: transparent;
-  min-width: 0;
-  min-height: 0;
-  box-shadow: none;
 }
 
 .cards.cards20 > ul > li {
@@ -578,49 +553,6 @@
   display: none;
 }
 
-.cards.cards11 {
-  background: #f3f3f3;
-  padding: 0;
-  max-width: 100%;
-}
-
-.cards.cards11 > ul > li > .cards-card-body:first-child {
-  display: none;
-}
-
-.cards.cards11 > ul > li > .cards-card-body:last-child {
-  display: block;
-  min-width: 0;
-  width: auto;
-  height: 32px;
-  margin: 0;
-  padding: 0 4px;
-  font-family: Roboto, Arial Narrow, Arial, sans-serif;
-  font-stretch: condensed;
-  font-size: 13px;
-  font-weight: 700;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  line-height: 32px;
-  letter-spacing: -0.03em;
-  text-align: center;
-  background: transparent;
-  box-sizing: border-box;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.cards.cards11 > ul > li:first-child > .cards-card-body:last-child {
-  background: #eee;
-  color: #444;
-}
-
-.cards.cards11 > ul > li:last-child > .cards-card-body:last-child {
-  background: #2381a7;
-  color: #fff;
-}
-
 .cards.cards39 .cards-card-body p {
   margin: 0;
   padding: 0;
@@ -774,11 +706,13 @@
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
   .cards.cards47 > ul > li,
   .cards.cards47 > ul > li:first-child,
   .cards.cards47 > ul > li:nth-child(2) {
     flex-direction: column;
   }
+
   .cards.cards47 > ul > li:first-child .cards-card-image {
     width: 100%;
     max-width: 100%;
@@ -786,6 +720,7 @@
     border-radius: 10px 10px 0 0;
     aspect-ratio: unset;
   }
+
   .cards.cards47 > ul > li:first-child .cards-card-body,
   .cards.cards47 > ul > li:nth-child(2) .cards-card-body {
     padding: 20px 16px 16px;
@@ -940,4 +875,109 @@
   opacity: 0.78;
   padding-top: 0;
   text-align: left;
+}
+
+.cards.cards11 {
+  background: #f3f3f3;
+  padding: 0;
+  min-height: 36px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cards.cards11 > ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  height: 36px;
+  min-height: 36px;
+  width: auto;
+  box-sizing: border-box;
+}
+
+.cards.cards11 > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  min-width: 0;
+  min-height: 0;
+  box-shadow: none;
+  height: 36px;
+}
+
+.cards.cards11 > ul > li > .cards-card-body:first-child {
+  display: none;
+}
+
+.cards.cards11 > ul > li > .cards-card-body:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 70px;
+  width: 96px;
+  height: 36px;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #444;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cards.cards11 > ul > li:first-child > .cards-card-body:last-child {
+  background: #e0e0e0;
+  color: #444;
+}
+
+.cards.cards11 > ul > li:last-child > .cards-card-body:last-child {
+  background: linear-gradient(to right, #2987ad, #2ba7b8);
+  color: #fff;
+}
+
+.cards.cards11 > ul > li:not(:first-child) > .cards-card-body:last-child {
+  border-left: none;
+}
+
+@media (width <= 500px) {
+  .cards.cards11 > ul {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .cards.cards11 > ul > li {
+    height: 36px;
+    width: 100%;
+  }
+
+  .cards.cards11 > ul > li > .cards-card-body:last-child {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.cards.cards11 > ul > li > .cards-card-body:last-child > p {
+  margin: 0;
+  padding: 0;
+  line-height: normal;
 }
