@@ -62,17 +62,6 @@
   min-height: 0;
 }
 
-.cards.cards39 > ul {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  max-width: 1240px;
-  box-sizing: border-box;
-}
-
 .cards.cards47 > ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -157,16 +146,6 @@
   box-sizing: border-box;
 }
 
-.cards.cards39 {
-  background: #f5f5f5;
-  padding: 20px 24px 36px;
-  margin: 0;
-  margin-top: 0;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-}
-
 .cards.cards20 > ul > li,
 .cards.cards29 > ul > li,
 .cards.cards39 > ul > li,
@@ -176,20 +155,6 @@
 .cards.cards11 > ul > li {
   margin: 0;
   padding: 0;
-}
-
-.cards.cards39 > ul > li {
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: none;
-  border: none;
-  min-height: 180px;
-  display: flex;
-  flex-direction: row;
-  overflow: hidden;
-  box-sizing: border-box;
-  padding: 0;
-  align-items: stretch;
 }
 
 .cards.cards47 > ul > li {
@@ -363,46 +328,6 @@
 
 .cards.cards51 > ul::marker {
   display: none;
-}
-
-.cards.cards39 .cards-card-body p {
-  margin: 0;
-  padding: 0;
-  font-size: 13px;
-  color: #555;
-  line-height: 1.6;
-  font-family: var(--body-font-family);
-}
-
-.cards.cards39 .cards-card-body p strong {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #222;
-  font-weight: 700;
-}
-
-.cards.cards39 .cards-card-body:last-child strong {
-  font-size: 14px;
-  font-weight: 700;
-  color: #222;
-  display: block;
-  margin-bottom: 8px;
-  letter-spacing: 0;
-}
-
-.cards.cards39 > ul > li > .cards-card-body:first-child {
-  display: none;
-}
-
-.cards.cards39 > ul > li > .cards-card-body:last-child {
-  flex: 1 1 auto;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left;
-  box-sizing: border-box;
 }
 
 .cards.cards47 > ul > li:first-child .cards-card-image {
@@ -1092,7 +1017,6 @@
   color: #159bab;
 }
 
-/* Responsive adjustments */
 @media (width <= 1023px) {
   .cards.cardsnoimages32 > ul {
     max-width: 100%;
@@ -1127,5 +1051,107 @@
     margin-top: 8px;
     font-size: 13px;
     text-align: left;
+  }
+}
+
+
+.cards.cards39 {
+  background-color: #ebebeb;
+  padding: 32px 0;
+  box-sizing: border-box;
+}
+
+.cards.cards39 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.cards.cards39 > ul > li {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: 170px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cards.cards39 > ul > li > .cards-card-body:first-child {
+  display: none;
+}
+
+.cards.cards39 > ul > li > .cards-card-body:last-child {
+  flex: 1 1 0%;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.cards.cards39 .cards-card-body p {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+}
+
+.cards.cards39 .cards-card-body p strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 16px;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+@media (width <= 1200px) {
+  .cards.cards39 > ul {
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 900px) {
+  .cards.cards39 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 8px;
+  }
+
+  .cards.cards39 {
+    padding: 16px 0;
+  }
+
+  .cards.cards39 > ul > li > .cards-card-body:last-child {
+    padding: 12px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards39 > ul {
+    grid-template-columns: 1fr;
+    gap: 8px 0;
+    padding: 0 2px;
+  }
+
+  .cards.cards39 {
+    padding: 8px 0;
+  }
+
+  .cards.cards39 > ul > li > .cards-card-body:last-child {
+    padding: 8px;
   }
 }
