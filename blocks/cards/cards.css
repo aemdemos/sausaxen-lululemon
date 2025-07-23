@@ -1355,185 +1355,6 @@
 }
 
 
-.cards.cardsnoimages13 {
-  background: #ededed;
-  padding: 40px 0;
-  width: 100%;
-}
-
-.cards.cardsnoimages13 > ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px 32px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  align-items: stretch;
-}
-
-.cards.cardsnoimages13 > ul > li {
-  background: #fff;
-  border: 2px solid #e6e6e6;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgb(0 0 0 / 6%);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-width: 0;
-  padding: 0;
-  align-self: stretch;
-}
-
-.cards.cardsnoimages13 .cards-card-body {
-  padding: 32px 28px 28px;
-  margin: 0;
-  flex: 1 1 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.cards.cardsnoimages13 .cards-card-body h3 {
-  font-size: 19px;
-  font-weight: 600;
-  font-family: var(--body-font-family), Arial, sans-serif;
-  color: #212529;
-  margin: 0 0 16px;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-}
-
-.cards.cardsnoimages13 .cards-card-body ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 12px;
-}
-
-.cards.cardsnoimages13 .cards-card-body ul li {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  color: #212529;
-  font-size: 15px;
-  font-family: var(--body-font-family), Arial, sans-serif;
-  line-height: 1.6;
-  min-height: 22px;
-  padding-left: 26px;
-  background: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 5v6h4l-5 5-5-5h4V5h2zm-7 10h14v2H6v-2z"/></svg>') no-repeat left 4px center/17px 17px;
-}
-
-.cards.cardsnoimages13 .cards-card-body .button-container li,
-.cards.cardsnoimages13 .cards-card-body .button-container ul li,
-.cards.cardsnoimages13 .cards-card-body .button-container a {
-  background: unset;
-  padding-left: 0;
-}
-
-.cards.cardsnoimages13 .cards-card-body ul li a,
-.cards.cardsnoimages13 .cards-card-body ul li a:visited {
-  color: #212529;
-  text-decoration: underline;
-  font-family: var(--body-font-family), Arial, sans-serif;
-  font-size: 15px;
-  transition: color 0.2s;
-}
-
-.cards.cardsnoimages13 .cards-card-body ul li a:hover,
-.cards.cardsnoimages13 .cards-card-body ul li a:focus {
-  color: #0096a0;
-  text-decoration: underline;
-}
-
-.cards.cardsnoimages13 .cards-card-body .button-container {
-  text-align: right;
-  margin-top: 12px;
-}
-
-.cards.cardsnoimages13 .cards-card-body .button,
-.cards.cardsnoimages13 .cards-card-body .button:visited {
-  background: none;
-  color: #0096a0;
-  border-radius: 0;
-  font-size: 16px;
-  font-family: var(--body-font-family), Arial, sans-serif;
-  padding: 0;
-  display: inline;
-  text-align: right;
-  text-decoration: underline;
-  border: none;
-  box-shadow: none;
-  cursor: pointer;
-}
-
-.cards.cardsnoimages13 .cards-card-body .button:hover,
-.cards.cardsnoimages13 .cards-card-body .button:focus {
-  color: #007078;
-  text-decoration: underline;
-}
-
-.cards.cardsnoimages13 .cards-card-body ul li:last-child {
-  margin-bottom: 0;
-}
-
-.cards.cardsnoimages13 > ul > li:nth-child(1) {
-  grid-column: 1 / -1;
-}
-
-.cards.cardsnoimages13 > ul > li:nth-child(2),
-.cards.cardsnoimages13 > ul > li:nth-child(3),
-.cards.cardsnoimages13 > ul > li:nth-child(4) {
-  grid-column: auto;
-}
-
-.cards.cardsnoimages13 > ul {
-}
-
-.cards.cardsnoimages13 > ul > li:nth-child(5),
-.cards.cardsnoimages13 > ul > li:nth-child(6) {
-  grid-column: 1 / -1;
-  display: inline-flex;
-  width: 49%;
-  min-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  vertical-align: top;
-}
-
-@media (width >= 900px) {
-  .cards.cardsnoimages13 > ul > li:nth-child(5) {
-    float: left;
-    clear: none;
-  }
-
-  .cards.cardsnoimages13 > ul > li:nth-child(6) {
-    float: right;
-    clear: none;
-  }
-}
-
-@media (width <= 900px) {
-  .cards.cardsnoimages13 > ul {
-    grid-template-columns: 1fr;
-    gap: 18px 0;
-    padding: 0 8px;
-  }
-
-  .cards.cardsnoimages13 > ul > li,
-  .cards.cardsnoimages13 > ul > li:nth-child(5),
-  .cards.cardsnoimages13 > ul > li:nth-child(6) {
-    grid-column: auto;
-    float: none;
-    width: 100%;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-  }
-}
-
-
 .cards.cards11 {
   background: #f4f4f4;
   padding: 0;
@@ -1623,5 +1444,168 @@
   .cards.cards11 > ul > li > .cards-card-body:last-child {
     width: 100%;
     min-width: 0;
+  }
+}
+
+
+.cards.cardsnoimages13 {
+  background: #ededed;
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards.cardsnoimages13 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 32px; /* vertical then horizontal gap */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.cards.cardsnoimages13 > ul > li {
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Top full-width card with reduced gap below for compactness */
+.cards.cardsnoimages13 > ul > li:first-child {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+  min-height: 110px;
+}
+
+/* Second row, left-align EGM and Tax Transparency as columns 1 and 2 */
+.cards.cardsnoimages13 > ul > li:nth-child(5) {
+  grid-column: 1;
+}
+
+.cards.cardsnoimages13 > ul > li:nth-child(6) {
+  grid-column: 2;
+}
+
+/* Remove min-height for grid cards so rows are based on tallest content */
+.cards.cardsnoimages13 > ul > li {
+  min-height: 0;
+}
+
+/* Card content padding and alignment */
+.cards.cardsnoimages13 .cards-card-body {
+  padding: 16px 12px;
+  margin: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Headings */
+.cards.cardsnoimages13 .cards-card-body h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 12px;
+  line-height: 1.3;
+  font-family: var(--body-font-family), Arial, sans-serif;
+}
+
+/* List in cards */
+.cards.cardsnoimages13 .cards-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 12px;
+}
+
+/* List items: compact spacing, no extra padding */
+.cards.cardsnoimages13 .cards-card-body ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #222;
+  font-size: 14px;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  line-height: 1.5;
+  min-height: 22px;
+  padding-left: 0;
+  background: none;
+}
+
+.cards.cardsnoimages13 .cards-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Links inside card lists */
+.cards.cardsnoimages13 .cards-card-body ul li a,
+.cards.cardsnoimages13 .cards-card-body ul li a:visited {
+  color: #222;
+  text-decoration: none;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.cards.cardsnoimages13 .cards-card-body ul li a:hover,
+.cards.cardsnoimages13 .cards-card-body ul li a:focus {
+  color: #009688;
+  text-decoration: underline;
+}
+
+/* Read more/Button styles */
+.cards.cardsnoimages13 .cards-card-body .button-container {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.cards.cardsnoimages13 .cards-card-body .button,
+.cards.cardsnoimages13 .cards-card-body .button:visited {
+  background: none;
+  color: #009688;
+  border-radius: 0;
+  font-size: 14px;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  padding: 0;
+  display: inline;
+  text-align: right;
+  text-decoration: none;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0;
+}
+
+.cards.cardsnoimages13 .cards-card-body .button:hover,
+.cards.cardsnoimages13 .cards-card-body .button:focus {
+  color: #00796b;
+  text-decoration: underline;
+}
+
+/* Responsive: stack to single column on small screens */
+@media (width <= 900px) {
+  .cards.cardsnoimages13 > ul {
+    grid-template-columns: 1fr;
+    gap: 14px 0;
+    padding: 0 8px;
+  }
+
+  .cards.cardsnoimages13 > ul > li,
+  .cards.cardsnoimages13 > ul > li:first-child {
+    grid-column: auto;
+    min-height: 0;
   }
 }
