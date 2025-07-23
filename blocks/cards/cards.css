@@ -1386,7 +1386,6 @@
   box-sizing: border-box;
 }
 
-/* Flex for right alignment */
 .cards.cards6 > ul {
   display: flex;
   flex-direction: row;
@@ -1410,7 +1409,6 @@
   height: 32px;
 }
 
-/* Rectangle: gradient, white text, compact size, right-aligned, with dropdown arrow */
 .cards.cards6 .cards-card-body {
   display: flex;
   align-items: center;
@@ -1421,7 +1419,7 @@
   font-family: inherit;
   height: 32px;
   min-width: 68px;
-  padding: 0 24px 0 14px; /* less right padding for compactness */
+  padding: 0 24px 0 14px;
   border: none;
   border-radius: 0;
   box-shadow: none;
@@ -1429,8 +1427,6 @@
   box-sizing: border-box;
   position: relative;
   line-height: 1;
-
-  /* Add arrow SVG as a background image, not content */
   background-repeat: no-repeat, no-repeat;
   background-position: right 14px center, left top;
   background-size: 6px 4px, auto;
@@ -1439,7 +1435,6 @@
     linear-gradient(90deg, #20b8be 0%, #2671c6 100%);
 }
 
-/* Remove default margins from p for vertical centering */
 .cards.cards6 .cards-card-body p {
   margin: 0;
   padding: 0;
@@ -1453,7 +1448,6 @@
   align-items: center;
 }
 
-/* Responsive: reduce height/font/padding on small screens */
 @media (width <= 600px) {
   .cards.cards6 > ul {
     height: 28px;
@@ -1465,5 +1459,200 @@
     padding: 0 16px 0 8px;
     background-size: 5px 3px, auto;
     background-position: right 9px center, left top;
+  }
+}
+
+
+.cards.cardsnoimages13 {
+  background: #ededed;
+  padding: 40px 0;
+  width: 100%;
+}
+
+.cards.cardsnoimages13 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  align-items: stretch;
+}
+
+/* Card base appearance */
+.cards.cardsnoimages13 > ul > li {
+  background: #fff;
+  border: 2px solid #e6e6e6;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 6%);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+  align-self: stretch;
+}
+
+/* Card content padding and layout */
+.cards.cardsnoimages13 .cards-card-body {
+  padding: 32px 28px 28px;
+  margin: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.cards.cardsnoimages13 .cards-card-body h3 {
+  font-size: 19px;
+  font-weight: 600;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  color: #212529;
+  margin: 0 0 16px;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+/* List styles with download icon alignment */
+.cards.cardsnoimages13 .cards-card-body ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 12px;
+}
+
+.cards.cardsnoimages13 .cards-card-body ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: #212529;
+  font-size: 15px;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 22px;
+
+  /* Download icon as background-image to left */
+  padding-left: 26px;
+  background: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 5v6h4l-5 5-5-5h4V5h2zm-7 10h14v2H6v-2z"/></svg>') no-repeat left 4px center/17px 17px;
+}
+
+/* Remove icon for "Read more" and similar links */
+.cards.cardsnoimages13 .cards-card-body .button-container li,
+.cards.cardsnoimages13 .cards-card-body .button-container ul li,
+.cards.cardsnoimages13 .cards-card-body .button-container a {
+  background: unset;
+  padding-left: 0;
+}
+
+/* Make list item links black, underlined, teal on hover */
+.cards.cardsnoimages13 .cards-card-body ul li a,
+.cards.cardsnoimages13 .cards-card-body ul li a:visited {
+  color: #212529;
+  text-decoration: underline;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.cards.cardsnoimages13 .cards-card-body ul li a:hover,
+.cards.cardsnoimages13 .cards-card-body ul li a:focus {
+  color: #0096a0;
+  text-decoration: underline;
+}
+
+/* "Read more" styling: right-aligned, teal, not button style */
+.cards.cardsnoimages13 .cards-card-body .button-container {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.cards.cardsnoimages13 .cards-card-body .button,
+.cards.cardsnoimages13 .cards-card-body .button:visited {
+  background: none;
+  color: #0096a0;
+  border-radius: 0;
+  font-size: 16px;
+  font-family: var(--body-font-family), Arial, sans-serif;
+  padding: 0;
+  display: inline;
+  text-align: right;
+  text-decoration: underline;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.cards.cardsnoimages13 .cards-card-body .button:hover,
+.cards.cardsnoimages13 .cards-card-body .button:focus {
+  color: #007078;
+  text-decoration: underline;
+}
+
+.cards.cardsnoimages13 .cards-card-body ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Grid placement for cards (matches 1/3/2 layout visually) */
+.cards.cardsnoimages13 > ul > li:nth-child(1) {
+  grid-column: 1 / -1;
+}
+
+/* Middle three cards, normal grid flow */
+.cards.cardsnoimages13 > ul > li:nth-child(2),
+.cards.cardsnoimages13 > ul > li:nth-child(3),
+.cards.cardsnoimages13 > ul > li:nth-child(4) {
+  grid-column: auto;
+}
+
+/* Bottom row: center two cards as a pair using flex and grid */
+.cards.cardsnoimages13 > ul {
+  /* Add a hook for the last row as flex, using a pseudo-row */
+
+  /* This is a creative workaround for the HTML constraint */
+}
+
+.cards.cardsnoimages13 > ul > li:nth-child(5),
+.cards.cardsnoimages13 > ul > li:nth-child(6) {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  width: 49%;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: top;
+}
+
+/* Keep the two bottom cards on the same row by floating them left/right if possible */
+@media (width >= 900px) {
+  .cards.cardsnoimages13 > ul > li:nth-child(5) {
+    float: left;
+    clear: none;
+  }
+
+  .cards.cardsnoimages13 > ul > li:nth-child(6) {
+    float: right;
+    clear: none;
+  }
+}
+
+/* Responsive: stack cards on small screens */
+@media (width <= 900px) {
+  .cards.cardsnoimages13 > ul {
+    grid-template-columns: 1fr;
+    gap: 18px 0;
+    padding: 0 8px;
+  }
+
+  .cards.cardsnoimages13 > ul > li,
+  .cards.cardsnoimages13 > ul > li:nth-child(5),
+  .cards.cardsnoimages13 > ul > li:nth-child(6) {
+    grid-column: auto;
+    float: none;
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
   }
 }
