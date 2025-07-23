@@ -437,90 +437,6 @@
 }
 
 
-.columns.columns9 {
-  background: #ededed;
-  padding: 0;
-  height: 140px;
-  min-height: unset;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.columns.columns9 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
-  max-width: 760px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.columns.columns9 > div > div {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  width: 340px;
-  min-width: 200px;
-  max-width: 360px;
-  height: 80px;
-  min-height: 80px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 16px 24px;
-  box-sizing: border-box;
-}
-
-.columns.columns9 .button-container {
-  margin: 0;
-  padding: 0;
-}
-
-.columns.columns9 .button-container .button {
-  color: #4ccac3;
-  font-size: 13px;
-  font-family: Inter, Roboto, Arial, sans-serif;
-  font-weight: 500;
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  line-height: 20px;
-  text-align: left;
-  cursor: pointer;
-}
-
-@media (width <= 700px) {
-  .columns.columns9 {
-    height: auto;
-    min-height: unset;
-    padding: 16px 0;
-  }
-
-  .columns.columns9 > div {
-    flex-direction: column;
-    gap: 14px;
-    max-width: 98vw;
-    padding: 0 8px;
-    align-items: center;
-  }
-
-  .columns.columns9 > div > div {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    height: 56px;
-    min-height: 56px;
-    padding: 12px 14px;
-  }
-}
-
-
 .columns.columns10 {
   background: #fff;
   margin: 0;
@@ -2855,7 +2771,6 @@
   padding: 24px 0;
 }
 
-/* Fix: Force the true card row container to flex row */
 .columns > div {
   display: flex;
   flex-direction: row;
@@ -2866,7 +2781,6 @@
   align-items: stretch;
 }
 
-/* All cards: equal width, balanced, no min/max height */
 .columns > div > div {
   flex: 1 1 0;
   min-width: 0;
@@ -2881,14 +2795,12 @@
   box-sizing: border-box;
 }
 
-/* Remove any stacked or column direction from card children */
 .columns > div > div > * {
   margin: 0;
   padding: 0;
   text-align: left;
 }
 
-/* Typography styles for titles/links */
 .columns h5,
 .columns h5 a {
   font-size: 13px;
@@ -2898,7 +2810,6 @@
   text-decoration: none;
 }
 
-/* Responsive: stack cards vertically on smaller screens */
 @media (width <= 900px) {
   .columns > div {
     flex-direction: column;
@@ -2908,6 +2819,115 @@
   }
 
   .columns > div > div {
+    padding: 12px 8px;
+  }
+}
+
+
+.columns.columns9 {
+  background: #ededed;
+  width: 100%;
+  min-height: 140px;
+  display: flex;
+  align-items: center; /* vertical centering of row */
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* top alignment for both cards */
+  justify-content: center;
+  gap: 20px; /* modest, tight gap */
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.columns.columns9 > div > div {
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  width: 260px;
+  height: 72px;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 14px 18px 10px;
+  margin: 0;
+}
+
+.columns.columns9 > div > div::before,
+.columns.columns9 > div > div::after,
+.columns.columns9 > div > div *::before,
+.columns.columns9 > div > div *::after {
+  display: none;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.columns.columns9 .button-container,
+.columns.columns9 p.button-container {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.columns.columns9 .button-container .button {
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: #0097a9;
+  font-family: Adani-Regular, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  line-height: 1.3;
+  display: inline-block;
+  box-shadow: none;
+  min-width: 0;
+  min-height: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.columns.columns9 .button-container .button:hover,
+.columns.columns9 .button-container .button:focus {
+  color: #0097a9;
+  background: none;
+  text-decoration: underline;
+}
+
+@media (width <= 700px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    max-width: 98vw;
+  }
+
+  .columns.columns9 > div > div {
+    width: 100%;
+    max-width: 98vw;
+    height: auto;
     padding: 12px 8px;
   }
 }
