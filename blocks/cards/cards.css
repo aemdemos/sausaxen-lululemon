@@ -28,17 +28,6 @@
   padding: 0;
 }
 
-.cards.cards47 > ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  box-sizing: border-box;
-}
-
 .cards.cards51 > ul {
   display: flex;
   flex-direction: row;
@@ -86,13 +75,6 @@
   width: 100%;
 }
 
-.cards.cards47 {
-  background: #e5e5e5;
-  padding: 40px 0;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .cards.cards51 {
   background: #f2f2f3;
   min-height: 20px;
@@ -123,48 +105,8 @@
   padding: 0;
 }
 
-.cards.cards47 > ul > li {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 8%);
-  display: flex;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-  align-items: stretch;
-  min-height: 240px;
-}
-
 .cards.cards51 > ul > li {
   display: none;
-}
-
-.cards.cards47 > ul > li:first-child {
-  flex-direction: row;
-}
-
-.cards.cards47 > ul > li:nth-child(2) {
-  flex-direction: column;
-}
-
-.cards.cards47 > ul > li:first-child .cards-card-body {
-  flex: 1 1 0;
-  padding: 28px 32px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 0;
-}
-
-.cards.cards47 > ul > li:nth-child(2) .cards-card-body {
-  flex: 1 1 0;
-  padding: 28px 32px 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  min-width: 0;
 }
 
 .cards.cardsnoimages49 > ul > li:first-child {
@@ -294,140 +236,6 @@
 
 .cards.cards51 > ul::marker {
   display: none;
-}
-
-.cards.cards47 > ul > li:first-child .cards-card-image {
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  width: 148px;
-  min-width: 120px;
-  max-width: 180px;
-  height: auto;
-  aspect-ratio: 1/1;
-  border-radius: 10px 0 0 10px;
-  overflow: hidden;
-  background: #e3e3e3;
-  margin: 0;
-  flex-shrink: 0;
-}
-
-.cards.cards47 > ul > li:first-child .cards-card-image img,
-.cards.cards47 > ul > li:first-child .cards-card-image picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cards.cards47 > ul > li:nth-child(2) .cards-card-image {
-  width: 100%;
-  min-height: 140px;
-  max-height: 168px;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-start;
-  border-radius: 10px 10px 0 0;
-  overflow: hidden;
-  background: #e3e3e3;
-  margin: 0;
-}
-
-.cards.cards47 > ul > li:nth-child(2) .cards-card-image img,
-.cards.cards47 > ul > li:nth-child(2) .cards-card-image picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cards.cards47 .cards-card-body h3 {
-  color: #222;
-  font-size: 22px;
-  font-weight: 700;
-  font-family: var(--heading-font-family);
-  margin: 0 0 10px;
-  line-height: 1.2;
-  text-align: left;
-}
-
-.cards.cards47 .cards-card-body p {
-  color: #555;
-  font-size: 15px;
-  margin: 0 0 16px;
-  line-height: 1.6;
-  text-align: left;
-}
-
-.cards.cards47 .cards-card-body .button-container {
-  margin-top: 0;
-  text-align: left;
-  padding: 0;
-}
-
-.cards.cards47 .cards-card-body .button {
-  background: none;
-  color: #009688;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  font-size: 15px;
-  font-weight: 600;
-  box-shadow: none;
-  text-align: left;
-  margin: 0;
-  display: inline-block;
-  line-height: 1.2;
-  min-width: 0;
-  max-width: 100%;
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.cards.cards47 .cards-card-body .button:hover,
-.cards.cards47 .cards-card-body .button:focus {
-  color: #00695c;
-  text-decoration: none;
-}
-
-.cards.cards47 .cards-card-image:empty {
-  min-height: 64px;
-  background: #e3e3e3;
-  display: flex;
-}
-
-@media (width <= 900px) {
-  .cards.cards47 > ul {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    max-width: 100%;
-  }
-}
-
-@media (width <= 700px) {
-  .cards.cards47 > ul {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .cards.cards47 > ul > li,
-  .cards.cards47 > ul > li:first-child,
-  .cards.cards47 > ul > li:nth-child(2) {
-    flex-direction: column;
-  }
-
-  .cards.cards47 > ul > li:first-child .cards-card-image {
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    border-radius: 10px 10px 0 0;
-    aspect-ratio: unset;
-  }
-
-  .cards.cards47 > ul > li:first-child .cards-card-body,
-  .cards.cards47 > ul > li:nth-child(2) .cards-card-body {
-    padding: 20px 16px 16px;
-  }
 }
 
 .cards.cards11 {
@@ -1140,7 +948,6 @@
   gap: 0;
 }
 
-/* Responsive card size */
 @media (width <= 900px) {
   .cards.cards46 > ul > li {
     flex-direction: column;
@@ -1151,7 +958,6 @@
   }
 }
 
-/* Text left, image right */
 .cards.cards46 .cards-card-body {
   flex: 1 1 0;
   min-width: 0;
@@ -1164,7 +970,6 @@
   margin: 0;
 }
 
-/* Image closer to text and vertically aligned with heading */
 .cards.cards46 .cards-card-image {
   width: 104px;
   height: 132px;
@@ -1202,7 +1007,6 @@
   }
 }
 
-/* Headings */
 .cards.cards46 .cards-card-body h3 {
   font-family: var(--heading-font-family);
   font-size: 1.36rem;
@@ -1215,7 +1019,6 @@
   word-break: break-word;
 }
 
-/* Second card heading: slightly larger */
 .cards.cards46 > ul > li:nth-child(2) .cards-card-body h3 {
   font-size: 1.45rem;
 }
@@ -1230,7 +1033,6 @@
   white-space: pre-line;
 }
 
-/* Read more button/link appearance and spacing */
 .cards.cards46 .cards-card-body .button-container {
   margin: 0 0 12px;
   padding: 0;
@@ -1264,7 +1066,6 @@
   text-decoration: underline;
 }
 
-/* Signature block: two lines, visually distinct, less margin to previous block */
 .cards.cards46 .cards-card-body p:last-of-type {
   font-size: 1.06rem;
   font-family: var(--body-font-family);
@@ -1281,7 +1082,6 @@
   opacity: 1;
 }
 
-/* Responsive font scaling for headings and signature */
 @media (width <= 600px) {
   .cards.cards46 .cards-card-body h3 {
     font-size: 1.07rem;
@@ -1289,5 +1089,214 @@
 
   .cards.cards46 > ul > li:nth-child(2) .cards-card-body h3 {
     font-size: 1.13rem;
+  }
+}
+
+
+.cards.cards47 {
+  background: #eee;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cards.cards47 ul {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 36px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  list-style: none;
+  max-width: 1080px;
+  align-items: stretch;
+  background: transparent;
+}
+
+/* Remove extra spacing above cards */
+.cards.cards47 .cards-wrapper,
+.cards.cards47 ul {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Card base style */
+.cards.cards47 ul > li {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 184px;
+  height: 184px;
+}
+
+/* Left card: side-by-side image/text, wide/short aspect */
+.cards.cards47 ul > li:first-child {
+  flex-direction: row;
+  height: 184px;
+  min-width: 340px;
+  max-width: 600px;
+}
+
+/* Left card image area (landscape) */
+.cards.cards47 ul > li:first-child .cards-card-image {
+  width: 58%;
+  height: 100%;
+  min-width: 164px;
+  max-width: 330px;
+  background: #e3e3e3;
+  border-radius: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  margin: 0;
+}
+
+.cards.cards47 ul > li:first-child .cards-card-image img,
+.cards.cards47 ul > li:first-child .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Left card text: more space from image, top-aligned */
+.cards.cards47 ul > li:first-child .cards-card-body {
+  width: 42%;
+  min-width: 0;
+  padding: 18px 24px 13px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Right card: image above, text below, shorter image */
+.cards.cards47 ul > li:nth-child(2) {
+  flex-direction: column;
+  min-width: 210px;
+  height: 184px;
+}
+
+/* Right card image area */
+.cards.cards47 ul > li:nth-child(2) .cards-card-image {
+  width: 100%;
+  height: 82px;
+  min-height: 60px;
+  max-height: 98px;
+  background: #e3e3e3;
+  border-radius: 0;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  margin: 0;
+}
+
+.cards.cards47 ul > li:nth-child(2) .cards-card-image img,
+.cards.cards47 ul > li:nth-child(2) .cards-card-image picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+}
+
+/* Right card text: reduced space above and below */
+.cards.cards47 ul > li:nth-child(2) .cards-card-body {
+  width: 100%;
+  padding: 12px 18px 7px 24px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Heading and text styles */
+.cards.cards47 .cards-card-body h3 {
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.13;
+  text-align: left;
+  font-family: var(--heading-font-family);
+}
+
+.cards.cards47 .cards-card-body p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0 0 8px;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.cards.cards47 .cards-card-body .button-container {
+  margin-top: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Button/link style */
+.cards.cards47 .cards-card-body .button {
+  background: none;
+  color: #1db4b4;
+  border: none;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 0;
+  min-width: 0;
+  max-width: 100%;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  text-decoration: underline;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.cards.cards47 .cards-card-body .button:hover,
+.cards.cards47 .cards-card-body .button:focus {
+  color: #199d9d;
+  text-decoration: none;
+}
+
+/* Responsive: stack vertically, full width, aspect fixes */
+@media (width <= 900px) {
+  .cards.cards47 ul {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 100%;
+  }
+
+  .cards.cards47 ul > li,
+  .cards.cards47 ul > li:first-child,
+  .cards.cards47 ul > li:nth-child(2) {
+    flex-direction: column;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .cards.cards47 ul > li:first-child .cards-card-image,
+  .cards.cards47 ul > li:nth-child(2) .cards-card-image {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 92px;
+  }
+
+  .cards.cards47 ul > li:first-child .cards-card-body,
+  .cards.cards47 ul > li:nth-child(2) .cards-card-body {
+    width: 100%;
+    padding: 10px 12px 6px 18px;
   }
 }
