@@ -2273,7 +2273,6 @@
   padding: 48px 0;
 }
 
-/* Top-level: columns side by side */
 .columns.columns38 > div {
   display: flex;
   flex-direction: row;
@@ -2286,7 +2285,6 @@
   width: 100%;
 }
 
-/* ---- LEFT: Listing Information block ---- */
 .columns.columns38 > div > div:first-child {
   background: #fff;
   border-radius: 0;
@@ -2302,7 +2300,6 @@
   box-sizing: border-box;
 }
 
-/* Make the heading and button span both columns */
 .columns.columns38 > div > div:first-child h4,
 .columns.columns38 > div > div:first-child .button-container {
   grid-column: 1 / -1;
@@ -2332,7 +2329,6 @@
   content: "";
 }
 
-/* Arrange each <p> as a cell in the grid */
 .columns.columns38 > div > div:first-child p {
   margin: 0 0 4px;
   font-size: 1rem;
@@ -2346,13 +2342,11 @@
   word-break: break-word;
 }
 
-/* Label style */
 .columns.columns38 > div > div:first-child p strong {
   font-weight: 600;
   color: #25335a;
 }
 
-/* Button styles */
 .columns.columns38 > div > div:first-child .button-container {
   margin-top: 18px;
   display: flex;
@@ -2378,7 +2372,6 @@
   margin-left: 0;
 }
 
-/* ---- RIGHT: Latest Information panel ---- */
 .columns.columns38 > div > div:last-child {
   background: #0071ba;
   border-radius: 0;
@@ -2395,7 +2388,6 @@
   height: auto;
 }
 
-/* Remove backgrounds/radius on all children of right panel */
 .columns.columns38 > div > div:last-child > * {
   background: none;
   border-radius: 0;
@@ -2405,7 +2397,6 @@
   margin-right: 0;
 }
 
-/* Heading for Latest Information */
 .columns.columns38 > div > div:last-child h3,
 .columns.columns38 > div > div:last-child h2 {
   color: #fff;
@@ -2416,7 +2407,6 @@
   line-height: 1.2;
 }
 
-/* Vertical list of links */
 .columns.columns38 > div > div:last-child ul {
   list-style: none;
   padding: 0;
@@ -2453,7 +2443,6 @@
   box-shadow: none;
 }
 
-/* Left icon for each link (simple circle placeholder) */
 .columns.columns38 > div > div:last-child ul li a::before {
   width: 18px;
   height: 18px;
@@ -2464,7 +2453,6 @@
   background: #fff;
 }
 
-/* Responsive adjustments */
 @media (width <= 900px) {
   .columns.columns38 > div {
     flex-direction: column;
@@ -2485,4 +2473,145 @@
     grid-template-columns: 1fr;
     gap: 8px 0;
   }
+}
+
+
+.columns.columns43 {
+  background: #ededed;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 440px;
+}
+
+.columns.columns43 > div {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 32px rgb(0 0 0 / 7%);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 32px 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+@media (width <= 900px) {
+  .columns.columns43 > div {
+    flex-direction: column;
+    padding: 24px 8px 32px;
+    gap: 24px;
+    max-width: 98vw;
+  }
+}
+
+/* Two columns, left and right */
+.columns.columns43 > div > div {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Heading alignment and accent bar */
+.columns.columns43 h4#write-to-us {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #222;
+  margin: 0 0 18px;
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.2;
+}
+
+.columns.columns43 h4#write-to-us::before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #009688;
+  border-radius: 2px;
+  display: block;
+
+  /* no content property */
+}
+
+/* Style "fields" as input-like */
+.columns.columns43 p {
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  padding: 10px 12px;
+  margin: 0 0 12px;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 400;
+  box-sizing: border-box;
+  width: 100%;
+  line-height: 1.45;
+}
+
+.columns.columns43 > div > div:first-child p:last-child {
+  min-height: 84px;
+  resize: vertical;
+
+  /* visually like a textarea */
+}
+
+.columns.columns43 > div > div:last-child {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.columns.columns43 > div > div:last-child p:last-child {
+  background: linear-gradient(90deg, #009688 0%, #1976d2 100%);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 10px 32px;
+  cursor: pointer;
+  margin-top: 24px;
+  margin-left: auto;
+  width: fit-content;
+  box-shadow: none;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+@media (width <= 700px) {
+  .columns.columns43 {
+    padding: 16px 0;
+  }
+
+  .columns.columns43 > div {
+    padding: 12px 0 18px;
+  }
+
+  .columns.columns43 h4#write-to-us {
+    font-size: 1rem;
+    padding-left: 10px;
+  }
+
+  .columns.columns43 p {
+    font-size: 0.98rem;
+    padding: 8px;
+  }
+}
+
+/* Prevent double margin-bottom on last field in column */
+.columns.columns43 > div > div p:last-child {
+  margin-bottom: 0;
 }
