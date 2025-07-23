@@ -437,151 +437,6 @@
 }
 
 
-.columns.columns10 {
-  background: #fff;
-  margin: 0;
-  padding: 0;
-  font-family: var(--body-font-family);
-}
-
-.columns.columns10 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 28px;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 18px 0 10px;
-  box-sizing: border-box;
-}
-
-.columns.columns10 > div > div {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.columns.columns10 > div > div:not(:nth-child(4)) {
-  min-width: 165px;
-  max-width: 220px;
-}
-
-.columns.columns10 > div > div:first-child h5,
-.columns.columns10 > div > div:first-child a {
-  padding-left: 6px;
-}
-
-.columns.columns10 h5 {
-  font-family: var(--body-font-family);
-  font-size: 16px;
-  font-weight: 500;
-  color: #0095c8;
-  margin: 0 0 6px;
-  line-height: 1.25;
-  letter-spacing: 0;
-}
-
-.columns.columns10 h5 a {
-  color: #0095c8;
-  font-size: 16px;
-  font-weight: 500;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-
-.columns.columns10 ul {
-  margin: 0 0 4px;
-  padding: 0;
-  list-style: none;
-}
-
-.columns.columns10 ul li {
-  margin-bottom: 0;
-  line-height: 1.38;
-  font-size: 15px;
-}
-
-.columns.columns10 ul li a {
-  color: #666;
-  font-size: 15px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.columns.columns10 a:hover {
-  color: #0095c8;
-  text-decoration: underline;
-}
-
-.columns.columns10 h5 + h5,
-.columns.columns10 h5 + ul,
-.columns.columns10 ul + ul,
-.columns.columns10 ul + h5 {
-  margin-top: 0;
-}
-
-.columns.columns10 > div > div:nth-child(4) {
-  border-left: 1px solid #e0e0e0;
-  padding-left: 18px;
-  margin-left: 5px;
-  max-width: 135px;
-  min-width: 90px;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.columns.columns10 > div > div:nth-child(4) h5 {
-  font-size: 13px;
-  font-weight: 400;
-  color: #a0a0a0;
-  margin-bottom: 7px;
-  margin-top: 7px;
-  letter-spacing: 0.01em;
-}
-
-.columns.columns10 > div > div:nth-child(4) ul:first-of-type {
-  margin-bottom: 6px;
-}
-
-.columns.columns10 > div > div:nth-child(4) ul:first-of-type li a {
-  color: #bbb;
-  font-size: 12.5px;
-}
-
-.columns.columns10 > div > div:nth-child(4) ul:not(:first-of-type) li a {
-  color: #2499ce;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-@media (width <= 900px) {
-  .columns.columns10 > div {
-    flex-direction: column;
-    gap: 14px;
-    padding: 8px 0 6px;
-    max-width: 98vw;
-  }
-
-  .columns.columns10 > div > div,
-  .columns.columns10 > div > div:nth-child(4) {
-    padding: 0;
-    border-left: none;
-    max-width: none;
-    margin-left: 0;
-    min-width: 0;
-  }
-}
-
-
 .columns {
   background: #ededed;
   padding: 32px 0;
@@ -2829,7 +2684,7 @@
   width: 100%;
   min-height: 140px;
   display: flex;
-  align-items: center; /* vertical centering of row */
+  align-items: center;
   justify-content: center;
   padding: 0;
   margin: 0;
@@ -2839,9 +2694,9 @@
 .columns.columns9 > div {
   display: flex;
   flex-direction: row;
-  align-items: flex-start; /* top alignment for both cards */
+  align-items: flex-start;
   justify-content: center;
-  gap: 20px; /* modest, tight gap */
+  gap: 20px;
   max-width: 560px;
   width: 100%;
   margin: 0 auto;
@@ -2929,5 +2784,252 @@
     max-width: 98vw;
     height: auto;
     padding: 12px 8px;
+  }
+}
+
+
+/* 1. Ensure the block is centered and has a white background */
+.columns.columns10 {
+  background: #fff;
+  width: 1140px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Adani-Regular, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* 2. Arrange the main columns in a row, align to top, fill full width */
+.columns.columns10 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  padding: 40px 0 32px;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack columns only on small screens */
+@media (width <= 900px) {
+  .columns.columns10 {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .columns.columns10 > div {
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px 0;
+  }
+}
+
+/* 3. Remove all card, pill, placeholder, or grid box styling from descendants */
+.columns.columns10 > div > div,
+.columns.columns10 > div > div * {
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Remove grid, center, or block alignment on nested items */
+  display: unset;
+  align-items: unset;
+  justify-content: unset;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Hide any legacy card/pill elements */
+.columns.columns10 .pill,
+.columns.columns10 .card,
+.columns.columns10 .circle,
+.columns.columns10 .switch {
+  display: none;
+}
+
+/* 4. Column sizing: last (branding/social) column narrower, with vertical divider */
+.columns.columns10 > div > div {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 260px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.columns.columns10 > div > div:last-child {
+  flex: 0 0 230px;
+  min-width: 180px;
+  max-width: 260px;
+  border-left: 1px solid #e0e0e0;
+  padding-left: 32px;
+  margin-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Remove divider and adjust spacing on mobile */
+@media (width <= 900px) {
+  .columns.columns10 > div > div:last-child {
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    padding-left: 0;
+    padding-top: 24px;
+    min-width: 0;
+    max-width: unset;
+    align-items: flex-start;
+  }
+}
+
+/* 5. Navigation Headings */
+.columns.columns10 h5 {
+  color: #0090ba;
+  font-size: 16px;
+  font-family: Adani-Regular, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  margin: 0 0 8px;
+  background: none;
+  line-height: 24px;
+  letter-spacing: 0;
+  padding: 0;
+}
+
+/* 6. Navigation Headings Links */
+.columns.columns10 h5 a {
+  color: #0090ba;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: Adani-Regular, sans-serif;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 7. Navigation lists and links: vertical stacking */
+.columns.columns10 ul {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0; /* No vertical gap, handled by li margin */
+}
+
+.columns.columns10 ul li {
+  margin: 0 0 6px;
+  padding: 0;
+  display: block;
+}
+
+/* All navigation links—default blue */
+.columns.columns10 ul li a {
+  color: #0090ba;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Adani-Regular, sans-serif;
+  text-decoration: none;
+  display: block;
+  margin: 0;
+  text-align: left;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* 8. Sustainability sub-links (second column only): gray links */
+.columns.columns10 > div > div:nth-child(2) ul li a {
+  color: #6d6e71;
+  font-size: 15px;
+}
+
+/* Remove extra vertical space between nav sections */
+.columns.columns10 h5 + h5,
+.columns.columns10 h5 + ul,
+.columns.columns10 ul + h5,
+.columns.columns10 ul + ul {
+  margin-top: 0;
+}
+
+/* "About Us" / "Investors" nav group in third column */
+.columns.columns10 > div > div:nth-child(3) h5 a {
+  color: #0083a9;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  background: none;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+/* 9. Branding/social column: vertically stack and center logo/social if present */
+.columns.columns10 .footer-social {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.columns.columns10 .footer-social a,
+.columns.columns10 .footer-social svg {
+  display: inline-block;
+  color: #0090ba;
+  font-size: 24px;
+  vertical-align: middle;
+  background: none;
+  border: none;
+  box-shadow: none;
+  line-height: 1;
+}
+
+.columns.columns10 .footer-branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.columns.columns10 .footer-branding img {
+  width: 108px;
+  height: auto;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.columns.columns10 .footer-branding .branding-text {
+  font-family: Adani-Regular, sans-serif;
+  font-size: 16px;
+  color: #212529;
+  margin-top: 4px;
+  text-align: center;
+}
+
+@media (width <= 900px) {
+  .columns.columns10 .footer-branding,
+  .columns.columns10 .footer-social {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
   }
 }
