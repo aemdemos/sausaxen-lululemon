@@ -1127,116 +1127,6 @@
 }
 
 
-.columns.columns35 {
-  background: #f4f4f4;
-  padding: 0;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-  font-family: Adani-Regular, sans-serif;
-}
-
-.columns.columns35 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  height: 338px;
-  padding: 32px 24px;
-  background: transparent;
-  box-sizing: border-box;
-}
-
-.columns.columns35 > div > div {
-  background: transparent;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0;
-  min-width: 0;
-  max-width: 220px;
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8px;
-  height: auto;
-  position: relative;
-}
-
-.columns.columns35 > div > div::before,
-.columns.columns35 > div > div::after,
-.columns.columns35 > div > div *::before,
-.columns.columns35 > div > div *::after {
-  display: none;
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.columns.columns35 > div > div *,
-.columns.columns35 > div > div *:not(img) {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-}
-
-.columns.columns35 img {
-  display: block;
-  margin: 0 auto 14px;
-  width: 48px;
-  height: 48px;
-  filter: none;
-}
-
-.columns.columns35 p {
-  text-align: center;
-  color: #009688;
-  font-size: 28px;
-  font-family: Adani-Regular, sans-serif;
-  font-weight: 600;
-  margin: 0 0 6px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  word-break: break-word;
-}
-
-.columns.columns35 p br + span,
-.columns.columns35 p br + em,
-.columns.columns35 p br + strong {
-  display: block;
-  color: #757575;
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-@media (width <= 900px) {
-  .columns.columns35 > div {
-    flex-direction: column;
-    height: auto;
-    padding: 12px 0;
-    gap: 24px;
-  }
-
-  .columns.columns35 > div > div {
-    max-width: 100%;
-    padding: 0 8px;
-    height: auto;
-  }
-
-  .columns.columns35 img {
-    margin-bottom: 8px;
-  }
-
-  .columns.columns35 p {
-    font-size: 22px;
-  }
-}
-
-
 .columns.columns36 {
   background: #f5f6fa;
   padding: 48px 0;
@@ -3106,7 +2996,6 @@
   padding: 0;
 }
 
-/* Two-column layout, left: main, right: grid */
 .columns.columns33 > div {
   display: flex;
   flex-direction: row;
@@ -3116,7 +3005,6 @@
   margin: 0;
 }
 
-/* Left/main column: only first item shown */
 .columns.columns33 > div > div:first-child {
   flex: 0 0 570px;
   max-width: 570px;
@@ -3132,7 +3020,6 @@
   display: none;
 }
 
-/* Large video block */
 .columns.columns33 > div > div:first-child > div:first-child {
   width: 570px;
   height: 326px;
@@ -3147,7 +3034,6 @@
   display: block;
 }
 
-/* Main image fills container */
 .columns.columns33 > div > div:first-child > div:first-child img,
 .columns.columns33 > div > div:first-child > div:first-child picture {
   width: 100%;
@@ -3159,7 +3045,6 @@
   border-radius: 0;
 }
 
-/* Grid column (right): force 2x2 grid, height matches left */
 .columns.columns33 > div > div:last-child {
   flex: 0 0 332px;
   max-width: 332px;
@@ -3179,7 +3064,6 @@
   position: relative;
 }
 
-/* Each grid cell: fill area, no card style */
 .columns.columns33 > div > div:last-child > div {
   width: 100%;
   height: 100%;
@@ -3198,7 +3082,6 @@
   justify-content: stretch;
 }
 
-/* Images inside grid: fill cell */
 .columns.columns33 > div > div:last-child > div img,
 .columns.columns33 > div > div:last-child > div picture {
   width: 100%;
@@ -3210,7 +3093,6 @@
   border-radius: 0;
 }
 
-/* Remove all card-like visuals from descendants */
 .columns.columns33 * {
   background: none;
   border-radius: 0;
@@ -3219,13 +3101,11 @@
   margin: 0;
 }
 
-/* Hide any button, toggle, or button-container in both columns */
 .columns.columns33 .button-container,
 .columns.columns33 .button {
   display: none;
 }
 
-/* Responsive: stack columns, grid becomes 1x4 */
 @media (width <= 900px) {
   .columns.columns33 > div {
     flex-direction: column;
@@ -3251,5 +3131,155 @@
   .columns.columns33 > div > div:last-child > div {
     min-width: 0;
     min-height: 0;
+  }
+}
+
+
+.columns.columns35 {
+  background: #f8f9fa;
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.columns.columns35 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 56px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+@media (width <= 1000px) {
+  .columns.columns35 > div {
+    gap: 28px;
+    padding: 0 8px;
+  }
+}
+
+@media (width <= 700px) {
+  .columns.columns35 > div {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 0 3vw;
+  }
+}
+
+.columns.columns35 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+  min-height: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 180px;
+  text-align: center;
+}
+
+/* Ensure all nested content is centered, including first stat block */
+.columns.columns35 > div > div > *,
+.columns.columns35 > div > div > * > * {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Remove unwanted pseudo-elements */
+.columns.columns35 > div > div::before,
+.columns.columns35 > div > div::after,
+.columns.columns35 > div > div *::before,
+.columns.columns35 > div > div *::after {
+  display: none;
+}
+
+/* Icon styling */
+.columns.columns35 img,
+.columns.columns35 picture {
+  display: block;
+  margin: 0 auto 14px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+@media (width <= 700px) {
+  .columns.columns35 img,
+  .columns.columns35 picture {
+    margin-bottom: 10px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Stat text styling */
+.columns.columns35 > div > div > p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: none;
+  box-shadow: none;
+  font-family: var(--body-font-family);
+  line-height: 1.24;
+  letter-spacing: 0.01em;
+  width: 100%;
+  display: block;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+/* First line/statistic: teal, bold, larger */
+.columns.columns35 > div > div > p:first-of-type {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #009688;
+  margin-bottom: 3px;
+}
+
+/* Second line/label: gray, regular, smaller */
+.columns.columns35 > div > div > p:not(:first-of-type) {
+  font-size: 1.01rem;
+  color: #757575;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+.columns.columns35 > div > div > p br + span,
+.columns.columns35 > div > div > p br + em,
+.columns.columns35 > div > div > p br + strong {
+  display: block;
+  color: #757575;
+  font-size: 1.01rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (width <= 700px) {
+  .columns.columns35 > div > div {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .columns.columns35 > div > div > p:first-of-type {
+    font-size: 1.12rem;
+  }
+
+  .columns.columns35 > div > div > p:not(:first-of-type),
+  .columns.columns35 > div > div > p br + span,
+  .columns.columns35 > div > div > p br + em,
+  .columns.columns35 > div > div > p br + strong {
+    font-size: 0.97rem;
   }
 }
