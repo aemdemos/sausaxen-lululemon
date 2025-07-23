@@ -2465,7 +2465,6 @@
   box-sizing: border-box;
 }
 
-/* Main row: Flex for horizontal layout and centering */
 .columns.columns3 > div {
   display: flex;
   flex-direction: row;
@@ -2480,7 +2479,6 @@
   padding: 0;
 }
 
-/* Left: Image block */
 .columns.columns3 > div > div:first-child {
   flex: 0 0 120px;
   width: 120px;
@@ -2500,7 +2498,6 @@
   padding: 0;
 }
 
-/* Restrict image to parent size */
 .columns.columns3 > div > div:first-child img {
   width: 100%;
   height: 100%;
@@ -2509,7 +2506,6 @@
   display: block;
 }
 
-/* Right: Content block */
 .columns.columns3 > div > div:last-child {
   flex: 1 1 0;
   display: flex;
@@ -2525,14 +2521,12 @@
   box-sizing: border-box;
 }
 
-/* Ensure all direct children stack and use full width */
 .columns.columns3 > div > div:last-child > * {
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Heading styles for visual hierarchy */
 .columns.columns3 > div > div:last-child > h1 {
   font-size: 2rem;
   font-weight: 700;
@@ -2546,7 +2540,6 @@
   letter-spacing: -0.1px;
 }
 
-/* Subtitle (role/designation) */
 .columns.columns3 > div > div:last-child > p:first-of-type {
   font-size: 1.06rem;
   color: #757575;
@@ -2556,7 +2549,6 @@
   background: none;
 }
 
-/* Paragraphs: readable, moderate weight, spacing */
 .columns.columns3 > div > div:last-child > p:not(:first-of-type, .button-container) {
   color: #444;
   font-size: 1rem;
@@ -2569,7 +2561,6 @@
   box-shadow: none;
 }
 
-/* Download button container */
 .columns.columns3 > div > div:last-child > .button-container {
   margin: 25px 0 0;
   padding: 0;
@@ -2578,7 +2569,6 @@
   justify-content: center;
 }
 
-/* Download button styling */
 .columns.columns3 > div > div:last-child > .button-container > .button {
   display: flex;
   align-items: center;
@@ -2611,7 +2601,6 @@
   background: linear-gradient(to right, #167c73 0%, #234887 100%);
 }
 
-/* Remove unwanted icons/buttons and card-like backgrounds */
 .columns.columns3 .unwanted-icon {
   display: none;
 }
@@ -2625,7 +2614,6 @@
   background: none;
 }
 
-/* Responsive stacking for small screens */
 @media (width <= 900px) {
   .columns.columns3 > div {
     flex-direction: column;
@@ -2644,4 +2632,235 @@
   .columns.columns3 > div > div:first-child {
     margin-bottom: 0;
   }
+}
+
+
+.columns.columns5 {
+  background: #ededed;
+  padding: 40px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.columns.columns5 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1280px;
+  margin: 0 auto;
+  gap: 22px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Main cards */
+.columns.columns5 > div > div {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(60 72 88 / 8%);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 286px;
+  padding: 32px 32px 28px;
+  width: 100%;
+  min-width: 0;
+  position: relative;
+}
+
+/* Left card (dividend) width */
+.columns.columns5 > div > div:first-child {
+  flex: 2 1 0;
+  max-width: 740px;
+  min-width: 420px;
+}
+
+/* Right card (newspaper) width */
+.columns.columns5 > div > div:last-child {
+  flex: 1 1 0;
+  max-width: 420px;
+  min-width: 340px;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Headings */
+.columns.columns5 > div > div > h3 {
+  font-size: 17px;
+  font-weight: 700;
+  font-family: var(--heading-font-family);
+  color: #2c2c2c;
+  margin: 0 0 20px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: left;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  position: static;
+  z-index: auto;
+
+  /* Ensure heading aligns with grid/list */
+  width: 100%;
+}
+
+/* Control text overflow and wrapping for headings */
+.columns.columns5 > div > div > h3 {
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Dividend list - two column grid, compact gap, aligns under heading */
+.columns.columns5 > div > div:first-child ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* Remove default bullets for all nested lists */
+.columns.columns5 ul,
+.columns.columns5 ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+/* List items */
+.columns.columns5 li {
+  font-size: 15px;
+  color: #575757;
+  font-family: var(--body-font-family);
+  line-height: 23px;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  text-align: left;
+  background: transparent;
+  border-radius: 0;
+  padding: 0 0 0 20px; /* room for possible icons */
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+/* Card links (including in lists) */
+.columns.columns5 ul a,
+.columns.columns5 li a {
+  color: #575757;
+  font-size: 15px;
+  text-decoration: none;
+  transition: color 0.15s;
+  background: transparent;
+  word-break: break-word;
+}
+
+.columns.columns5 ul a:hover,
+.columns.columns5 li a:hover {
+  color: #2c2c2c;
+  text-decoration: underline;
+}
+
+/* Newspaper card (right) */
+.columns.columns5 > div > div:last-child ul {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  width: 100%;
+}
+
+/* Remove backgrounds/radii from any potential nested elements in the card */
+.columns.columns5 > div > div * {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* "Read more" alignment, right and at bottom */
+.columns.columns5 > div > div:last-child .button-container {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.columns.columns5 > div > div:last-child .button {
+  background: none;
+  border: none;
+  color: #13a5b3;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  text-align: right;
+  line-height: 1.2;
+  cursor: pointer;
+  min-width: unset;
+}
+
+.columns.columns5 > div > div:last-child .button:hover,
+.columns.columns5 > div > div:last-child .button:focus {
+  text-decoration: underline;
+}
+
+/* Responsive stacking for mobile */
+@media (width <= 1020px) {
+  .columns.columns5 > div {
+    gap: 12px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+
+  .columns.columns5 > div > div {
+    min-width: 0;
+    max-width: 100%;
+    padding: 20px 10px 16px;
+  }
+}
+
+@media (width <= 700px) {
+  .columns.columns5 > div {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+
+  .columns.columns5 > div > div {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 16px 7px 12px;
+  }
+
+  .columns.columns5 > div > div:first-child ul {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}
+
+/* Remove unwanted pseudo-elements or artifacts (such as leftover circles/shadows) */
+.columns.columns5 > div > div::before,
+.columns.columns5 > div > div::after,
+.columns.columns5 > div > div *::before,
+.columns.columns5 > div > div *::after {
+  display: none;
 }
