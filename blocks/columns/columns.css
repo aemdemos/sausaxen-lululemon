@@ -1127,214 +1127,6 @@
 }
 
 
-.columns.columns38 {
-  background: #ededed;
-  padding: 48px 0;
-}
-
-.columns.columns38 > div {
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-  align-items: flex-start;
-  justify-content: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.columns.columns38 > div > div:first-child {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 32px 40px;
-  min-width: 340px;
-  max-width: 720px;
-  flex: 1 1 0;
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  gap: 8px 32px;
-  align-items: center;
-  box-sizing: border-box;
-}
-
-.columns.columns38 > div > div:first-child h4,
-.columns.columns38 > div > div:first-child .button-container {
-  grid-column: 1 / -1;
-}
-
-.columns.columns38 > div > div:first-child h4 {
-  margin-top: 0;
-  margin-bottom: 24px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #222;
-  display: flex;
-  align-items: center;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  position: relative;
-}
-
-.columns.columns38 > div > div:first-child h4::before {
-  display: inline-block;
-  width: 4px;
-  height: 28px;
-  background: #009688;
-  margin-right: 12px;
-  border-radius: 2px;
-  vertical-align: middle;
-  content: "";
-}
-
-.columns.columns38 > div > div:first-child p {
-  margin: 0 0 4px;
-  font-size: 1rem;
-  color: #25335a;
-  line-height: 1.5;
-  background: none;
-  border: none;
-  box-shadow: none;
-  min-width: 0;
-  max-width: 100%;
-  word-break: break-word;
-}
-
-.columns.columns38 > div > div:first-child p strong {
-  font-weight: 600;
-  color: #25335a;
-}
-
-.columns.columns38 > div > div:first-child .button-container {
-  margin-top: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-}
-
-.columns.columns38 > div > div:first-child .button,
-.columns.columns38 > div > div:first-child a.button {
-  display: inline-block;
-  padding: 8px 20px;
-  background: #009688;
-  color: #fff;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border: none;
-  margin-top: 8px;
-  margin-bottom: 0;
-  box-shadow: none;
-  margin-left: 0;
-}
-
-.columns.columns38 > div > div:last-child {
-  background: #0071ba;
-  border-radius: 0;
-  color: #fff;
-  padding: 32px 24px;
-  min-width: 280px;
-  max-width: 340px;
-  flex: 0 0 340px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  box-shadow: none;
-  justify-content: flex-start;
-  height: auto;
-}
-
-.columns.columns38 > div > div:last-child > * {
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.columns.columns38 > div > div:last-child h3,
-.columns.columns38 > div > div:last-child h2 {
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 22px;
-  line-height: 1.2;
-}
-
-.columns.columns38 > div > div:last-child ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.columns.columns38 > div > div:last-child ul li {
-  margin-bottom: 14px;
-  padding: 0;
-  width: 100%;
-  display: block;
-}
-
-.columns.columns38 > div > div:last-child ul li:last-child {
-  margin-bottom: 0;
-}
-
-.columns.columns38 > div > div:last-child ul li a {
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  gap: 10px;
-  padding: 0;
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-.columns.columns38 > div > div:last-child ul li a::before {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 10px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: #fff;
-}
-
-@media (width <= 900px) {
-  .columns.columns38 > div {
-    flex-direction: column;
-    gap: 24px;
-    padding: 0 8px;
-    max-width: 100vw;
-    align-items: stretch;
-  }
-
-  .columns.columns38 > div > div:first-child,
-  .columns.columns38 > div > div:last-child {
-    max-width: 100%;
-    min-width: 0;
-    padding: 20px 12px 20px 16px;
-  }
-
-  .columns.columns38 > div > div:first-child {
-    grid-template-columns: 1fr;
-    gap: 8px 0;
-  }
-}
-
-
 .columns.columns43 {
   background: #ededed;
   padding: 40px 0;
@@ -3075,7 +2867,6 @@
   padding: 48px 0;
 }
 
-/* Main columns: side-by-side flex for desktop, stacked for mobile */
 .columns.columns36 > div {
   display: flex;
   flex-direction: row;
@@ -3099,7 +2890,6 @@
   }
 }
 
-/* LEFT CARD: main content, should grow for all content */
 .columns.columns36 > div > div:first-child {
   background: #fff;
   border-radius: 12px;
@@ -3116,7 +2906,6 @@
   height: auto;
 }
 
-/* Ensure entire content is inside the white card */
 .columns.columns36 > div > div:first-child > * {
   display: block;
   position: static;
@@ -3133,7 +2922,6 @@
   line-height: 1.6;
 }
 
-/* Headings: section color and spacing */
 .columns.columns36 h2 {
   font-size: 20px;
   font-weight: 700;
@@ -3149,7 +2937,6 @@
 .columns.columns36 h2#enter-invoice-details-manually { color: #377694; }
 .columns.columns36 h2:first-child { margin-top: 0; }
 
-/* Section and paragraph spacing */
 .columns.columns36 h2:not(:first-child) {
   margin-top: 36px;
 }
@@ -3166,7 +2953,6 @@
   margin: 0 0 16px;
 }
 
-/* Download column: vertical button stack, full width */
 .columns.columns36 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -3221,7 +3007,6 @@
   padding: 0;
 }
 
-/* Make sure mail links use section color */
 .columns.columns36 a[href^="mailto"] {
   color: #008080;
   text-decoration: underline;
@@ -3229,7 +3014,6 @@
   font-size: 1em;
 }
 
-/* Add More Invoice button style */
 .columns.columns36 p:contains('+ Add More Invoice') {
   display: inline-block;
   background: #22b6a4;
@@ -3247,7 +3031,6 @@
   letter-spacing: 0.02em;
 }
 
-/* Disclaimer/Legal text */
 .columns.columns36 p:last-of-type {
   color: #777;
   font-size: 0.97em;
@@ -3258,7 +3041,6 @@
   background: none;
 }
 
-/* Restrict max-width of columns to avoid stretching */
 .columns.columns36 > div > div:first-child {
   max-width: 700px;
 }
@@ -3267,7 +3049,6 @@
   max-width: 340px;
 }
 
-/* Bank Details: Only two fields side by side, force single-line */
 .columns.columns36 > div > div:first-child > h2#bank-details + p,
 .columns.columns36 > div > div:first-child > h2#bank-details + p + p {
   display: inline-block;
@@ -3284,7 +3065,6 @@
   margin-right: 0;
 }
 
-/* Remove blue and bold from all paragraphs - enforce dark, regular text in case of override */
 .columns.columns36 > div > div:first-child p,
 .columns.columns36 > div > div:first-child span,
 .columns.columns36 > div > div:first-child li {
@@ -3292,10 +3072,275 @@
   font-weight: 400;
 }
 
-/* Remove min-width from download column to avoid button crowding on small screens */
 @media (width <= 700px) {
   .columns.columns36 > div > div:last-child {
     min-width: 0;
     max-width: 100%;
   }
+}
+
+
+.columns.columns38 {
+  background: #ededed;
+  padding: 40px 0 64px;
+  margin: 0;
+}
+
+.columns.columns38 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0;
+}
+
+/* Responsive stack on mobile */
+@media (width <= 900px) {
+  .columns.columns38 > div {
+    flex-direction: column;
+    gap: 24px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+}
+
+/* --- LEFT CARD: Listing Information --- */
+.columns.columns38 > div > div:first-child {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgb(60 60 60 / 6%);
+  padding: 28px 32px 24px;
+  min-width: 340px;
+  max-width: 540px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* Remove unwanted white circles (loader artifacts) */
+.columns.columns38 > div > div:first-child [style*="border-radius: 50%"],
+.columns.columns38 > div > div:first-child .sidebar-loading-indicator,
+.columns.columns38 > div > div:first-child .loading {
+  display: none;
+}
+
+/* Header styling with proper separation */
+.columns.columns38 > div > div:first-child h4 {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #232325;
+  margin: 0 0 18px;
+  line-height: 1.2;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+.columns.columns38 > div > div:first-child h4::before {
+  display: inline-block;
+  width: 4px;
+  height: 26px;
+  background: #009688;
+  margin-right: 10px;
+  border-radius: 2px;
+  content: "";
+}
+
+/* Simulated info grid: target only p children directly after h4 */
+.columns.columns38 > div > div:first-child > p:not(.button-container) {
+  font-size: 15px;
+  color: #222;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Two-column flex grid for label-value pairs: 
+   - odd-numbered <p> (labels), even-numbered <p> (values), 
+   - works for sequential <p> after h4 */
+@media (width >= 701px) {
+  .columns.columns38 > div > div:first-child > p:not(.button-container) {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  .columns.columns38 > div > div:first-child > p:not(.button-container):nth-of-type(n+2):nth-of-type(odd) {
+    width: 44%;
+    font-weight: 500;
+    color: #333;
+    text-align: right;
+    padding-right: 18px;
+    margin-bottom: 6px;
+    display: inline-block;
+    vertical-align: top;
+    white-space: nowrap;
+  }
+
+  .columns.columns38 > div > div:first-child > p:not(.button-container):nth-of-type(n+2):nth-of-type(even) {
+    width: 56%;
+    font-weight: 400;
+    color: #445;
+    text-align: left;
+    margin-bottom: 6px;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    padding-left: 0;
+  }
+}
+
+/* On mobile, stack rows */
+@media (width <= 700px) {
+  .columns.columns38 > div > div:first-child > p:not(.button-container) {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    margin: 0 0 6px;
+  }
+}
+
+/* Remove any green button/link (should not appear) */
+.columns.columns38 > div > div:first-child .button-container,
+.columns.columns38 > div > div:first-child .button,
+.columns.columns38 > div > div:first-child a.button {
+  display: none;
+}
+
+/* --- RIGHT CARD: Sidebar --- */
+.columns.columns38 > div > div:last-child {
+  background: #1d77b8;
+  color: #fff;
+  border-radius: 6px;
+  padding: 28px 24px;
+  min-width: 270px;
+  max-width: 340px;
+  flex: 0 0 320px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: 0 2px 8px rgb(60 60 60 / 9%);
+  position: relative;
+  height: auto;
+}
+
+/* Remove unwanted inner backgrounds, borders (no inner gray boxes) */
+.columns.columns38 > div > div:last-child > *:not(h3, h2, ul) {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove loading indicators or circles from sidebar */
+.columns.columns38 > div > div:last-child [style*="border-radius: 50%"],
+.columns.columns38 > div > div:last-child .sidebar-loading-indicator,
+.columns.columns38 > div > div:last-child .loading {
+  display: none;
+}
+
+.columns.columns38 > div > div:last-child ul li::after {
+  display: none;
+}
+
+/* Sidebar heading */
+.columns.columns38 > div > div:last-child h3,
+.columns.columns38 > div > div:last-child h2 {
+  color: #fff;
+  font-size: 1.13rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  line-height: 1.2;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+/* Sidebar vertical list, no inner panels, ensure it stays at the top */
+.columns.columns38 > div > div:last-child ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: none;
+}
+
+/* Sidebar links as vertical column, with spacing */
+.columns.columns38 > div > div:last-child ul li {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  line-height: 1.35;
+  margin-bottom: 14px;
+  color: #fff;
+  font-weight: 400;
+  min-height: 28px;
+  position: relative;
+  border-radius: 0;
+  background: none;
+  padding: 0;
+  width: 100%;
+}
+
+.columns.columns38 > div > div:last-child ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebar link text */
+.columns.columns38 > div > div:last-child ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.35;
+  margin-left: 0;
+  transition: text-decoration 0.2s;
+  flex: 1 1 auto;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Tighten up sidebar spacing on mobile */
+@media (width <= 700px) {
+  .columns.columns38 > div > div:last-child ul li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    min-height: 24px;
+  }
+}
+
+/* Placeholder for icons: style a span.sidebar-icon (must exist in HTML) */
+.columns.columns38 > div > div:last-child ul li .sidebar-icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  background-color: #fff;
+  border-radius: 3px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 85% 85%;
 }
