@@ -531,124 +531,6 @@
 }
 
 
-.columns.columns18 {
-  background: #ededed;
-  padding: 40px 0;
-  box-sizing: border-box;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.columns.columns18 > div {
-  background: #fff;
-  border-radius: 6px;
-  box-sizing: border-box;
-  max-width: 1200px;
-  width: 92vw;
-  min-width: 320px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 36px;
-  min-height: 90px;
-  gap: 0;
-  overflow: hidden;
-}
-
-.columns.columns18 > div > div {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  height: auto;
-  display: flex;
-  align-items: center;
-}
-
-.columns.columns18 > div > div:first-child .button {
-  background: none;
-  color: #212529;
-  font-size: 16px;
-  font-weight: 400;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-  min-width: 0;
-  width: auto;
-  cursor: default;
-  pointer-events: none;
-  line-height: 1.2;
-  display: inline;
-}
-
-.columns.columns18 > div > div:last-child {
-  flex: 0 0 auto;
-  justify-content: flex-end;
-}
-
-.columns.columns18 > div > div:last-child .button {
-  background: linear-gradient(90deg, #0bb6d7 0%, #1977c6 100%);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 22px;
-  font-size: 14px;
-  font-weight: 500;
-  min-width: 64px;
-  min-height: 32px;
-  text-align: center;
-  box-shadow: none;
-  margin: 0;
-  line-height: 1.2;
-  display: inline-block;
-  transition: background 0.2s;
-  cursor: pointer;
-}
-
-.columns.columns18 > div > div:last-child .button:hover,
-.columns.columns18 > div > div:last-child .button:focus {
-  background: linear-gradient(90deg, #1977c6 0%, #0bb6d7 100%);
-  color: #fff;
-}
-
-@media (width <= 700px) {
-  .columns.columns18 > div {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0 10px;
-    min-height: unset;
-    width: 100%;
-    gap: 16px;
-  }
-
-  .columns.columns18 {
-    padding: 16px 0;
-  }
-
-  .columns.columns18 > div > div {
-    justify-content: flex-start;
-  }
-
-  .columns.columns18 > div > div:last-child {
-    justify-content: flex-end;
-    margin-top: 12px;
-  }
-
-  .columns.columns18 > div > div:last-child .button {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-
 .columns.columns19 {
   background: #fff;
   padding: 0;
@@ -2787,8 +2669,6 @@
   }
 }
 
-
-/* 1. Ensure the block is centered and has a white background */
 .columns.columns10 {
   background: #fff;
   width: 1140px;
@@ -2801,7 +2681,6 @@
   line-height: 24px;
 }
 
-/* 2. Arrange the main columns in a row, align to top, fill full width */
 .columns.columns10 > div {
   display: flex;
   flex-direction: row;
@@ -2813,7 +2692,6 @@
   box-sizing: border-box;
 }
 
-/* Responsive: stack columns only on small screens */
 @media (width <= 900px) {
   .columns.columns10 {
     width: 100%;
@@ -2827,7 +2705,6 @@
   }
 }
 
-/* 3. Remove all card, pill, placeholder, or grid box styling from descendants */
 .columns.columns10 > div > div,
 .columns.columns10 > div > div * {
   background: none;
@@ -2838,8 +2715,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-  /* Remove grid, center, or block alignment on nested items */
   display: unset;
   align-items: unset;
   justify-content: unset;
@@ -2847,7 +2722,6 @@
   word-break: break-word;
 }
 
-/* Hide any legacy card/pill elements */
 .columns.columns10 .pill,
 .columns.columns10 .card,
 .columns.columns10 .circle,
@@ -2855,7 +2729,6 @@
   display: none;
 }
 
-/* 4. Column sizing: last (branding/social) column narrower, with vertical divider */
 .columns.columns10 > div > div {
   flex: 1 1 0;
   min-width: 0;
@@ -2878,7 +2751,6 @@
   justify-content: flex-start;
 }
 
-/* Remove divider and adjust spacing on mobile */
 @media (width <= 900px) {
   .columns.columns10 > div > div:last-child {
     border-left: none;
@@ -2891,7 +2763,6 @@
   }
 }
 
-/* 5. Navigation Headings */
 .columns.columns10 h5 {
   color: #0090ba;
   font-size: 16px;
@@ -2905,7 +2776,6 @@
   padding: 0;
 }
 
-/* 6. Navigation Headings Links */
 .columns.columns10 h5 a {
   color: #0090ba;
   font-weight: 400;
@@ -2916,14 +2786,13 @@
   padding: 0;
 }
 
-/* 7. Navigation lists and links: vertical stacking */
 .columns.columns10 ul {
   list-style: none;
   margin: 0 0 8px;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0; /* No vertical gap, handled by li margin */
+  gap: 0;
 }
 
 .columns.columns10 ul li {
@@ -2932,7 +2801,6 @@
   display: block;
 }
 
-/* All navigation links—default blue */
 .columns.columns10 ul li a {
   color: #0090ba;
   font-size: 16px;
@@ -2948,13 +2816,11 @@
   box-shadow: none;
 }
 
-/* 8. Sustainability sub-links (second column only): gray links */
 .columns.columns10 > div > div:nth-child(2) ul li a {
   color: #6d6e71;
   font-size: 15px;
 }
 
-/* Remove extra vertical space between nav sections */
 .columns.columns10 h5 + h5,
 .columns.columns10 h5 + ul,
 .columns.columns10 ul + h5,
@@ -2962,7 +2828,6 @@
   margin-top: 0;
 }
 
-/* "About Us" / "Investors" nav group in third column */
 .columns.columns10 > div > div:nth-child(3) h5 a {
   color: #0083a9;
   font-size: 16px;
@@ -2976,7 +2841,6 @@
   text-align: left;
 }
 
-/* 9. Branding/social column: vertically stack and center logo/social if present */
 .columns.columns10 .footer-social {
   display: flex;
   flex-direction: row;
@@ -3031,5 +2895,159 @@
     width: 100%;
     text-align: left;
     margin-left: 0;
+  }
+}
+
+
+.columns.columns18 {
+  background: #ededed;
+  padding: 0; /* Remove extra vertical padding around the white block */
+  display: flex;
+  justify-content: center;
+}
+
+.columns.columns18 > div {
+  background: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  width: 92vw;
+  min-width: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px 20px; /* Minimal vertical padding to hug content */
+  gap: 0;
+  overflow: hidden;
+  min-height: unset; /* Prevent vertical stretching */
+  height: auto;
+}
+
+/* Remove all unwanted effects from columns and children */
+.columns.columns18 > div > div,
+.columns.columns18 > div > div * {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove unwanted pseudo-elements */
+.columns.columns18 > div > div::before,
+.columns.columns18 > div > div::after,
+.columns.columns18 > div > div *::before,
+.columns.columns18 > div > div *::after {
+  display: none;
+}
+
+/* Ensure columns do not stretch */
+.columns.columns18 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+}
+
+/* Left (text) column: match original spacing */
+.columns.columns18 > div > div:first-child {
+  padding-top: 2px;
+  padding-left: 0;
+}
+
+/* Text link in left column */
+.columns.columns18 > div > div:first-child .button {
+  background: none;
+  color: #212529;
+  font-size: 13px;
+  font-weight: 400;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  min-width: 0;
+  width: auto;
+  cursor: default;
+  pointer-events: none;
+  line-height: 1.2;
+  display: inline;
+}
+
+/* Right (button) column: align top and right, minimal spacing */
+.columns.columns18 > div > div:last-child {
+  align-items: flex-end;
+  flex: 0 0 auto;
+  padding-top: 2px;
+  padding-right: 0;
+  width: auto;
+}
+
+/* Remove extra space from .button-container */
+.columns.columns18 .button-container,
+.columns.columns18 p.button-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* Button style */
+.columns.columns18 > div > div:last-child .button {
+  background: linear-gradient(90deg, #2493b5 0%, #3289a8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 500;
+  min-width: 48px;
+  min-height: 24px;
+  text-align: center;
+  box-shadow: none;
+  margin: 0;
+  line-height: 1.2;
+  display: inline-block;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (width <= 700px) {
+  .columns.columns18 > div {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 6px;
+    width: 100%;
+    gap: 10px;
+    min-height: unset;
+    height: auto;
+  }
+
+  .columns.columns18 > div > div {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .columns.columns18 > div > div:first-child {
+    padding-top: 8px;
+    padding-left: 0;
+  }
+
+  .columns.columns18 > div > div:last-child {
+    padding-top: 6px;
+    padding-right: 0;
+    margin-top: 4px;
+    align-items: flex-end;
+  }
+
+  .columns.columns18 > div > div:last-child .button {
+    width: 100%;
+    min-width: 0;
   }
 }
