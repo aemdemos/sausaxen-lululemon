@@ -28,42 +28,6 @@
   padding: 0;
 }
 
-.cards.cards51 > ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 146px;
-  min-width: 100px;
-  max-width: 200px;
-  height: 32px;
-  background: linear-gradient(90deg, #1fa2a6 0%, #2578b3 100%);
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0 14px;
-  list-style: none;
-  border: none;
-  overflow: hidden;
-  color: #fff;
-  font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  line-height: 1.2;
-  white-space: nowrap;
-  justify-content: flex-start;
-}
-
-.cards.cards51 {
-  background: #f2f2f3;
-  min-height: 20px;
-  width: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: stretch;
-  padding: 0;
-  margin: 0;
-}
-
 .cards.cards20 > ul > li,
 .cards.cards29 > ul > li,
 .cards.cards39 > ul > li,
@@ -73,14 +37,6 @@
 .cards.cards11 > ul > li {
   margin: 0;
   padding: 0;
-}
-
-.cards.cards51 > ul > li {
-  display: none;
-}
-
-.cards.cards51 > ul::marker {
-  display: none;
 }
 
 .cards.cards11 {
@@ -1178,7 +1134,6 @@
   min-height: 1px;
 }
 
-/* Left card: News and Updates */
 .cards.cardsnoimages49 > ul > li:first-child {
   background: #fff;
   border-radius: 24px 0 0 24px;
@@ -1211,7 +1166,6 @@
   line-height: 1.18;
 }
 
-/* News list styling */
 .cards.cardsnoimages49 .cards-card-body > ul {
   padding: 0;
   margin: 0 0 18px;
@@ -1235,7 +1189,6 @@
   gap: 12px;
 }
 
-/* News icon (simulate with blue square, as SVGs can't be injected) */
 .cards.cardsnoimages49 .cards-card-body > ul > li::before {
   display: inline-block;
   width: 28px;
@@ -1247,7 +1200,6 @@
   flex-shrink: 0;
 }
 
-/* News link styling */
 .cards.cardsnoimages49 .cards-card-body > ul > li > a {
   color: #181e28;
   font-family: var(--body-font-family);
@@ -1267,7 +1219,6 @@
   text-decoration: underline;
 }
 
-/* Button styling */
 .cards.cardsnoimages49 .cards-card-body .button-container {
   margin: 0;
   padding: 0;
@@ -1299,7 +1250,6 @@
   background: linear-gradient(90deg, #009e99 0%, #005fa3 100%);
 }
 
-/* Right card: light gray background, rounded corners */
 .cards.cardsnoimages49 > ul > li:last-child {
   background: #f5f6f8;
   border-radius: 0 24px 24px 0;
@@ -1335,12 +1285,10 @@
   margin: 0 40px 40px 0;
 }
 
-/* Hide non-image content in right card */
 .cards.cardsnoimages49 > ul > li:last-child .cards-card-image p {
   display: none;
 }
 
-/* Responsive: stack columns vertically on small screens */
 @media (width <= 900px) {
   .cards.cardsnoimages49 {
     flex-direction: column;
@@ -1377,5 +1325,57 @@
     max-width: 90vw;
     margin-right: 0;
     margin-bottom: 0;
+  }
+}
+
+
+.cards.cards51 {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  width: 100%;
+  height: 32px;
+  min-height: 32px;
+  background: #eeeeef;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Colored nav area on the left using the empty ul */
+.cards.cards51 > ul {
+  grid-column: 1 / 2;
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+  height: 32px;
+  background: linear-gradient(90deg, #18a1a7 0%, #2673ba 100%);
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  list-style: none;
+  display: block;
+  align-self: stretch;
+}
+
+/* Hide any li's in ul for future proofing */
+.cards.cards51 > ul > li {
+  display: none;
+}
+
+/* Responsive: shrink left nav area on smaller screens, keep proportions */
+@media (width <= 700px) {
+  .cards.cards51 {
+    grid-template-columns: 70px 1fr;
+    height: 24px;
+    min-height: 24px;
+  }
+
+  .cards.cards51 > ul {
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+    height: 24px;
   }
 }
