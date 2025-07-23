@@ -1127,215 +1127,6 @@
 }
 
 
-.columns.columns36 {
-  background: #f5f6fa;
-  padding: 48px 0;
-  font-family: var(--body-font-family);
-  font-size: var(--body-font-size-m);
-  color: #212529;
-}
-
-.columns.columns36 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 48px;
-  max-width: 950px;
-  margin: 0 auto;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.columns.columns36 > div > div:first-child {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 18px rgb(0 0 0 / 11%);
-  padding: 48px 36px;
-  flex: 2 1 0;
-  min-width: 360px;
-  max-width: 670px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  height: auto;
-}
-
-.columns.columns36 > div > div:first-child::after,
-.columns.columns36 > div > div:first-child::before {
-  display: none;
-}
-
-.columns.columns36 h2 {
-  color: #22bbb2;
-  font-size: 1.22em;
-  font-weight: 700;
-  margin-top: 36px;
-  margin-bottom: 12px;
-  letter-spacing: 0.01em;
-  line-height: 1.24;
-}
-
-.columns.columns36 h2:first-child {
-  margin-top: 0;
-}
-
-.columns.columns36 h1 {
-  font-size: 2.25em;
-  font-weight: 700;
-  color: #212529;
-  margin-bottom: 34px;
-  margin-top: 0;
-  letter-spacing: -0.5px;
-  line-height: 1.1;
-}
-
-.columns.columns36 p {
-  color: #212529;
-  font-size: 1em;
-  margin-top: 0;
-  margin-bottom: 18px;
-  line-height: 1.68;
-  background: none;
-  border: none;
-  padding: 0;
-  word-break: break-word;
-  font-weight: 400;
-}
-
-.columns.columns36 h2:not(:first-child) {
-  margin-top: 40px;
-}
-
-.columns.columns36 > div > div:last-child {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 48px 0 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 220px;
-  max-width: 320px;
-  flex: 1 1 0;
-  margin-top: 0;
-  box-sizing: border-box;
-}
-
-.columns.columns36 > div > div:last-child a {
-  display: block;
-  width: 100%;
-  background: #222;
-  color: #fff;
-  border-radius: 8px;
-  padding: 18px 24px;
-  font-size: 1em;
-  font-weight: 500;
-  margin-bottom: 12px;
-  text-align: left;
-  letter-spacing: 0.01em;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-  text-decoration: none;
-  line-height: 1.28;
-  border: none;
-  box-sizing: border-box;
-}
-
-.columns.columns36 > div > div:last-child a:last-child {
-  margin-bottom: 0;
-}
-
-.columns.columns36 > div > div:last-child a:hover {
-  background: #444;
-}
-
-.columns.columns36 a[href^="mailto"] {
-  color: #22bbb2;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 1em;
-}
-
-.columns.columns36 p:contains('+ Add More Invoice') {
-  display: inline-block;
-  background: #22b6a4;
-  color: #fff;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1em;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 16px;
-  margin-bottom: 22px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
-  border: none;
-  letter-spacing: 0.02em;
-}
-
-.columns.columns36 > div > div:first-child p:last-of-type {
-  color: #777;
-  font-size: 0.97em;
-  line-height: 1.6;
-  margin-top: 38px;
-  margin-bottom: 0;
-  padding: 0;
-  background: none;
-}
-
-@media (width <= 900px) {
-  .columns.columns36 > div {
-    flex-direction: column;
-    gap: 32px;
-    max-width: 98vw;
-    padding: 0 8px;
-    align-items: stretch;
-  }
-
-  .columns.columns36 > div > div {
-    max-width: 100%;
-    min-width: 0;
-  }
-
-  .columns.columns36 > div > div:first-child,
-  .columns.columns36 > div > div:last-child {
-    padding: 28px 10px;
-  }
-}
-
-@media (width <= 600px) {
-  .columns.columns36 > div {
-    gap: 16px;
-    padding: 0 2vw;
-  }
-
-  .columns.columns36 > div > div:first-child,
-  .columns.columns36 > div > div:last-child {
-    padding: 14px 2vw;
-  }
-}
-
-.columns.columns36 > div > div,
-.columns.columns36 > div > div * {
-  position: static;
-  overflow: visible;
-  box-shadow: none;
-}
-
-.columns.columns36 > div > div:first-child > *:first-child {
-  margin-top: 0;
-}
-
-.columns.columns36 > div > div:first-child > *:last-child {
-  margin-bottom: 0;
-}
-
-
 .columns.columns38 {
   background: #ededed;
   padding: 48px 0;
@@ -3187,7 +2978,6 @@
   text-align: center;
 }
 
-/* Ensure all nested content is centered, including first stat block */
 .columns.columns35 > div > div > *,
 .columns.columns35 > div > div > * > * {
   align-items: center;
@@ -3195,7 +2985,6 @@
   justify-content: center;
 }
 
-/* Remove unwanted pseudo-elements */
 .columns.columns35 > div > div::before,
 .columns.columns35 > div > div::after,
 .columns.columns35 > div > div *::before,
@@ -3203,7 +2992,6 @@
   display: none;
 }
 
-/* Icon styling */
 .columns.columns35 img,
 .columns.columns35 picture {
   display: block;
@@ -3222,7 +3010,6 @@
   }
 }
 
-/* Stat text styling */
 .columns.columns35 > div > div > p {
   margin: 0;
   padding: 0;
@@ -3238,7 +3025,6 @@
   overflow-wrap: anywhere;
 }
 
-/* First line/statistic: teal, bold, larger */
 .columns.columns35 > div > div > p:first-of-type {
   font-size: 1.6rem;
   font-weight: 700;
@@ -3246,7 +3032,6 @@
   margin-bottom: 3px;
 }
 
-/* Second line/label: gray, regular, smaller */
 .columns.columns35 > div > div > p:not(:first-of-type) {
   font-size: 1.01rem;
   color: #757575;
@@ -3281,5 +3066,236 @@
   .columns.columns35 > div > div > p br + em,
   .columns.columns35 > div > div > p br + strong {
     font-size: 0.97rem;
+  }
+}
+
+
+.columns.columns36 {
+  background: #f2f2f2;
+  padding: 48px 0;
+}
+
+/* Main columns: side-by-side flex for desktop, stacked for mobile */
+.columns.columns36 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+}
+
+@media (width <= 900px) {
+  .columns.columns36 > div {
+    flex-direction: column;
+    gap: 32px;
+    max-width: 98vw;
+    padding: 0 8px;
+    align-items: stretch;
+  }
+}
+
+/* LEFT CARD: main content, should grow for all content */
+.columns.columns36 > div > div:first-child {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 11%);
+  padding: 48px 36px 32px;
+  min-width: 0;
+  max-width: 670px;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  font-size: 16px;
+  color: #232323;
+  overflow: visible;
+  height: auto;
+}
+
+/* Ensure entire content is inside the white card */
+.columns.columns36 > div > div:first-child > * {
+  display: block;
+  position: static;
+  float: none;
+  width: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+  white-space: normal;
+  clear: both;
+  color: #232323;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Headings: section color and spacing */
+.columns.columns36 h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 36px;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+  line-height: 1.22;
+  color: #008080;
+}
+.columns.columns36 h2#company-details { color: #48a23f; }
+.columns.columns36 h2#payment-details { color: #09c; }
+.columns.columns36 h2#upload-payment-against-invoice-document { color: #3c87d6; }
+.columns.columns36 h2#enter-invoice-details-manually { color: #377694; }
+.columns.columns36 h2:first-child { margin-top: 0; }
+
+/* Section and paragraph spacing */
+.columns.columns36 h2:not(:first-child) {
+  margin-top: 36px;
+}
+
+.columns.columns36 h2 + p {
+  margin-top: 10px;
+}
+
+.columns.columns36 p + h2 {
+  margin-top: 30px;
+}
+
+.columns.columns36 p {
+  margin: 0 0 16px;
+}
+
+/* Download column: vertical button stack, full width */
+.columns.columns36 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 20px;
+  min-width: 220px;
+  max-width: 320px;
+  width: 100%;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 48px 0 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (width <= 900px) {
+  .columns.columns36 > div > div:last-child {
+    padding: 28px 0 0;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+.columns.columns36 > div > div:last-child a {
+  display: block;
+  width: 100%;
+  background: #232b2c;
+  color: #fff;
+  border-radius: 8px;
+  padding: 18px 24px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: left;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  text-decoration: none;
+  line-height: 1.28;
+  border: none;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: break-word;
+}
+.columns.columns36 > div > div:last-child a:last-child { margin-bottom: 0; }
+.columns.columns36 > div > div:last-child a:hover { background: #444; }
+
+.columns.columns36 > div > div:last-child p {
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+/* Make sure mail links use section color */
+.columns.columns36 a[href^="mailto"] {
+  color: #008080;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* Add More Invoice button style */
+.columns.columns36 p:contains('+ Add More Invoice') {
+  display: inline-block;
+  background: #22b6a4;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 22px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  border: none;
+  letter-spacing: 0.02em;
+}
+
+/* Disclaimer/Legal text */
+.columns.columns36 p:last-of-type {
+  color: #777;
+  font-size: 0.97em;
+  line-height: 1.6;
+  margin-top: 38px;
+  margin-bottom: 0;
+  padding: 0;
+  background: none;
+}
+
+/* Restrict max-width of columns to avoid stretching */
+.columns.columns36 > div > div:first-child {
+  max-width: 700px;
+}
+
+.columns.columns36 > div > div:last-child {
+  max-width: 340px;
+}
+
+/* Bank Details: Only two fields side by side, force single-line */
+.columns.columns36 > div > div:first-child > h2#bank-details + p,
+.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
+  display: inline-block;
+  width: 48%;
+  vertical-align: top;
+  margin-right: 2%;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
+  margin-right: 0;
+}
+
+/* Remove blue and bold from all paragraphs - enforce dark, regular text in case of override */
+.columns.columns36 > div > div:first-child p,
+.columns.columns36 > div > div:first-child span,
+.columns.columns36 > div > div:first-child li {
+  color: #232323;
+  font-weight: 400;
+}
+
+/* Remove min-width from download column to avoid button crowding on small screens */
+@media (width <= 700px) {
+  .columns.columns36 > div > div:last-child {
+    min-width: 0;
+    max-width: 100%;
   }
 }
