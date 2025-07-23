@@ -531,109 +531,6 @@
 }
 
 
-.columns.columns23 {
-  background: #fff;
-  border-radius: 16px;
-  box-sizing: border-box;
-  max-width: 980px;
-  margin: 40px auto;
-  padding: 32px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 32px;
-  min-height: 260px;
-}
-
-.columns.columns23 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  width: 100%;
-  gap: 32px;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.columns.columns23 > div > div:first-child {
-  flex: 1.2 1 0;
-  max-width: 540px;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.columns.columns23 > div > div:nth-child(2) {
-  flex: 1 1 0;
-  min-width: 220px;
-  max-width: 370px;
-  min-height: 180px;
-  background: #e9e9e9;
-  border-radius: 12px;
-  margin-left: 0;
-  align-items: flex-start;
-  justify-content: flex-start;
-  display: flex;
-}
-
-.columns.columns23 > div > div:nth-child(2):empty {
-  background: repeating-linear-gradient(135deg, #eee, #eee 8px, #e9e9e9 8px, #e9e9e9 16px);
-  border-radius: 12px;
-}
-
-.columns.columns23 > div > div:nth-child(2) img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  display: block;
-  background: #eee;
-}
-
-.columns.columns23 > div > div:first-child ul {
-  font-size: 16px;
-  line-height: 24px;
-  font-family: var(--body-font-family, Arial, sans-serif);
-  color: #222;
-  margin: 0;
-  padding-left: 18px;
-}
-
-.columns.columns23 > div > div:first-child ul li {
-  margin-bottom: 8px;
-  padding-left: 0;
-}
-
-@media (width <= 900px) {
-  .columns.columns23 {
-    flex-direction: column;
-    padding: 20px 6px;
-    min-height: unset;
-    max-width: 98vw;
-    gap: 24px;
-  }
-
-  .columns.columns23 > div {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .columns.columns23 > div > div:first-child,
-  .columns.columns23 > div > div:nth-child(2) {
-    max-width: 100%;
-    width: 100%;
-    min-width: 0;
-  }
-
-  .columns.columns23 > div > div:nth-child(2) {
-    min-height: 120px;
-    max-width: 100%;
-  }
-}
-
-
 .columns.columns27 {
   background: #fff;
   border-radius: 0;
@@ -2972,12 +2869,11 @@
 }
 
 .columns.columns19 > div {
-  /* Force horizontal alignment for the three links */
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 120px; /* adjust for similar spacing as original */
+  gap: 120px;
   background: #fff;
   padding: 0;
   margin: 0;
@@ -2986,7 +2882,6 @@
   border: none;
 }
 
-/* Remove all card, grid, and box styling from the direct children */
 .columns.columns19 > div > div {
   background: none;
   box-shadow: none;
@@ -3001,11 +2896,8 @@
   min-height: 0;
   display: block;
   position: static;
-
-  /* Remove any forced height/width from previous card/grid CSS */
 }
 
-/* Remove any grid or card-like styling from nested elements */
 .columns.columns19 > div > div > * {
   background: none;
   box-shadow: none;
@@ -3023,7 +2915,6 @@
   text-align: left;
 }
 
-/* Remove any pseudo-element overlays or card/grid effects */
 .columns.columns19 > div > div::before,
 .columns.columns19 > div > div::after,
 .columns.columns19 h5::before,
@@ -3031,7 +2922,6 @@
   display: none;
 }
 
-/* Minimal heading and link styling */
 .columns.columns19 h5 {
   margin: 0;
   padding: 0;
@@ -3059,7 +2949,6 @@
   vertical-align: top;
 }
 
-/* Responsive: stack vertically on small screens */
 @media (width <= 700px) {
   .columns.columns19 > div {
     flex-direction: column;
@@ -3069,5 +2958,145 @@
 
   .columns.columns19 > div > div {
     width: 100%;
+  }
+}
+
+
+.columns.columns23 {
+  max-width: 980px;
+  margin: 40px auto 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+}
+
+/* Center the inner row and restrict its width */
+.columns.columns23 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 32px;
+  width: auto;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Text column: left, visually balanced with image */
+.columns.columns23 > div > div:first-child {
+  order: 1;
+  flex: 1 1 0;
+  min-width: 330px;
+  max-width: 540px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Image column: right, more visually prominent */
+.columns.columns23 > div > div:not(:first-child) {
+  order: 2;
+  flex: 0 1 420px;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.columns.columns23 > div > div:not(:first-child) picture,
+.columns.columns23 > div > div:not(:first-child) img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  border-radius: 0;
+  background: none;
+  margin: 0;
+  box-shadow: none;
+  display: block;
+}
+
+/* Typography and bullet styles */
+.columns.columns23 > div > div:first-child ul {
+  font-size: 16px;
+  color: #222;
+  font-family: var(--body-font-family, Arial, sans-serif);
+  line-height: 1.45;
+  margin: 0;
+  padding-left: 24px;
+  background: none;
+}
+
+.columns.columns23 > div > div:first-child ul li {
+  margin-bottom: 13px;
+  padding-left: 0;
+  background: none;
+  border: 0;
+}
+
+/* Remove all overlays and bullet pseudo-elements, with higher specificity */
+.columns.columns23 li::before,
+.columns.columns23 li::after,
+.columns.columns23 ul li::before,
+.columns.columns23 ul li::after,
+.columns.columns23 > div > div:not(:first-child)::before,
+.columns.columns23 > div > div:not(:first-child)::after,
+.columns.columns23 img::before,
+.columns.columns23 img::after,
+.columns.columns23 picture::before,
+.columns.columns23 picture::after {
+  display: none;
+  background: none;
+  box-shadow: none;
+  border: none;
+  width: 0;
+  height: 0;
+  position: static;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive stacking for mobile */
+@media (width <= 900px) {
+  .columns.columns23 {
+    max-width: 100vw;
+    margin: 24px 0 0;
+    padding: 0 2vw;
+  }
+
+  .columns.columns23 > div {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+    max-width: 100%;
+  }
+
+  .columns.columns23 > div > div:first-child,
+  .columns.columns23 > div > div:not(:first-child) {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .columns.columns23 > div > div:not(:first-child) picture,
+  .columns.columns23 > div > div:not(:first-child) img {
+    max-width: 100%;
+    aspect-ratio: auto;
   }
 }
