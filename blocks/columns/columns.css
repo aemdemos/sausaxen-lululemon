@@ -2274,151 +2274,6 @@
 }
 
 
-.columns.columns33 {
-  background: transparent;
-  margin: 0;
-  padding: 0;
-}
-
-.columns.columns33 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  gap: 24px;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns33 > div > div:first-child {
-  flex: 0 0 570px;
-  max-width: 570px;
-  min-width: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns33 > div > div:first-child > div:not(:first-child) {
-  display: none;
-}
-
-.columns.columns33 > div > div:first-child > div:first-child {
-  width: 570px;
-  height: 326px;
-  aspect-ratio: 16 / 9;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
-
-.columns.columns33 > div > div:first-child > div:first-child img,
-.columns.columns33 > div > div:first-child > div:first-child picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  padding: 0;
-  margin: 0;
-  border-radius: 0;
-}
-
-.columns.columns33 > div > div:last-child {
-  flex: 0 0 332px;
-  max-width: 332px;
-  min-width: 216px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px;
-  width: 332px;
-  height: 326px;
-  place-items: stretch stretch;
-  padding: 0;
-  margin: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-}
-
-.columns.columns33 > div > div:last-child > div {
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  position: relative;
-  overflow: hidden;
-  display: block;
-  display: flex;
-  align-items: stretch;
-  justify-content: stretch;
-}
-
-.columns.columns33 > div > div:last-child > div img,
-.columns.columns33 > div > div:last-child > div picture {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
-  border-radius: 0;
-}
-
-.columns.columns33 * {
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns33 .button-container,
-.columns.columns33 .button {
-  display: none;
-}
-
-@media (width <= 900px) {
-  .columns.columns33 > div {
-    flex-direction: column;
-    gap: 18px;
-  }
-
-  .columns.columns33 > div > div:first-child,
-  .columns.columns33 > div > div:last-child {
-    width: 100%;
-    max-width: 100vw;
-    height: auto;
-  }
-
-  .columns.columns33 > div > div:last-child {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    width: 100%;
-    height: auto;
-    min-width: 0;
-    max-width: 100vw;
-  }
-
-  .columns.columns33 > div > div:last-child > div {
-    min-width: 0;
-    min-height: 0;
-  }
-}
-
-
 .columns.columns35 {
   background: #f8f9fa;
   padding: 40px 0;
@@ -3171,7 +3026,6 @@
   align-items: center;
 }
 
-/* Main two-column layout: image left, card right */
 .columns.columns31 > div {
   display: flex;
   flex-direction: row;
@@ -3186,7 +3040,6 @@
   align-items: flex-start;
 }
 
-/* Left column: image */
 .columns.columns31 > div > div:first-child {
   display: flex;
   align-items: stretch;
@@ -3222,7 +3075,6 @@
   box-shadow: none;
 }
 
-/* Right column: text card, tightly grouped content */
 .columns.columns31 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -3240,7 +3092,6 @@
   height: auto;
 }
 
-/* Remove all default margins, use only controlled spacing */
 .columns.columns31 > div > div:last-child > * {
   background: none;
   border-radius: 0;
@@ -3250,7 +3101,6 @@
   width: 100%;
 }
 
-/* Heading - only a small space below */
 .columns.columns31 > div > div:last-child h3 {
   font-size: 2rem;
   font-weight: 600;
@@ -3261,7 +3111,6 @@
   margin-bottom: 12px;
 }
 
-/* Paragraph(s) - only a small space below */
 .columns.columns31 > div > div:last-child p:not(.button-container) {
   font-family: var(--body-font-family);
   font-size: 1rem;
@@ -3273,7 +3122,6 @@
   overflow: visible;
 }
 
-/* Read More link/button - no extra margin */
 .columns.columns31 > div > div:last-child .button-container {
   margin: 0;
   padding: 0;
@@ -3298,7 +3146,6 @@
   line-height: 1.5;
 }
 
-/* Responsive: stack image and text on small screens */
 @media (width <= 1000px) {
   .columns.columns31 > div {
     flex-direction: column;
@@ -3337,7 +3184,6 @@
   }
 }
 
-/* Remove overlays, spinners, and unnecessary decorative elements */
 .columns.columns31 .spinner,
 .columns.columns31 .overlay,
 .columns.columns31 > div > div:last-child > *:not(h3, p, .button-container),
@@ -3349,4 +3195,166 @@
   border-radius: 0;
   padding: 0;
   margin: 0;
+}
+
+
+.columns.columns33 {
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Two main columns: left (large image) and right (grid) side-by-side */
+.columns.columns33 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  max-width: 902px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* --- Left: main video thumbnail --- */
+.columns.columns33 > div > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 0 0 570px;
+  max-width: 570px;
+  min-width: 320px;
+  height: 326px;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns33 > div > div:first-child > div {
+  display: none;
+}
+
+.columns.columns33 > div > div:first-child > div:first-child {
+  display: block;
+  width: 570px;
+  height: 326px;
+  aspect-ratio: 16 / 9;
+  position: relative;
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.columns.columns33 > div > div:first-child > div:first-child img,
+.columns.columns33 > div > div:first-child > div:first-child picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+/* --- Right: enforce 2x2 grid for up to 4 thumbnails --- */
+.columns.columns33 > div > div:last-child {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  width: 332px;
+  min-width: 216px;
+  max-width: 332px;
+  height: 326px;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  align-self: flex-start;
+}
+
+/* Explicit grid position for each video: row-wise filling (if 3, leaves only bottom-right empty) */
+.columns.columns33 > div > div:last-child > div {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+/* Map children to grid positions: row-wise, starting at top-left */
+.columns.columns33 > div > div:last-child > div:nth-child(1) { grid-row: 1; grid-column: 1; }
+.columns.columns33 > div > div:last-child > div:nth-child(2) { grid-row: 1; grid-column: 2; }
+.columns.columns33 > div > div:last-child > div:nth-child(3) { grid-row: 2; grid-column: 1; }
+.columns.columns33 > div > div:last-child > div:nth-child(4) { grid-row: 2; grid-column: 2; }
+
+/* Remove empty cells so you don't see blank squares if there are only 3 items */
+.columns.columns33 > div > div:last-child > div:empty {
+  display: none;
+}
+
+/* Images fill cell */
+.columns.columns33 > div > div:last-child > div img,
+.columns.columns33 > div > div:last-child > div picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Remove all extra spacing, card effects */
+.columns.columns33 * {
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Hide button links in the gallery */
+.columns.columns33 .button-container,
+.columns.columns33 .button {
+  display: none;
+}
+
+/* Responsive stacking: grid below main video on mobile */
+@media (width <= 900px) {
+  .columns.columns33 > div {
+    flex-direction: column;
+    gap: 18px;
+    max-width: 100vw;
+  }
+
+  .columns.columns33 > div > div:first-child,
+  .columns.columns33 > div > div:last-child {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+  }
+
+  .columns.columns33 > div > div:last-child {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    max-width: 100vw;
+  }
+
+  .columns.columns33 > div > div:last-child > div {
+    min-width: 0;
+    min-height: 0;
+  }
 }
