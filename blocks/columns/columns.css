@@ -531,144 +531,6 @@
 }
 
 
-.columns.columns30 {
-  background: #fff;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.columns.columns30 > div {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 28px 0 18px;
-  box-sizing: border-box;
-}
-
-.columns.columns30 > div > div {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 32px;
-  width: 100%;
-  min-height: 220px;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.columns.columns30 > div > div > div:first-child {
-  flex: 1 1 0;
-  min-width: 0;
-  max-width: 520px;
-  padding-right: 8px;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.columns.columns30 > div > div > .columns-img-col {
-  flex: 0 0 432px;
-  width: 432px;
-  min-width: 180px;
-  max-width: 432px;
-  height: 220px;
-  display: flex;
-  align-items: stretch;
-  justify-content: flex-end;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.columns.columns30 .columns-img-col picture,
-.columns.columns30 .columns-img-col img {
-  width: 432px;
-  height: 220px;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 0;
-  background: transparent;
-  display: block;
-  margin: 0;
-}
-
-.columns.columns30 h4,
-.columns.columns30 h5 {
-  font-size: 24px;
-  font-family: var(--heading-font-family), Adani-Regular, sans-serif;
-  font-weight: 600;
-  color: #212529;
-  margin: 0 0 8px;
-  line-height: 1.25;
-  letter-spacing: 0;
-}
-
-.columns.columns30 ul {
-  font-family: var(--body-font-family), Adani-Regular, sans-serif;
-  font-size: 16px;
-  color: #212529;
-  line-height: 1.6;
-  margin: 0 0 0 20px;
-  padding: 0;
-  list-style-type: circle;
-}
-
-.columns.columns30 li {
-  margin-bottom: 4px;
-}
-
-@media (width <= 950px) {
-  .columns.columns30 {
-    max-width: 100%;
-    padding: 0 8px;
-  }
-
-  .columns.columns30 > div {
-    padding: 8px 0;
-    gap: 12px;
-  }
-
-  .columns.columns30 > div > div {
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
-    min-height: unset;
-  }
-
-  .columns.columns30 > div > div > div:first-child,
-  .columns.columns30 > div > div > .columns-img-col {
-    max-width: 100%;
-    width: 100%;
-    padding-right: 0;
-    height: auto;
-  }
-
-  .columns.columns30 .columns-img-col picture,
-  .columns.columns30 .columns-img-col img {
-    width: 100%;
-    height: auto;
-  }
-}
-
-
 .columns.columns31 {
   background: #ebebeb;
   min-height: 493px;
@@ -3098,7 +2960,6 @@
   padding: 0;
 }
 
-/* Responsive stack on mobile */
 @media (width <= 900px) {
   .columns.columns38 > div {
     flex-direction: column;
@@ -3108,7 +2969,6 @@
   }
 }
 
-/* --- LEFT CARD: Listing Information --- */
 .columns.columns38 > div > div:first-child {
   background: #fff;
   border-radius: 6px;
@@ -3124,14 +2984,12 @@
   position: relative;
 }
 
-/* Remove unwanted white circles (loader artifacts) */
 .columns.columns38 > div > div:first-child [style*="border-radius: 50%"],
 .columns.columns38 > div > div:first-child .sidebar-loading-indicator,
 .columns.columns38 > div > div:first-child .loading {
   display: none;
 }
 
-/* Header styling with proper separation */
 .columns.columns38 > div > div:first-child h4 {
   display: flex;
   align-items: center;
@@ -3155,7 +3013,6 @@
   content: "";
 }
 
-/* Simulated info grid: target only p children directly after h4 */
 .columns.columns38 > div > div:first-child > p:not(.button-container) {
   font-size: 15px;
   color: #222;
@@ -3167,9 +3024,6 @@
   box-shadow: none;
 }
 
-/* Two-column flex grid for label-value pairs: 
-   - odd-numbered <p> (labels), even-numbered <p> (values), 
-   - works for sequential <p> after h4 */
 @media (width >= 701px) {
   .columns.columns38 > div > div:first-child > p:not(.button-container) {
     display: flex;
@@ -3202,7 +3056,6 @@
   }
 }
 
-/* On mobile, stack rows */
 @media (width <= 700px) {
   .columns.columns38 > div > div:first-child > p:not(.button-container) {
     display: block;
@@ -3213,14 +3066,12 @@
   }
 }
 
-/* Remove any green button/link (should not appear) */
 .columns.columns38 > div > div:first-child .button-container,
 .columns.columns38 > div > div:first-child .button,
 .columns.columns38 > div > div:first-child a.button {
   display: none;
 }
 
-/* --- RIGHT CARD: Sidebar --- */
 .columns.columns38 > div > div:last-child {
   background: #1d77b8;
   color: #fff;
@@ -3239,7 +3090,6 @@
   height: auto;
 }
 
-/* Remove unwanted inner backgrounds, borders (no inner gray boxes) */
 .columns.columns38 > div > div:last-child > *:not(h3, h2, ul) {
   background: none;
   border-radius: 0;
@@ -3248,7 +3098,6 @@
   padding: 0;
 }
 
-/* Remove loading indicators or circles from sidebar */
 .columns.columns38 > div > div:last-child [style*="border-radius: 50%"],
 .columns.columns38 > div > div:last-child .sidebar-loading-indicator,
 .columns.columns38 > div > div:last-child .loading {
@@ -3259,7 +3108,6 @@
   display: none;
 }
 
-/* Sidebar heading */
 .columns.columns38 > div > div:last-child h3,
 .columns.columns38 > div > div:last-child h2 {
   color: #fff;
@@ -3272,7 +3120,6 @@
   border: none;
 }
 
-/* Sidebar vertical list, no inner panels, ensure it stays at the top */
 .columns.columns38 > div > div:last-child ul {
   list-style: none;
   padding: 0;
@@ -3284,7 +3131,6 @@
   background: none;
 }
 
-/* Sidebar links as vertical column, with spacing */
 .columns.columns38 > div > div:last-child ul li {
   display: flex;
   align-items: center;
@@ -3305,7 +3151,6 @@
   margin-bottom: 0;
 }
 
-/* Sidebar link text */
 .columns.columns38 > div > div:last-child ul li a {
   color: #fff;
   text-decoration: none;
@@ -3321,7 +3166,6 @@
   border: none;
 }
 
-/* Tighten up sidebar spacing on mobile */
 @media (width <= 700px) {
   .columns.columns38 > div > div:last-child ul li {
     font-size: 14px;
@@ -3330,7 +3174,6 @@
   }
 }
 
-/* Placeholder for icons: style a span.sidebar-icon (must exist in HTML) */
 .columns.columns38 > div > div:last-child ul li .sidebar-icon {
   display: inline-block;
   width: 18px;
@@ -3343,4 +3186,146 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 85% 85%;
+}
+
+
+.columns.columns30 {
+  background: #fff;
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: block;
+  position: static;
+}
+
+/* Stack each block vertically with minimal gap */
+.columns.columns30 > div {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 0 24px;
+  box-sizing: border-box;
+}
+
+/* Each row: text left, image right */
+.columns.columns30 > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 32px;
+  width: 100%;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  min-height: 180px;
+  box-sizing: border-box;
+}
+
+/* Left column: text */
+.columns.columns30 > div > div > div:first-child {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 62%;
+  background: #fff;
+  padding: 0 22px 0 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Heading and list styling */
+.columns.columns30 h4,
+.columns.columns30 h5 {
+  font-size: 18px;
+  font-family: var(--heading-font-family), sans-serif;
+  font-weight: 600;
+  color: #212529;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.columns.columns30 ul {
+  font-family: var(--body-font-family), sans-serif;
+  font-size: 15px;
+  color: #212529;
+  line-height: 1.6;
+  margin: 0 0 0 18px;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.columns.columns30 li {
+  margin-bottom: 4px;
+  color: #212529;
+}
+
+/* Right column: image */
+.columns.columns30 > div > div > .columns-img-col {
+  flex: 0 0 38%;
+  width: 38%;
+  min-width: 280px;
+  max-width: 440px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  background: none;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.columns.columns30 .columns-img-col picture,
+.columns.columns30 .columns-img-col img {
+  width: 100%;
+  min-width: 220px;
+  max-width: 420px;
+  height: 170px;
+  object-fit: cover;
+  object-position: left center;
+  border-radius: 0;
+  background: none;
+  display: block;
+  margin: 0;
+}
+
+/* Remove any overlay artifacts */
+.columns.columns30 .columns-img-col::after,
+.columns.columns30 .columns-img-col > *::after {
+  display: none;
+}
+
+/* Responsive: stack on mobile */
+@media (width <= 900px) {
+  .columns.columns30 > div > div {
+    flex-direction: column;
+    gap: 12px;
+    min-height: unset;
+  }
+
+  .columns.columns30 > div > div > div:first-child,
+  .columns.columns30 > div > div > .columns-img-col {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    padding-right: 0;
+    margin: 0;
+  }
+
+  .columns.columns30 .columns-img-col picture,
+  .columns.columns30 .columns-img-col img {
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    max-width: 100%;
+    max-height: none;
+  }
+
+  .columns.columns30 > div {
+    gap: 14px;
+    padding: 18px 0;
+  }
 }
