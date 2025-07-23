@@ -2654,7 +2654,6 @@
   width: 100%;
 }
 
-/* Main cards */
 .columns.columns5 > div > div {
   background: #fff;
   border-radius: 12px;
@@ -2669,14 +2668,12 @@
   position: relative;
 }
 
-/* Left card (dividend) width */
 .columns.columns5 > div > div:first-child {
   flex: 2 1 0;
   max-width: 740px;
   min-width: 420px;
 }
 
-/* Right card (newspaper) width */
 .columns.columns5 > div > div:last-child {
   flex: 1 1 0;
   max-width: 420px;
@@ -2685,7 +2682,6 @@
   align-items: flex-start;
 }
 
-/* Headings */
 .columns.columns5 > div > div > h3 {
   font-size: 17px;
   font-weight: 700;
@@ -2700,18 +2696,14 @@
   padding: 0;
   position: static;
   z-index: auto;
-
-  /* Ensure heading aligns with grid/list */
   width: 100%;
 }
 
-/* Control text overflow and wrapping for headings */
 .columns.columns5 > div > div > h3 {
   word-break: break-word;
   white-space: normal;
 }
 
-/* Dividend list - two column grid, compact gap, aligns under heading */
 .columns.columns5 > div > div:first-child ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2723,7 +2715,6 @@
   border-radius: 0;
 }
 
-/* Remove default bullets for all nested lists */
 .columns.columns5 ul,
 .columns.columns5 ol {
   list-style: none;
@@ -2733,7 +2724,6 @@
   border-radius: 0;
 }
 
-/* List items */
 .columns.columns5 li {
   font-size: 15px;
   color: #575757;
@@ -2746,12 +2736,11 @@
   text-align: left;
   background: transparent;
   border-radius: 0;
-  padding: 0 0 0 20px; /* room for possible icons */
+  padding: 0 0 0 20px;
   box-sizing: border-box;
   word-break: break-word;
 }
 
-/* Card links (including in lists) */
 .columns.columns5 ul a,
 .columns.columns5 li a {
   color: #575757;
@@ -2768,7 +2757,6 @@
   text-decoration: underline;
 }
 
-/* Newspaper card (right) */
 .columns.columns5 > div > div:last-child ul {
   display: flex;
   flex-direction: column;
@@ -2781,14 +2769,12 @@
   width: 100%;
 }
 
-/* Remove backgrounds/radii from any potential nested elements in the card */
 .columns.columns5 > div > div * {
   background: transparent;
   border-radius: 0;
   box-shadow: none;
 }
 
-/* "Read more" alignment, right and at bottom */
 .columns.columns5 > div > div:last-child .button-container {
   margin-top: 24px;
   width: 100%;
@@ -2821,7 +2807,6 @@
   text-decoration: underline;
 }
 
-/* Responsive stacking for mobile */
 @media (width <= 1020px) {
   .columns.columns5 > div {
     gap: 12px;
@@ -2857,10 +2842,72 @@
   }
 }
 
-/* Remove unwanted pseudo-elements or artifacts (such as leftover circles/shadows) */
 .columns.columns5 > div > div::before,
 .columns.columns5 > div > div::after,
 .columns.columns5 > div > div *::before,
 .columns.columns5 > div > div *::after {
   display: none;
+}
+
+
+.columns {
+  background: #eaeaea;
+  padding: 24px 0;
+}
+
+/* Fix: Force the true card row container to flex row */
+.columns > div {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  align-items: stretch;
+}
+
+/* All cards: equal width, balanced, no min/max height */
+.columns > div > div {
+  flex: 1 1 0;
+  min-width: 0;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Remove any stacked or column direction from card children */
+.columns > div > div > * {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Typography styles for titles/links */
+.columns h5,
+.columns h5 a {
+  font-size: 13px;
+  font-weight: 400;
+  color: #33b8b8;
+  font-family: inherit;
+  text-decoration: none;
+}
+
+/* Responsive: stack cards vertically on smaller screens */
+@media (width <= 900px) {
+  .columns > div {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+
+  .columns > div > div {
+    padding: 12px 8px;
+  }
 }
