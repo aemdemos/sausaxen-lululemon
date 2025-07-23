@@ -140,93 +140,6 @@
   text-shadow: 0 1px 2px rgb(0 0 0 / 10%);
 }
 
-.hero.hero24 {
-  position: relative;
-  width: 100vw;
-  min-height: 604px;
-  height: 604px;
-  padding: 0;
-  margin-top: 0;
-  box-sizing: border-box;
-  display: block;
-  overflow: hidden;
-}
-
-.hero.hero24 > div:first-child {
-  position: absolute;
-  inset: 0;
-  width: 100vw;
-  height: 604px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero.hero24 > div:first-child > div,
-.hero.hero24 > div:first-child picture,
-.hero.hero24 > div:first-child img {
-  width: 100vw;
-  height: 604px;
-  object-fit: cover;
-  display: block;
-  pointer-events: none;
-}
-
-.hero.hero24 > div:first-child img {
-  filter: brightness(0.54);
-}
-
-.hero.hero24 > div:last-child {
-  position: absolute;
-  top: 65%;
-  right: 24px;
-  transform: translateY(-50%);
-  width: 360px;
-  max-width: 360px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 2px 32px rgb(0 0 0 / 16%);
-  padding: 28px 22px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1em;
-  box-sizing: border-box;
-}
-
-.hero.hero24 > div:last-child h1 {
-  color: #009688;
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 0.22em;
-  font-family: var(--heading-font-family);
-}
-
-.hero.hero24 > div:last-child h2 {
-  color: #333;
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin: 0 0 1.1em;
-}
-
-.hero.hero24 > div:last-child p {
-  margin: 0.7em 0 0;
-  color: #555;
-  font-size: 0.98em;
-  text-align: right;
-}
-
-.hero.hero24 > div:last-child a {
-  color: #009688;
-  text-decoration: underline;
-  font-weight: 500;
-}
-.hero.hero24 > div:last-child {}
-
-.hero.hero24 > div:first-child > div,
-.hero.hero24 > div:first-child picture,
-.hero.hero24 > div:first-child img {}
-
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
@@ -252,40 +165,6 @@
   .hero.hero21 p {
     font-size: 14px;
     max-width: 87vw;
-  }
-
-  .hero.hero24 {
-    min-height: 360px;
-    height: 360px;
-  }
-
-  .hero.hero24 > div:first-child,
-  .hero.hero24 > div:first-child > div,
-  .hero.hero24 > div:first-child picture,
-  .hero.hero24 > div:first-child img {
-    height: 360px;
-    min-height: 200px;
-    max-height: 45vw;
-  }
-
-  .hero.hero24 > div:last-child {
-    position: static;
-    margin: 28px auto 0;
-    width: 96vw;
-    max-width: 99vw;
-    padding: 14px 4vw;
-    border-radius: 14px;
-    box-shadow: 0 2px 14px rgb(0 0 0 / 12%);
-    top: unset;
-    right: unset;
-    transform: none;
-  }
-}
-
-@media (width <= 599px) {
-  .hero.hero24 > div:last-child {
-    padding: 10px 2vw;
-    font-size: 0.97em;
   }
 }
 .hero.hero44 > div:first-child {}
@@ -705,7 +584,6 @@
   font-family: var(--body-font-family);
 }
 
-/* Background image: fill hero, cover, appear behind overlay */
 .hero.hero17 > div:first-child {
   position: absolute;
   inset: 0;
@@ -726,7 +604,6 @@
   display: block;
 }
 
-/* Overlay container: align overlay panel to top-left, fill width */
 .hero.hero17 > div:last-child {
   position: relative;
   z-index: 2;
@@ -740,7 +617,6 @@
   background: none;
 }
 
-/* Overlay panel: more compact top margin, moderate padding, subtle shadow */
 .hero.hero17 > div:last-child > div {
   background: rgb(255 255 255 / 81%);
   max-width: 420px;
@@ -756,7 +632,6 @@
   pointer-events: auto;
 }
 
-/* Heading: accent bar, lighter font, compact spacing */
 .hero.hero17 > div:last-child > div h3 {
   font-size: 22px;
   font-family: var(--heading-font-family);
@@ -773,7 +648,6 @@
   background: none;
 }
 
-/* List: no bullets, more vertical space, tighter max-width for wrapping */
 .hero.hero17 > div:last-child > div ul {
   list-style: none;
   padding-left: 0;
@@ -795,7 +669,6 @@
   text-align: left;
 }
 
-/* Responsive: stack overlay below image on small screens, reduce margins/padding */
 @media (width <= 900px) {
   .hero.hero17 {
     min-height: 320px;
@@ -837,5 +710,184 @@
     max-width: 90vw;
     font-size: 14px;
     margin-bottom: 6px;
+  }
+}
+
+
+.hero.hero24 {
+  position: relative;
+  width: 100vw;
+  min-height: 604px;
+  height: 604px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: none;
+  display: block;
+}
+
+/* Top light gray bar */
+.hero.hero24::before {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 56px;
+  background: #ededed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* IMAGE: stretch to fill, sits behind everything */
+.hero.hero24 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 604px;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero.hero24 > div:first-child > div,
+.hero.hero24 > div:first-child picture,
+.hero.hero24 > div:first-child img {
+  width: 100vw;
+  height: 604px;
+  min-width: 0;
+  min-height: 0;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  filter: none;
+}
+
+/* Hide any extra dot overlays (catch-all for central white dot) */
+.hero.hero24 > div:not(:first-child, :last-child),
+.hero.hero24 .centered-white-dot,
+.hero.hero24 [class*="dot"],
+.hero.hero24 > .dot,
+.hero.hero24 .center-dot,
+.hero.hero24 > div > .centered-white-dot {
+  display: none;
+}
+
+/* CARD: overlays image, floats top-right with margin and is offset from the top bar */
+.hero.hero24 > div:last-child {
+  position: absolute;
+  top: 150px;
+  right: 60px;
+  left: auto;
+  transform: none;
+  z-index: 3;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+/* Card box */
+.hero.hero24 > div:last-child > div {
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 8px 32px rgb(30 60 90 / 18%);
+  padding: 36px 48px 28px;
+  min-width: 340px;
+  max-width: 420px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Headings and card text */
+.hero.hero24 h1 {
+  color: #009688;
+  font-family: Adani-Regular, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0 0 8px;
+  text-align: left;
+}
+
+.hero.hero24 h2 {
+  color: #222;
+  font-family: Adani-Regular, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 1.08rem;
+  margin: 0 0 20px;
+  text-align: left;
+}
+
+.hero.hero24 p {
+  color: #555;
+  font-size: 0.95em;
+  font-weight: 400;
+  margin-top: 16px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.hero.hero24 a {
+  color: #009688;
+  text-decoration: underline;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Responsive adjustments */
+@media (width <= 900px) {
+  .hero.hero24 {
+    min-height: 420px;
+    height: auto;
+  }
+
+  .hero.hero24 > div:first-child,
+  .hero.hero24 > div:first-child > div,
+  .hero.hero24 > div:first-child picture,
+  .hero.hero24 > div:first-child img {
+    height: 320px;
+    min-height: 200px;
+    max-height: 45vw;
+  }
+
+  .hero.hero24 > div:last-child {
+    top: unset;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: static;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: none;
+  }
+
+  .hero.hero24 > div:last-child > div {
+    width: 96vw;
+    max-width: 99vw;
+    min-width: 0;
+    padding: 18px 4vw;
+    border-radius: 14px;
+    box-shadow: 0 2px 14px rgb(30 60 90 / 12%);
+  }
+}
+
+@media (width <= 600px) {
+  .hero.hero24 > div:last-child > div {
+    padding: 10px 2vw;
+    font-size: 0.97em;
   }
 }
