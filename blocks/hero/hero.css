@@ -65,88 +65,6 @@
   display: block;
 }
 
-.hero.hero2 {
-  position: relative;
-  background: #f5f5f5;
-  min-height: 190px;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-  padding: 0;
-}
-
-.hero.hero2 > div > div {
-  margin: 0;
-  padding: 0;
-}
-
-.hero.hero2 > div:first-child {
-  position: absolute;
-  left: 420px;
-  right: 0;
-  bottom: 0;
-  width: auto;
-  height: 108px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  pointer-events: none;
-  z-index: 1;
-  overflow-x: clip;
-}
-
-.hero.hero2 > div:first-child picture,
-.hero.hero2 > div:first-child img {
-  width: 100%;
-  height: 100%;
-  max-width: none;
-  object-fit: contain;
-  display: block;
-  margin: 0;
-  padding: 0;
-  background: none;
-  box-shadow: none;
-  border: none;
-}
-
-.hero.hero2 > div:last-child {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 38px 20px 30px 24px;
-  max-width: 380px;
-  min-height: 88px;
-}
-
-.hero.hero2 h1,
-.hero.hero2 h2,
-.hero.hero2 h3 {
-  color: #ededed;
-  font-size: 2rem;
-  font-weight: 600;
-  margin: 0 0 0.7em;
-  line-height: 1.1;
-  letter-spacing: 0;
-  text-align: left;
-  text-shadow: 0 1px 2px #f7f7f7;
-}
-
-.hero.hero2 p {
-  color: #ededed;
-  font-size: 1.07rem;
-  margin: 0;
-  font-weight: 400;
-  text-align: left;
-  line-height: 1.48;
-  max-width: 98%;
-}
-
 .hero.hero21 {
   position: relative;
   width: 100vw;
@@ -388,19 +306,12 @@
   margin-bottom: 0.29em;
   line-height: 1.44;
 }
-
-/* Order fix for .hero.hero24 > div:last-child */
 .hero.hero24 > div:last-child {}
 
-/* Order fix for .hero.hero24 > div:first-child > div */
 .hero.hero24 > div:first-child > div,
 .hero.hero24 > div:first-child picture,
 .hero.hero24 > div:first-child img {}
-
-/* Order fix for .hero.hero17 > div:first-child */
 .hero.hero17 > div:first-child {}
-
-/* Order fix for .hero.hero17 > div:last-child */
 .hero.hero17 > div:last-child {}
 
 @media (width >= 900px) {
@@ -410,17 +321,6 @@
 }
 
 @media (width <= 900px) {
-  .hero.hero2 > div:first-child {
-    left: 49vw;
-    height: 64px;
-  }
-
-  .hero.hero2 > div:last-child {
-    padding-left: 8vw;
-    max-width: 74vw;
-    padding-top: 20px;
-  }
-
   .hero.hero17 {
     min-height: 0;
     width: 100vw;
@@ -509,44 +409,13 @@
   }
 }
 
-@media (width <= 600px) {
-  .hero.hero2 > div:first-child {
-    left: 78vw;
-    height: 38px;
-  }
-
-  .hero.hero2 > div:last-child {
-    padding-left: 4vw;
-    max-width: 94vw;
-    padding-top: 14px;
-  }
-}
-
-@media (width <= 1200px) {
-  .hero.hero2 > div:first-child {
-    left: 38vw;
-    height: 82px;
-  }
-}
-
-@media (width >= 1300px) {
-  .hero.hero2 > div:last-child {
-    padding-left: 36px;
-    max-width: 420px;
-  }
-}
-
 @media (width <= 599px) {
   .hero.hero24 > div:last-child {
     padding: 10px 2vw;
     font-size: 0.97em;
   }
 }
-
-/* Order fix for .hero.hero44 > div:first-child */
 .hero.hero44 > div:first-child {}
-
-/* Order fix for .hero.hero44 > div:last-child */
 .hero.hero44 > div:last-child {}
 
 .hero.hero44 {
@@ -713,7 +582,6 @@
   min-width: 0;
 }
 
-/* --- vertical bar on left --- */
 .hero.hero1 > div:first-child {
   order: 0;
   flex: 0 0 16px;
@@ -735,7 +603,6 @@
   border-radius: 2px;
 }
 
-/* --- Main content --- */
 .hero.hero1 > div:last-child {
   order: 1;
   flex: 1 1 0%;
@@ -773,7 +640,6 @@
   margin-bottom: 0;
 }
 
-/* "Read more" and chevron (if present in DOM) */
 .hero.hero1 .read-more,
 .hero.hero1 .read-more-text {
   display: block;
@@ -809,7 +675,6 @@
   display: block;
 }
 
-/* Responsive: stack for mobile */
 @media (width <= 800px) {
   .hero.hero1 > div {
     flex-direction: column;
@@ -841,4 +706,128 @@
     line-height: 20px;
     margin-bottom: 10px;
   }
+}
+
+
+.hero.hero2 {
+  background: #f4f4f4;
+  position: relative;
+  width: 100vw;
+  min-height: 600px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto 1fr 170px;
+
+  /* First row: text, second: flexible whitespace, third: illustration */
+}
+
+/* Ensure hero can span full width of viewport */
+.hero-container > .hero-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Top-left text, with ample padding */
+.hero.hero2 > div:last-child {
+  grid-row: 1 / 2;
+  z-index: 2;
+  place-self: start start;
+  padding: 44px 16px 0 48px;
+  max-width: 700px;
+  box-sizing: border-box;
+}
+
+/* Reduce whitespace between text and port scene illustration */
+.hero.hero2 {
+  row-gap: 24px;
+}
+
+@media (width <= 900px) {
+  .hero.hero2 > div:last-child {
+    padding-left: 18px;
+    padding-top: 22px;
+    max-width: 100vw;
+    padding-right: 8px;
+  }
+
+  .hero.hero2 {
+    min-height: 350px;
+    row-gap: 12px;
+    grid-template-rows: auto 1fr 90px;
+  }
+}
+
+/* Illustration container: bottom row, left-aligned */
+.hero.hero2 > div:first-child {
+  grid-row: 3 / 4;
+  width: 100vw;
+  height: 150px;
+  min-height: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none;
+  z-index: 1;
+  background: none;
+  box-sizing: border-box;
+  position: relative;
+
+  /* Ensure illustration starts at same left as text */
+
+  /* Optionally use padding-left instead of margin-left for mobile adaptiveness */
+  padding-left: 48px;
+}
+
+.hero.hero2 > div:first-child picture,
+.hero.hero2 > div:first-child img {
+  width: calc(100vw - 48px);
+  max-width: unset;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+}
+
+@media (width <= 900px) {
+  .hero.hero2 > div:first-child,
+  .hero.hero2 > div:first-child picture,
+  .hero.hero2 > div:first-child img {
+    height: 90px;
+    min-height: 90px;
+    padding-left: 18px;
+    width: calc(100vw - 18px);
+  }
+}
+
+/* Text styles */
+.hero.hero2 h1,
+.hero.hero2 h2,
+.hero.hero2 h3 {
+  color: #212529;
+  font-size: 2.25rem;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25em;
+  text-align: left;
+  line-height: 1.1;
+  text-shadow: none;
+}
+
+.hero.hero2 p {
+  color: #222;
+  font-size: 1.125rem;
+  opacity: 0.95;
+  margin-top: 12px;
+  margin-bottom: 0;
+  max-width: 100%;
+  text-align: left;
+  line-height: 1.5;
+}
+
+/* Hide any decorative illustrations not part of the port scene, if present */
+.hero.hero2 .decorative-illustration {
+  display: none;
 }
