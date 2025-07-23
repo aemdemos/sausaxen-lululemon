@@ -1342,7 +1342,6 @@
   overflow: hidden;
 }
 
-/* Colored nav area on the left using the empty ul */
 .cards.cards51 > ul {
   grid-column: 1 / 2;
   width: 110px;
@@ -1359,12 +1358,10 @@
   align-self: stretch;
 }
 
-/* Hide any li's in ul for future proofing */
 .cards.cards51 > ul > li {
   display: none;
 }
 
-/* Responsive: shrink left nav area on smaller screens, keep proportions */
 @media (width <= 700px) {
   .cards.cards51 {
     grid-template-columns: 70px 1fr;
@@ -1377,5 +1374,96 @@
     min-width: 70px;
     max-width: 70px;
     height: 24px;
+  }
+}
+
+
+.cards.cards6 {
+  background: #f4f4f4;
+  width: 100%;
+  min-height: 32px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Flex for right alignment */
+.cards.cards6 > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 32px;
+  background: transparent;
+}
+
+.cards.cards6 > ul > li {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+/* Rectangle: gradient, white text, compact size, right-aligned, with dropdown arrow */
+.cards.cards6 .cards-card-body {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #20b8be 0%, #2671c6 100%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  height: 32px;
+  min-width: 68px;
+  padding: 0 24px 0 14px; /* less right padding for compactness */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  line-height: 1;
+
+  /* Add arrow SVG as a background image, not content */
+  background-repeat: no-repeat, no-repeat;
+  background-position: right 14px center, left top;
+  background-size: 6px 4px, auto;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='6' height='4' viewBox='0 0 6 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 6,0 3,4' fill='white'/%3E%3C/svg%3E"),
+    linear-gradient(90deg, #20b8be 0%, #2671c6 100%);
+}
+
+/* Remove default margins from p for vertical centering */
+.cards.cards6 .cards-card-body p {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1;
+  letter-spacing: 0.4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive: reduce height/font/padding on small screens */
+@media (width <= 600px) {
+  .cards.cards6 > ul {
+    height: 28px;
+  }
+
+  .cards.cards6 .cards-card-body {
+    height: 28px;
+    font-size: 12px;
+    padding: 0 16px 0 8px;
+    background-size: 5px 3px, auto;
+    background-position: right 9px center, left top;
   }
 }
