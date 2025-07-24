@@ -2274,224 +2274,6 @@
 }
 
 
-.columns.columns36 {
-  background: #f2f2f2;
-  padding: 48px 0;
-}
-
-.columns.columns36 > div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 40px;
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-  background: none;
-}
-
-@media (width <= 900px) {
-  .columns.columns36 > div {
-    flex-direction: column;
-    gap: 32px;
-    max-width: 98vw;
-    padding: 0 8px;
-    align-items: stretch;
-  }
-}
-
-.columns.columns36 > div > div:first-child {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgb(0 0 0 / 11%);
-  padding: 48px 36px 32px;
-  min-width: 0;
-  max-width: 670px;
-  width: 100%;
-  box-sizing: border-box;
-  display: block;
-  font-size: 16px;
-  color: #232323;
-  overflow: visible;
-  height: auto;
-}
-
-.columns.columns36 > div > div:first-child > * {
-  display: block;
-  position: static;
-  float: none;
-  width: auto;
-  max-width: 100%;
-  box-sizing: border-box;
-  overflow: visible;
-  white-space: normal;
-  clear: both;
-  color: #232323;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.columns.columns36 h2 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 36px;
-  margin-bottom: 10px;
-  letter-spacing: 0.01em;
-  line-height: 1.22;
-  color: #008080;
-}
-.columns.columns36 h2#company-details { color: #48a23f; }
-.columns.columns36 h2#payment-details { color: #09c; }
-.columns.columns36 h2#upload-payment-against-invoice-document { color: #3c87d6; }
-.columns.columns36 h2#enter-invoice-details-manually { color: #377694; }
-.columns.columns36 h2:first-child { margin-top: 0; }
-
-.columns.columns36 h2:not(:first-child) {
-  margin-top: 36px;
-}
-
-.columns.columns36 h2 + p {
-  margin-top: 10px;
-}
-
-.columns.columns36 p + h2 {
-  margin-top: 30px;
-}
-
-.columns.columns36 p {
-  margin: 0 0 16px;
-}
-
-.columns.columns36 > div > div:last-child {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  gap: 20px;
-  min-width: 220px;
-  max-width: 320px;
-  width: 100%;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 48px 0 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-@media (width <= 900px) {
-  .columns.columns36 > div > div:last-child {
-    padding: 28px 0 0;
-    max-width: 100%;
-    min-width: 0;
-  }
-}
-
-.columns.columns36 > div > div:last-child a {
-  display: block;
-  width: 100%;
-  background: #232b2c;
-  color: #fff;
-  border-radius: 8px;
-  padding: 18px 24px;
-  font-size: 1em;
-  font-weight: 600;
-  margin-bottom: 12px;
-  text-align: left;
-  letter-spacing: 0.01em;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
-  text-decoration: none;
-  line-height: 1.28;
-  border: none;
-  box-sizing: border-box;
-  white-space: normal;
-  word-break: break-word;
-}
-.columns.columns36 > div > div:last-child a:last-child { margin-bottom: 0; }
-.columns.columns36 > div > div:last-child a:hover { background: #444; }
-
-.columns.columns36 > div > div:last-child p {
-  margin: 0 0 16px;
-  padding: 0;
-}
-
-.columns.columns36 a[href^="mailto"] {
-  color: #008080;
-  text-decoration: underline;
-  font-weight: 500;
-  font-size: 1em;
-}
-
-.columns.columns36 p:contains('+ Add More Invoice') {
-  display: inline-block;
-  background: #22b6a4;
-  color: #fff;
-  border-radius: 6px;
-  padding: 12px 28px;
-  font-size: 1em;
-  font-weight: 500;
-  cursor: pointer;
-  margin-top: 16px;
-  margin-bottom: 22px;
-  text-align: center;
-  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
-  border: none;
-  letter-spacing: 0.02em;
-}
-
-.columns.columns36 p:last-of-type {
-  color: #777;
-  font-size: 0.97em;
-  line-height: 1.6;
-  margin-top: 38px;
-  margin-bottom: 0;
-  padding: 0;
-  background: none;
-}
-
-.columns.columns36 > div > div:first-child {
-  max-width: 700px;
-}
-
-.columns.columns36 > div > div:last-child {
-  max-width: 340px;
-}
-
-.columns.columns36 > div > div:first-child > h2#bank-details + p,
-.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
-  display: inline-block;
-  width: 48%;
-  vertical-align: top;
-  margin-right: 2%;
-  margin-bottom: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
-  margin-right: 0;
-}
-
-.columns.columns36 > div > div:first-child p,
-.columns.columns36 > div > div:first-child span,
-.columns.columns36 > div > div:first-child li {
-  color: #232323;
-  font-weight: 400;
-}
-
-@media (width <= 700px) {
-  .columns.columns36 > div > div:last-child {
-    min-width: 0;
-    max-width: 100%;
-  }
-}
-
-
 .columns.columns38 {
   background: #ededed;
   padding: 40px 0 64px;
@@ -3227,7 +3009,6 @@
   min-height: 0;
 }
 
-/* Make all cards the same width and reduce excessive gaps */
 .columns.columns35 > div > div {
   display: flex;
   flex-direction: column;
@@ -3244,7 +3025,6 @@
   text-align: center;
 }
 
-/* Tighter gap between cards on large screens */
 @media (width >= 901px) {
   .columns.columns35 > div > div:not(:last-child) {
     margin-right: 8px;
@@ -3259,7 +3039,6 @@
   }
 }
 
-/* Responsive: two columns/tablet */
 @media (width <= 900px) {
   .columns.columns35 > div {
     flex-wrap: wrap;
@@ -3281,7 +3060,6 @@
   }
 }
 
-/* Responsive: one column/mobile */
 @media (width <= 600px) {
   .columns.columns35 > div {
     flex-flow: column nowrap;
@@ -3298,7 +3076,6 @@
   }
 }
 
-/* Icon styling with more separation */
 .columns.columns35 picture,
 .columns.columns35 img {
   display: block;
@@ -3317,7 +3094,6 @@
   }
 }
 
-/* Text stacking and spacing */
 .columns.columns35 > div > div > p {
   margin: 0;
   padding: 0;
@@ -3332,7 +3108,6 @@
   overflow-wrap: anywhere;
 }
 
-/* Statistic value styling */
 .columns.columns35 > div > div > p:first-of-type {
   font-size: 2rem;
   font-weight: 700;
@@ -3342,7 +3117,6 @@
   line-height: 1.1;
 }
 
-/* Statistic label styling */
 .columns.columns35 > div > div > p:not(:first-of-type) {
   font-size: 1rem;
   color: #757575;
@@ -3352,10 +3126,235 @@
   line-height: 1.3;
 }
 
-/* Remove any extra before/after content from CMS generators */
 .columns.columns35 > div > div::before,
 .columns.columns35 > div > div::after,
 .columns.columns35 > div > div *::before,
 .columns.columns35 > div > div *::after {
   display: none;
+}
+
+
+.columns.columns36 {
+  background: #ededed;
+  padding: 48px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* OUTER columns: two columns side-by-side */
+.columns.columns36 > div {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Responsive: stack columns vertically on small screens */
+@media (width <= 900px) {
+  .columns.columns36 > div {
+    flex-direction: column;
+    gap: 32px;
+    max-width: 98vw;
+    padding: 0 8px;
+  }
+}
+
+/* MAIN CONTENT CARD (left column) */
+.columns.columns36 > div > div:first-child {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgb(0 0 0 / 11%);
+  padding: 48px 36px 32px;
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #232323;
+  overflow: visible;
+  min-width: 0;
+}
+
+/* Force block stacking for all direct children of main content */
+.columns.columns36 > div > div:first-child > * {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  position: static;
+}
+
+/* Section Headings (color/spacing) */
+.columns.columns36 h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1c4b82;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  letter-spacing: 0.01em;
+}
+.columns.columns36 h2#company-details { color: #48a23f; }
+.columns.columns36 h2#payment-details { color: #09c; }
+.columns.columns36 h2#upload-payment-against-invoice-document { color: #3c87d6; }
+.columns.columns36 h2#enter-invoice-details-manually { color: #377694; }
+.columns.columns36 h2:first-child { margin-top: 0; }
+
+/* Paragraphs: vertical flow and spacing */
+.columns.columns36 > div > div:first-child p,
+.columns.columns36 > div > div:first-child li,
+.columns.columns36 > div > div:first-child span {
+  color: #232323;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.6;
+  word-break: break-word;
+  display: block;
+  width: 100%;
+  position: static;
+}
+
+/* ONLY the two "Bank Details" paragraphs: side by side using flex */
+.columns.columns36 > div > div:first-child > h2#bank-details + p,
+.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
+  display: inline-block;
+  width: 48%;
+  margin-right: 4%;
+  margin-bottom: 12px;
+  vertical-align: top;
+}
+
+.columns.columns36 > div > div:first-child > h2#bank-details + p + p {
+  margin-right: 0;
+}
+
+/* All paragraphs after the Bank Details two-col revert to block */
+.columns.columns36 > div > div:first-child > h2#bank-details + p + p ~ p {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+}
+
+/* Extra paragraph/heading spacing for clarity */
+.columns.columns36 h2:not(:first-child) {
+  margin-top: 36px;
+}
+
+.columns.columns36 h2 + p {
+  margin-top: 10px;
+}
+
+.columns.columns36 p + h2 {
+  margin-top: 30px;
+}
+
+/* Divider (if present in markup) */
+.columns.columns36 .section-divider {
+  border-top: 1px solid #e5e5e5;
+  margin: 32px 0 24px;
+  width: 100%;
+}
+
+/* SIDEBAR (right col): vertical stack for buttons */
+.columns.columns36 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 20px;
+  min-width: 220px;
+  max-width: 340px;
+  width: 100%;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 48px 0 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: static;
+}
+
+/* Responsive sidebar */
+@media (width <= 900px) {
+  .columns.columns36 > div > div:last-child {
+    padding: 28px 0 0;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+/* Download buttons: full-width, spacing */
+.columns.columns36 > div > div:last-child a {
+  display: block;
+  width: 100%;
+  background: #232b2c;
+  color: #fff;
+  border-radius: 8px;
+  padding: 18px 24px;
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: left;
+  letter-spacing: 0.01em;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  text-decoration: none;
+  line-height: 1.28;
+  border: none;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.columns.columns36 > div > div:last-child a:last-child {
+  margin-bottom: 0;
+}
+
+.columns.columns36 > div > div:last-child a:hover {
+  background: #444;
+}
+
+.columns.columns36 > div > div:last-child p {
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+/* Email links */
+.columns.columns36 a[href^="mailto"] {
+  color: #008080;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+/* "Add More Invoice" button style */
+.columns.columns36 p:contains('+ Add More Invoice') {
+  display: inline-block;
+  background: #22b6a4;
+  color: #fff;
+  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+  margin-bottom: 22px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  border: none;
+  letter-spacing: 0.02em;
+}
+
+/* Remove possible flex/grid from the main content column div itself */
+.columns.columns36 > div > div {
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: visible;
+  display: block;
+  position: static;
 }
