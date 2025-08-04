@@ -1,39 +1,28 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header for Hero block
-  const headerRow = ['Hero (hero17)'];
-
-  // --- Extract background image (if present) ---
-  let bgImg = '';
-  const bgImagesDiv = element.querySelector(':scope > .bg-images');
+  // Get the background image (first image in .bg-images)
+  let bgImg = null;
+  const bgImagesDiv = element.querySelector('.bg-images');
   if (bgImagesDiv) {
-    const bgImgEl = bgImagesDiv.querySelector('img');
-    if (bgImgEl) {
-      bgImg = bgImgEl;
-    }
+    const img = bgImagesDiv.querySelector('img');
+    if (img) bgImg = img;
   }
 
-  // --- Extract content (headline, list, etc) ---
-  let content = '';
-  // The hero text content lives in container > row > col-lg-5 > .dredging-fleet
-  const container = element.querySelector(':scope > .container');
-  if (container) {
-    const col = container.querySelector(':scope > .row > .col-lg-5');
-    if (col) {
-      const fleet = col.querySelector(':scope > .dredging-fleet');
-      if (fleet) {
-        content = fleet;
-      }
-    }
+  // Get the content block (contains heading and ul)
+  let contentBlock = null;
+  const containerDiv = element.querySelector('.container');
+  if (containerDiv) {
+    const dredgingFleet = containerDiv.querySelector('.dredging-fleet');
+    if (dredgingFleet) contentBlock = dredgingFleet;
   }
 
-  // Compose table as per the block specification: header, bg image, content
-  const rows = [
-    headerRow,
-    [bgImg],
-    [content],
+  // Prepare the rows as per the exact guidance
+  const cells = [
+    ['Hero (hero17)'],
+    [bgImg ? bgImg : ''],
+    [contentBlock ? contentBlock : '']
   ];
 
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

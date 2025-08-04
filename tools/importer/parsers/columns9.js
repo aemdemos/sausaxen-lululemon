@@ -1,24 +1,23 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the row containing the columns
+  // Locate the columns within the container
   const row = element.querySelector('.container > .row');
   if (!row) return;
 
-  // Get all immediate .col-lg-4 children (the columns)
-  const colDivs = Array.from(row.children).filter(div => div.classList.contains('col-lg-4'));
-
-  // For each column, extract the main content box
-  const columns = colDivs.map(col => {
-    const box = col.querySelector('.bg-white');
-    return box || col;
+  const cols = Array.from(row.children);
+  // Extract the main content from each column
+  const colCells = cols.map(col => {
+    let box = col.querySelector('.boxzoom, .bg-white');
+    return box ? box : document.createElement('span');
   });
 
-  // The header row must be a single cell (regardless of column count)
-  const headerRow = ['Columns (columns9)'];
+  // Compose the block table with a single-cell header row
+  const rows = [
+    ['Columns (columns9)'], // Header: Only ONE cell regardless of number of columns
+    colCells // Each element in colCells will become a cell in the second row
+  ];
 
-  // The second row is an array of N columns
-  const tableRows = [headerRow, columns];
-
-  const table = WebImporter.DOMUtils.createTable(tableRows, document);
+  // Create the table and replace the original element
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

@@ -1,52 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row as per block name - matches example exactly
+  // Header row as per block name
   const headerRow = ['Cards (cardsNoImages32)'];
-  const cells = [headerRow];
+  const rows = [headerRow];
 
-  // Find all direct card rows
-  const cardRows = element.querySelectorAll('section .container > .row.bg-white');
+  // Get all card rows
+  const cardRows = element.querySelectorAll('.row.bg-white.p-3.border-bottom');
 
-  cardRows.forEach((cardRow) => {
-    // Extract the left cell (title/label)
-    const left = cardRow.querySelector('.col-md-9');
-    // Extract the right cell (CTA link)
-    const right = cardRow.querySelector('.col-md-3 a');
+  cardRows.forEach(card => {
+    // Get the left column (title/description)
+    const leftCol = card.querySelector('.col-md-9');
+    // Get the right column (View link)
+    const rightCol = card.querySelector('.col-md-3');
 
-    // Build the card content for the cell
-    const fragments = [];
-    if (left) {
-      // Use the first <a> tag in the left as heading if possible, otherwise use text node
-      const maybeLink = left.querySelector('a');
-      if (maybeLink) {
-        // For consistency, use <strong> for heading as in example (or <b>)
+    const content = [];
+    // Title (always inside <a> in leftCol)
+    if (leftCol) {
+      const titleAnchor = leftCol.querySelector('a');
+      if (titleAnchor) {
         const strong = document.createElement('strong');
-        strong.textContent = maybeLink.textContent.trim();
-        fragments.push(strong);
-      } else {
-        const text = left.textContent.trim();
-        if (text) {
-          const strong = document.createElement('strong');
-          strong.textContent = text;
-          fragments.push(strong);
-        }
+        strong.textContent = titleAnchor.textContent.trim();
+        content.push(strong);
+      } else if (leftCol.textContent.trim()) {
+        // Fallback to plain text if anchor missing
+        const strong = document.createElement('strong');
+        strong.textContent = leftCol.textContent.trim();
+        content.push(strong);
       }
     }
-    // If there's a CTA link, put it below the heading as in the example, as a link
-    if (right) {
-      // Add a <br> for separation only if there's a heading
-      if (fragments.length) {
-        fragments.push(document.createElement('br'));
+    // If rightCol has the CTA/link, append it after a break
+    if (rightCol) {
+      const ctaAnchor = rightCol.querySelector('a');
+      if (ctaAnchor) {
+        content.push(document.createElement('br'));
+        content.push(ctaAnchor);
       }
-      fragments.push(right);
     }
-    // Only add row if something exists
-    if (fragments.length) {
-      cells.push([fragments]);
-    }
+    rows.push([content]);
   });
 
-  // Create and replace with table
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

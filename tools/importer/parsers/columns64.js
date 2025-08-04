@@ -1,35 +1,47 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find columns: direct children of .row
-  const container = element.querySelector('.container');
-  if (!container) return;
-  const row = container.querySelector('.row');
+  // Find the three main columns inside the .row
+  const row = element.querySelector('.row');
   if (!row) return;
-  const cols = row.querySelectorAll(':scope > div');
-  if (!cols.length) return;
+  const columns = Array.from(row.children);
 
-  // Prepare header: one cell only
-  const headerRow = ['Columns (columns64)'];
-
-  // Prepare content row: one cell for each column
-  const contentRow = [];
-  for (let i = 0; i < cols.length; i += 1) {
-    const col = cols[i];
-    const box = col.querySelector('.box-block');
-    if (i < 2) {
-      contentRow.push(box);
-    } else {
-      // For the third column, also include the 'Media Library' p if present
-      const colContent = [];
-      if (box) colContent.push(box);
-      const mediaLibP = col.querySelector('p.mt-5.my-3.px-4');
-      if (mediaLibP) colContent.push(mediaLibP);
-      contentRow.push(colContent.length === 1 ? colContent[0] : colContent);
-    }
+  function getBoxBlock(colDiv) {
+    return colDiv.querySelector(':scope > .box-block');
   }
 
-  // Assemble the table as per block guidelines
-  const cells = [headerRow, contentRow];
+  function getMediaLibrary(colDiv) {
+    return colDiv.querySelector('p.mt-5.my-3.px-4');
+  }
+
+  // Prepare columns content for the main row
+  const col1 = columns[0] ? getBoxBlock(columns[0]) || document.createTextNode('') : document.createTextNode('');
+  const col2 = columns[1] ? getBoxBlock(columns[1]) || document.createTextNode('') : document.createTextNode('');
+
+  let col3 = '';
+  let mediaLib = '';
+  if (columns[2]) {
+    // Only put the box-block (Media Contacts) in the third column for the 2nd row
+    col3 = getBoxBlock(columns[2]) || document.createTextNode('');
+    // Media Library should go in its own row according to the spec
+    const ml = getMediaLibrary(columns[2]);
+    if (ml) {
+      mediaLib = ml;
+    }
+  } else {
+    col3 = document.createTextNode('');
+  }
+
+  // Build the cells array: header, then row of columns, then (if present) Media Library as a new row
+  const cells = [
+    ['Columns (columns64)'],
+    [col1, col2, col3]
+  ];
+  // Only add a new row for Media Library if it exists, in third cell only
+  if (mediaLib) {
+    cells.push(['', '', mediaLib]);
+  }
+
+  // Create table and replace element
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

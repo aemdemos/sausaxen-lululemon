@@ -1,58 +1,63 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Helper: Build a cell by collecting all direct child nodes, including text and elements, and for modals, add the video link
-  function extractCellContent(parent) {
-    const cell = [];
-    // Collect all immediate children
-    Array.from(parent.childNodes).forEach(child => {
-      // If it's a modal, grab the video link from its iframe (and any visible fallback text)
-      if (
-        child.nodeType === Node.ELEMENT_NODE &&
-        child.classList.contains('modal')
-      ) {
-        const iframe = child.querySelector('iframe');
-        if (iframe && iframe.src) {
-          const a = document.createElement('a');
-          a.href = iframe.src;
-          a.textContent = 'Watch Video';
-          a.target = '_blank';
-          cell.push(a);
+  // Helper: Get all visible content (elements and text nodes) except modals
+  function getVisibleContent(container) {
+    const nodes = [];
+    container.childNodes.forEach(node => {
+      if (node.nodeType === 1 && node.classList.contains('modal')) return;
+      if (node.nodeType === 3) {
+        // Text node: keep if not whitespace only
+        if (node.textContent && node.textContent.trim().length > 0) {
+          const span = document.createElement('span');
+          span.textContent = node.textContent.trim();
+          nodes.push(span);
         }
       } else {
-        // For other nodes, include as-is for text and element content
-        cell.push(child);
+        nodes.push(node);
       }
     });
-    // If cell is empty (no content), return empty string so table cells aren't empty element wrappers
-    return cell.length ? cell : '';
+    return nodes;
   }
 
-  // Top-level layout: .col-md-6 (left and right columns)
-  const colNodes = element.querySelectorAll(':scope > .col-md-6');
-  if (colNodes.length < 2) return;
+  // Find the two main columns
+  const cols = element.querySelectorAll(':scope > div');
+  if (cols.length < 2) return;
 
-  // LEFT: Large video section
-  const leftCell = extractCellContent(colNodes[0]);
+  // LEFT COLUMN: all visible content
+  const leftCol = cols[0];
+  const leftContent = getVisibleContent(leftCol);
 
-  // RIGHT: 2x2 grid videos (flatten to 4 cells)
-  const rightGridParent = colNodes[1];
-  const miniCols = rightGridParent.querySelectorAll(':scope > .row > .col-lg-6');
-  const rightCells = Array.from(miniCols).map(extractCellContent);
-  // Fill up to 4 cells to ensure grid, pad with '' if not enough
-  while (rightCells.length < 4) rightCells.push('');
+  // RIGHT COLUMN: layout is a 2x2 grid of videos/thumbnails
+  const rightCol = cols[1];
+  let rightContentItems = [];
+  const gridRows = rightCol.querySelectorAll(':scope > .row > .col-lg-6');
+  if (gridRows.length > 0) {
+    gridRows.forEach(cell => {
+      const cellContent = getVisibleContent(cell);
+      if (cellContent.length > 0) {
+        // Wrap each cell content for grid representation
+        const wrapper = document.createElement('div');
+        cellContent.forEach(item => wrapper.appendChild(item));
+        rightContentItems.push(wrapper);
+      }
+    });
+  } else {
+    // fallback: all visible children
+    rightContentItems = getVisibleContent(rightCol);
+  }
+  // Place all grid cells into a container for 2x2 appearance
+  const rightGrid = document.createElement('div');
+  rightGrid.style.display = 'grid';
+  rightGrid.style.gridTemplateColumns = '1fr 1fr';
+  rightGrid.style.gap = '1em';
+  rightContentItems.forEach(el => rightGrid.appendChild(el));
 
-  // Build table: header is single cell with block name, then two rows of three columns each
-  const headerRow = ['Columns (columns33)'];
-  // Row 1: left + right top row of 2
-  const firstRow = [leftCell, rightCells[0], rightCells[1]];
-  // Row 2: left empty, right bottom row of 2
-  const secondRow = ['', rightCells[2], rightCells[3]];
-  const cells = [headerRow, firstRow, secondRow];
+  // Compose the table as per the Columns (columns33) block
+  const cells = [
+    ['Columns (columns33)'],
+    [leftContent, rightGrid]
+  ];
 
-  // Create table and set header colspan to match three columns
   const table = WebImporter.DOMUtils.createTable(cells, document);
-  const th = table.querySelector('th');
-  if (th) th.setAttribute('colspan', '3');
-
   element.replaceWith(table);
 }

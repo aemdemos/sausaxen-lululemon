@@ -1,60 +1,59 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the accordion root inside the given element
-  const accordion = element.querySelector('.accordion');
+  // Find the accordion root
+  let accordion = element.querySelector('.accordion');
   if (!accordion) return;
 
-  // Start with the block header
-  const rows = [
-    ['Accordion (accordion37)']
-  ];
+  // Build header row
+  const rows = [['Accordion (accordion37)']];
 
-  // Select all .card-header elements (each is a question)
-  const cardHeaders = accordion.querySelectorAll('.card-header');
-
-  cardHeaders.forEach(header => {
-    // Title cell: use the .card-title inside the header if present, else use the whole header
-    let title = header.querySelector('.card-title') || header;
-
-    // Content cell: answer is in .card-body (may be nextElementSibling or next-next)
-    let answer = header.nextElementSibling;
-    // Skip .bg-gray divider(s) if present
-    while (answer && answer.classList.contains('bg-gray')) {
-      answer = answer.nextElementSibling;
+  // Find all .card-header elements (these are the titles)
+  const headers = Array.from(accordion.querySelectorAll('.card-header'));
+  headers.forEach((header) => {
+    // Find the title element (usually .card-title in an <a>)
+    let titleElem = header.querySelector('.card-title') || header.querySelector('a');
+    if (!titleElem) {
+      // fallback to using the header itself
+      titleElem = header;
     }
-    // .card-body (may contain a .p-4, or direct element)
-    let contentCell = null;
-    if (answer && answer.classList.contains('card-body')) {
-      // Use all children of card-body
-      // If only a single element, use it, else use all as array
-      let blockDiv = answer.querySelector('.p-4');
-      if (blockDiv) {
-        // If .p-4, use it
-        contentCell = blockDiv;
-      } else {
-        // Otherwise, use all element children
-        const els = Array.from(answer.children);
-        if (els.length === 0) {
-          contentCell = answer;
-        } else if (els.length === 1) {
-          contentCell = els[0];
+    // Find associated body: matches by href (e.g. href="#collapseThree" -> id="collapseThree")
+    let contentElem = null;
+    const href = header.getAttribute('href') || header.getAttribute('data-bs-target') || header.getAttribute('data-target');
+    if (href && href.startsWith('#')) {
+      const collapseId = href.slice(1);
+      const body = accordion.querySelector(`#${collapseId}`);
+      if (body) {
+        // Prefer .p-4 inner div if present
+        const p4 = body.querySelector('.p-4');
+        if (p4) {
+          contentElem = p4;
         } else {
-          contentCell = els;
+          contentElem = body;
         }
       }
-    } else if (answer && (answer.classList.contains('p-4') || answer.tagName === 'P' || answer.tagName === 'UL')) {
-      // Handle rare case where answer is a .p-4 or <p> or <ul> directly
-      contentCell = answer;
-    } else if (answer) {
-      contentCell = answer;
     } else {
-      // fallback: empty span
-      contentCell = document.createElement('span');
+      // fallback: next .card-body sibling
+      let next = header.parentElement;
+      while (next && !next.classList.contains('card-body')) {
+        next = next.nextElementSibling;
+      }
+      if (next) {
+        const p4 = next.querySelector('.p-4');
+        if (p4) {
+          contentElem = p4;
+        } else {
+          contentElem = next;
+        }
+      }
     }
-    rows.push([title, contentCell]);
+    // Defensive: if contentElem is null, use empty <div>
+    if (!contentElem) {
+      contentElem = document.createElement('div');
+    }
+    rows.push([titleElem, contentElem]);
   });
 
-  // Build and replace the table
+  // Create and replace
   const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

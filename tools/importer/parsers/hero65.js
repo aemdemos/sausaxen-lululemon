@@ -1,45 +1,52 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Table header row matches exactly: 'Hero (hero65)'
+  // Table header: must exactly match block name
   const headerRow = ['Hero (hero65)'];
 
-  // 2. Background image: Not present, so leave empty string as cell
-  const backgroundImageRow = [''];
+  // Second row: background image (none present in source HTML)
+  const bgRow = [''];
 
-  // 3. Content row: Heading and CTA button
-  // The source structure is:
-  // <section ...>
-  //   <div class="container">
-  //     <h2>
-  //       ... text ...
-  //       <span><a>...</a></span>
-  //     </h2>
-  //   </div>
-  // </section>
-
-  // We want to reference the actual h2 from the DOM, not a clone
-  // We'll extract <h2> from the DOM and use it directly
-  // (It is safe because we're going to replace the whole block with the table)
-
+  // Third row: content (title/cta)
+  // The title and CTA are inside the section > div > h2
+  // We want to preserve their structure and semantics
   let contentCell = '';
   const section = element.querySelector('section');
   if (section) {
-    const h2 = section.querySelector('h2');
-    if (h2) {
-      contentCell = h2;
+    const container = section.querySelector('.container');
+    if (container) {
+      // Find the h2 inside container
+      const h2 = container.querySelector('h2');
+      if (h2) {
+        // We want to reference the existing h2, but move the CTA <a> outside the h2
+        // The CTA is inside a <span> as the lastChild of h2
+        // We'll extract the <a> and put it after the h2
+        const span = h2.querySelector('span');
+        let ctaLink = null;
+        if (span) {
+          ctaLink = span.querySelector('a');
+        }
+        // Remove the span (and thus the link) from the h2
+        if (span) {
+          span.remove();
+        }
+        // Build the cell contents: h2, then if present, the CTA link (with a <br> if both)
+        const content = [];
+        content.push(h2);
+        if (ctaLink) {
+          // Insert a break if the link doesn't already appear on its own line
+          content.push(document.createElement('br'));
+          content.push(ctaLink);
+        }
+        contentCell = content;
+      }
     }
   }
-
-  // Table structure: 1 column, 3 rows
-  const cells = [
+  const tableRows = [
     headerRow,
-    backgroundImageRow,
+    bgRow,
     [contentCell]
   ];
 
-  // Create the table block
-  const block = WebImporter.DOMUtils.createTable(cells, document);
-
-  // Replace the original entire element with the block table
+  const block = WebImporter.DOMUtils.createTable(tableRows, document);
   element.replaceWith(block);
 }

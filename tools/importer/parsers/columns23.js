@@ -1,34 +1,47 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the .boxPd inside the editorBox
   const boxPd = element.querySelector('.boxPd');
   if (!boxPd) return;
 
-  // Find the heading (h3) -- not part of columns block, so we'll exclude it
-  // All content after h3 and br is the row
+  const heading = boxPd.querySelector('h3');
   const row = boxPd.querySelector('.row');
   if (!row) return;
 
-  // Get all direct children (columns) of row
-  const columns = Array.from(row.children);
+  const columns = Array.from(row.children).filter(col => col.matches('[class*=col-]'));
 
-  // If there are no columns, do not proceed
-  if (columns.length === 0) return;
+  let leftCellContent = [];
+  let rightCellContent = [];
 
-  // Prepare the header row exactly as required
-  const headerRow = ['Columns (columns23)'];
+  if (columns[0]) {
+    const col1 = columns[0];
+    const ul = col1.querySelector('ul');
+    if (ul) leftCellContent.push(ul);
+  }
+  if (heading) {
+    leftCellContent.unshift(heading);
+  }
+  if (columns[1]) {
+    const col2 = columns[1];
+    const img = col2.querySelector('img');
+    if (img) rightCellContent.push(img);
+  }
+  if (leftCellContent.length === 0) leftCellContent = [''];
+  if (rightCellContent.length === 0) rightCellContent = [''];
 
-  // Prepare the columns row: use the full existing col-md-* elements as-is
-  const columnsRow = columns;
-
-  // Build the table
+  // Create the table with the intended rows
   const cells = [
-    headerRow,
-    columnsRow,
+    ['Columns (columns23)'],
+    [leftCellContent, rightCellContent]
   ];
 
+  // Use the helper to create the table
   const table = WebImporter.DOMUtils.createTable(cells, document);
 
-  // Replace the original element with the new table
+  // Ensure the header row has one cell spanning both columns
+  const headerTr = table.querySelector('tr');
+  if (headerTr && headerTr.children.length === 1 && table.rows[1] && table.rows[1].cells.length === 2) {
+    headerTr.children[0].setAttribute('colspan', '2');
+  }
+
   element.replaceWith(table);
 }

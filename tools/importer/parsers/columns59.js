@@ -1,43 +1,29 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get the .container > .row children (columns)
-  const row = element.querySelector('.container .row');
+  // Find the .container .row structure
+  const container = element.querySelector('.container');
+  if (!container) return;
+  const row = container.querySelector('.row');
   if (!row) return;
+  // Find both columns
   const cols = Array.from(row.children);
-  if (cols.length < 2) return;
-
-  // Left column: image
-  const leftCol = cols[0];
-  const img = leftCol.querySelector('img');
-
-  // Right column: structured content
-  const rightCol = cols[1];
-  const contentElements = [];
-
-  // Name and title block (.border-left)
-  const nameBlock = rightCol.querySelector('.border-left');
-  if (nameBlock) contentElements.push(nameBlock);
-  
-  // Social icons (.social-icons ul)
-  const socialIcons = rightCol.querySelector('.social-icons');
-  if (socialIcons) contentElements.push(socialIcons);
-
-  // Main description (first p.mb-3)
-  const descP = rightCol.querySelector('p.mb-3');
-  if (descP) contentElements.push(descP);
-
-  // Download high resolution image (p.mt-4)
-  const downloadP = rightCol.querySelector('p.mt-4');
-  if (downloadP) contentElements.push(downloadP);
-
-  // Compose table rows
-  const headerRow = ['Columns (columns59)'];
-  const contentRow = [img, contentElements];
-  
+  let leftCol = cols.find(div => div.classList.contains('col-md-3'));
+  let rightCol = cols.find(div => div.classList.contains('col-md-9'));
+  if (!leftCol || !rightCol) {
+    // fallback in case classes change
+    if (cols.length === 2) {
+      leftCol = cols[0];
+      rightCol = cols[1];
+    } else {
+      return;
+    }
+  }
+  // Build block table
+  const header = ['Columns (columns59)'];
+  const row1 = [leftCol, rightCol];
   const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    contentRow
+    header,
+    row1,
   ], document);
-
   element.replaceWith(table);
 }

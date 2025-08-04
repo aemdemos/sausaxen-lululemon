@@ -1,34 +1,50 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get the main row containing the two columns
-  const mainRow = element.querySelector('.container > .row');
+  // Get the main .row containing columns
+  const mainRow = element.querySelector('.row');
   if (!mainRow) return;
+  const columns = mainRow.querySelectorAll(':scope > div');
+  let leftCol = null, rightCol = null;
+  columns.forEach(col => {
+    if (col.classList.contains('col-lg-8')) leftCol = col;
+    if (col.classList.contains('col-lg-4')) rightCol = col;
+  });
 
-  const colLeft = mainRow.querySelector('.col-lg-8');
-  const colRight = mainRow.querySelector('.col-lg-4');
-
-  // Compose left cell: heading and info table card
-  let leftCellContent = [];
-  if (colLeft) {
-    const heading = colLeft.querySelector('h4.heading');
-    if (heading) leftCellContent.push(heading);
-    const infoBox = colLeft.querySelector('.bg-white.border.p-3');
-    if (infoBox) leftCellContent.push(infoBox);
+  // Left column: heading + white card
+  let leftContent = null;
+  if (leftCol) {
+    // Find heading and white card
+    const heading = leftCol.querySelector('h4.heading');
+    const whiteCard = leftCol.querySelector('.bg-white.border.p-3');
+    if (heading && whiteCard) {
+      // Wrap in fragment for reference
+      const frag = document.createDocumentFragment();
+      frag.appendChild(heading);
+      frag.appendChild(whiteCard);
+      leftContent = frag;
+    } else if (heading) {
+      leftContent = heading;
+    } else if (whiteCard) {
+      leftContent = whiteCard;
+    } else {
+      leftContent = leftCol;
+    }
   }
 
-  // Compose right cell: blue box with latest links
-  let rightCellContent = [];
-  if (colRight) {
-    const blueBox = colRight.querySelector('.p-4.bg-blue.h-100.ul-financials');
-    if (blueBox) rightCellContent.push(blueBox);
+  // Right column: blue box
+  let rightContent = null;
+  if (rightCol) {
+    const blueBox = rightCol.querySelector('.p-4.bg-blue') || rightCol.querySelector('.bg-blue');
+    rightContent = blueBox ? blueBox : rightCol;
   }
 
-  // Ensure the header row contains only one column, regardless of the number of content columns
+  // Build the block table as per the example structure
+  // Header row: single column, Content row: two columns
   const cells = [
     ['Columns (columns38)'],
-    [leftCellContent, rightCellContent]
+    [leftContent, rightContent]
   ];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  element.replaceWith(block);
 }

@@ -1,23 +1,23 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the ul.nav-tabs inside the given element
-  const ul = element.querySelector('ul');
-  if (!ul) return;
-  const links = Array.from(ul.querySelectorAll('li.nav-item > a.nav-link'));
-  if (links.length === 0) return;
+  // Find the tab list (ul.nav-tabs) inside the element
+  const tabList = element.querySelector('ul.nav-tabs');
+  if (!tabList) return;
 
-  // Prepare rows: first row is single cell 'Table', second row is tab names
-  const tabNames = links.map(link => link.textContent.trim());
-  const rows = [['Table'], tabNames];
+  // Find all <a> elements within the nav-tabs
+  const tabLinks = Array.from(tabList.querySelectorAll('a'));
 
-  // Create the table
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-  // Set the header th's colspan to the number of tab columns
-  const th = table.querySelector('tr:first-child th');
-  if (th) {
-    th.setAttribute('colspan', tabNames.length);
-  }
+  // Header row: The block name must match exactly as 'Table' (per the example)
+  const cells = [['Table']];
 
-  // Replace the original element with the table
+  // For each tab, add a row with just the tab text
+  tabLinks.forEach(link => {
+    cells.push([link.textContent.trim()]);
+  });
+
+  // Create the table block
+  const table = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the new table
   element.replaceWith(table);
 }

@@ -1,26 +1,28 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Prepare the header row as a single cell (matches example exactly)
-  const headerRow = ['Columns (columns19)'];
-
-  // Get all immediate child divs (columns)
-  const columnDivs = Array.from(element.querySelectorAll(':scope > div'));
-
-  // For each column, grab all its content (not just the link!) for fully robust extraction
-  const cols = columnDivs.map((col) => {
-    // Use all children of the col div, to preserve heading/structure
-    // If there are no children, use the text directly
-    if (col.children.length) {
-      return Array.from(col.children);
-    } else {
-      return col.textContent.trim();
+  // Find all direct child columns
+  const columns = Array.from(element.querySelectorAll(':scope > div'));
+  // For each column, extract the main content (the link in the h5)
+  const cells = columns.map(col => {
+    // Expecting a single <h5><a></a></h5> inside each column
+    const h5 = col.querySelector('h5');
+    if (h5 && h5.firstElementChild && h5.firstElementChild.tagName.toLowerCase() === 'a') {
+      return h5.firstElementChild;
     }
+    // fallback: try direct <a>
+    const link = col.querySelector('a');
+    if (link) {
+      return link;
+    }
+    // fallback: empty string
+    return '';
   });
 
-  // Build the table: header row (single cell), then a second row with N cells (1 per column)
-  const table = [headerRow, cols];
+  // Build the table: header row is a single cell, second row is all columns
+  const table = WebImporter.DOMUtils.createTable([
+    ['Columns (columns19)'],
+    cells
+  ], document);
 
-  // Create table and replace original element
-  const block = WebImporter.DOMUtils.createTable(table, document);
-  element.replaceWith(block);
+  element.replaceWith(table);
 }

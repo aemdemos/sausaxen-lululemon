@@ -1,42 +1,49 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header as in the example
-  const headerRow = ['Cards (cardsNoImages50)'];
-  const rows = [headerRow];
+  // Header row matches the block name and variant exactly
+  const cells = [['Cards (cardsNoImages50)']];
 
-  // Get all cards: direct children of .row inside the element
-  const rowDiv = element.querySelector('.row');
-  const cardDivs = rowDiv ? Array.from(rowDiv.children) : [];
-
-  cardDivs.forEach((col) => {
-    // Each .col-md-4.mb-4 contains an <a> which wraps the card content
-    const a = col.querySelector('a');
-    if (a) {
-      // We want the text from the <p> inside tariff-block, but also the link, in one cell
-      // To ensure all text from the p is included, preserve structure but reference existing elements
-      const p = a.querySelector('p');
-      if (p) {
-        // Create a fragment so we can have both the card text and the link semantics
-        const frag = document.createDocumentFragment();
-        // Create a link that matches the appearance of the original
-        const link = document.createElement('a');
-        link.href = a.href;
-        link.textContent = p.textContent.trim();
-        frag.appendChild(link);
-        rows.push([frag]);
+  // Find the card container row
+  const row = element.querySelector('.row');
+  if (row) {
+    // Select all immediate children (each card column)
+    const cardColumns = row.querySelectorAll(':scope > div');
+    cardColumns.forEach((col) => {
+      // Each card is structured as: <a><div><p>Text</p></div></a>
+      const link = col.querySelector('a');
+      if (link) {
+        // Find the .tariff-block (contains the text)
+        const block = link.querySelector('.tariff-block');
+        if (block) {
+          // Check for <p>, otherwise fallback to textContent
+          const p = block.querySelector('p');
+          if (p) {
+            // Create a link element referencing the original <a>, but reuse existing <p>
+            // (Don't clone, instead move the <p> node into the <a> node)
+            // Remove all children from link
+            while (link.firstChild) link.removeChild(link.firstChild);
+            // Append the <p> directly into the link
+            link.appendChild(p);
+            cells.push([link]);
+          } else {
+            // If only text, set link's textContent
+            link.textContent = block.textContent.trim();
+            cells.push([link]);
+          }
+        } else {
+          // If structure unexpected, use link as fallback
+          cells.push([link]);
+        }
       } else {
-        // If no p, just use the <a> (as is, references existing element)
-        rows.push([a]);
+        // Fallback: if no link, use the card column text
+        const text = col.textContent && col.textContent.trim();
+        if (text) {
+          cells.push([text]);
+        }
       }
-    } else {
-      // Fallback: put all text
-      const text = col.textContent.trim();
-      if (text) {
-        rows.push([text]);
-      }
-    }
-  });
+    });
+  }
 
-  const table = WebImporter.DOMUtils.createTable(rows, document);
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

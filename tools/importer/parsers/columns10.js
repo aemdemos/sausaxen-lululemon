@@ -1,32 +1,74 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find all direct child columns
-  const columns = Array.from(element.querySelectorAll(':scope > div'));
-
-  // Create the header row with exactly one column (matches the example)
-  const cells = [ ['Columns (columns10)'] ];
-
-  // Add a single row with all column content, each as its own cell
-  const row = columns.map(col => {
-    // Collect all children (including text nodes)
-    const frag = document.createElement('div');
-    Array.from(col.childNodes).forEach(node => {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        frag.appendChild(node);
-      } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-        frag.appendChild(document.createTextNode(node.textContent));
+  // Helper to get the first direct child with a selector
+  function getDirectChild(parent, selector) {
+    for (const child of parent.children) {
+      if (child.matches && child.matches(selector)) {
+        return child;
       }
-    });
-    // If the column is empty, return an empty string
-    if (!frag.childNodes.length) return '';
-    // If only one child and it's a single element, return it directly
-    if (frag.childNodes.length === 1) return frag.firstChild;
-    // Otherwise, return the fragment (which may contain several elements/texts)
-    return Array.from(frag.childNodes);
-  });
+    }
+    return null;
+  }
 
-  cells.push(row);
+  // Gather column content in correct order
+  const columns = [];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // 1st column: .ft-submenu
+  const col1 = getDirectChild(element, '.ft-submenu');
+  if (col1) {
+    // The .ft-business <ul> contains the links as <h5><li>...</li></h5>
+    const ul = col1.querySelector('ul.ft-business');
+    if (ul) {
+      columns.push(ul);
+    } else {
+      columns.push(col1);
+    }
+  }
+
+  // 2nd column: .col-md-3.col-6:not(.ft-submenu)
+  let col2 = null;
+  for (const child of element.children) {
+    if (
+      child.classList &&
+      child.classList.contains('col-md-3') &&
+      child.classList.contains('col-6') &&
+      !child.classList.contains('ft-submenu')
+    ) {
+      col2 = child;
+      break;
+    }
+  }
+  if (col2) {
+    columns.push(col2);
+  }
+
+  // 3rd column: .col-md-2.col-6
+  const col3 = getDirectChild(element, '.col-md-2.col-6');
+  if (col3) {
+    // The content is in a div inside
+    const innerDiv = col3.querySelector('div');
+    if (innerDiv) {
+      columns.push(innerDiv);
+    } else {
+      columns.push(col3);
+    }
+  }
+
+  // 4th column: .col-md-4
+  const col4 = getDirectChild(element, '.col-md-4');
+  if (col4) {
+    columns.push(col4);
+  }
+
+  // If any missing, pad with empty
+  while (columns.length < 4) columns.push('');
+
+  // Header row must be a single cell
+  const headerRow = ['Columns (columns10)'];
+
+  const table = WebImporter.DOMUtils.createTable(
+    [headerRow, columns],
+    document
+  );
   element.replaceWith(table);
 }

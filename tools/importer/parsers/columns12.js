@@ -1,37 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The header row must be a single cell, matching the example
+  // The header row must be a single cell with the block name, matching the example exactly
   const headerRow = ['Columns (columns12)'];
 
-  // The next row should have as many columns as there are columns in the HTML
-  // Each col is one column (usually a .col-lg-4)
-  const cols = element.querySelectorAll(':scope > div');
+  // Get all immediate columns
+  const columns = Array.from(element.querySelectorAll(':scope > div'));
 
-  // Helper: collect all content from a column, converting iframes to links
-  function getColumnContent(col) {
-    const parts = [];
-    col.childNodes.forEach(node => {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        if (node.tagName === 'IFRAME') {
-          const a = document.createElement('a');
-          a.href = node.src;
-          a.textContent = node.src;
-          parts.push(a);
-        } else {
-          parts.push(node);
-        }
+  // For each column, collect ALL content (including text nodes, elements, etc.)
+  const contentCells = columns.map((col) => {
+    const nodes = [];
+    col.childNodes.forEach((node) => {
+      if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'IFRAME') {
+        // For iframe (not img), add as a link with its src
+        const link = document.createElement('a');
+        link.href = node.src;
+        link.textContent = node.src;
+        link.target = '_blank';
+        nodes.push(link);
+      } else if (node.nodeType === Node.ELEMENT_NODE && node.classList.contains('scroll-socialmedia')) {
+        // For .scroll-socialmedia (twitter), add all children
+        Array.from(node.childNodes).forEach((child) => {
+          if (child.nodeType === Node.ELEMENT_NODE || (child.nodeType === Node.TEXT_NODE && child.textContent.trim())) {
+            nodes.push(child);
+          }
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        nodes.push(node);
       } else if (node.nodeType === Node.TEXT_NODE && node.textContent.trim()) {
-        parts.push(document.createTextNode(node.textContent));
+        nodes.push(document.createTextNode(node.textContent));
       }
     });
-    return parts.length === 1 ? parts[0] : parts;
-  }
+    // If the column is empty, return empty string
+    if (nodes.length === 0) return '';
+    // If only one node, return that node; else, return array
+    return nodes.length === 1 ? nodes[0] : nodes;
+  });
 
-  // Build the content row with one cell per column
-  const contentRow = Array.from(cols).map(getColumnContent);
+  // Build the table as [headerRow, contentRow], where contentRow has one cell per column
+  const rows = [headerRow, contentCells];
 
-  // The block table: first row = single header cell, second row = multiple columns
-  const cells = [headerRow, contentRow];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(block);
 }

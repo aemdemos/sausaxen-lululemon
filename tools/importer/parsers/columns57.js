@@ -1,25 +1,23 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the .boxzoom element containing the actual content
-  const contentBox = element.querySelector('.boxzoom');
-  if (!contentBox) return;
+  // Defensive: Look for the known content structure
+  const container = element.querySelector('.container');
+  if (!container) return;
+  const row = container.querySelector('.row');
+  if (!row) return;
+  const col = row.querySelector('.col-lg-12');
+  if (!col) return;
+  const box = col.querySelector('.bg-gradient');
+  if (!box) return;
 
-  // Extract all meaningful child nodes (skip empty text nodes)
-  const cellContent = Array.from(contentBox.childNodes).filter(node => {
-    // Keep all non-empty text nodes and elements
-    if (node.nodeType === Node.TEXT_NODE) {
-      return node.textContent.trim() !== '';
-    }
-    return true;
-  });
-
-  // Define block table header per requirements
+  // The example shows a single columns block with 1 column
+  // The header must exactly match 'Columns (columns57)'
   const headerRow = ['Columns (columns57)'];
-  // Second row: all content in a single column (single cell)
-  const contentRow = [cellContent];
-  const cells = [headerRow, contentRow];
+  // The content cell is the entire box with heading, paragraphs, and contact info
+  const contentRow = [box];
 
-  // Create and replace block table
+  const cells = [headerRow, contentRow];
   const table = WebImporter.DOMUtils.createTable(cells, document);
+
   element.replaceWith(table);
 }
