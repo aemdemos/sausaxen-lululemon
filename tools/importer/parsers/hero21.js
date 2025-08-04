@@ -1,52 +1,50 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // 1. Table header row
+  // Header row for the block: must match exactly
   const headerRow = ['Hero (hero21)'];
 
-  // 2. Background image row
-  let bgImgEl = null;
+  // Find the background image (first <img> in .bg-image)
+  let bgImg = null;
   const bgImageDiv = element.querySelector('.bg-image');
   if (bgImageDiv) {
     const img = bgImageDiv.querySelector('img');
-    if (img) {
-      bgImgEl = img;
-    }
+    if (img) bgImg = img;
   }
 
-  // 3. Content row
+  // Second row: background image, or null if not found
+  const backgroundRow = [bgImg];
+
+  // Third row: All text elements in correct order (h1, p, cta if any)
+  // In this HTML, content is in .container > .row > .col-lg-6
   let contentCell = [];
-  // Find column containing the main content
   const col = element.querySelector('.container .row .col-lg-6');
   if (col) {
-    // Headline (h1)
+    // Headline
     const h1 = col.querySelector('h1');
     if (h1) contentCell.push(h1);
-    // Subheading (p)
+    // Subheading/paragraph (optional)
     const p = col.querySelector('p');
     if (p) contentCell.push(p);
-    // CTA (link not in breadcrumb)
-    const links = col.querySelectorAll('a');
-    for (const link of links) {
-      // Exclude breadcrumb link (inside ul)
+    // Call-to-action: only include a link if present and not just a breadcrumb
+    // Check for links after h1 or p (but in this HTML, only the breadcrumb exists, which should be ignored)
+    // If a CTA is added in future, e.g. a link after h1/p, it will be included here
+    // For robustness, look for <a> tags that are not inside the <ul> breadcrumb
+    const allLinks = col.querySelectorAll('a');
+    allLinks.forEach(link => {
+      // Exclude from breadcrumb (inside ul)
       if (!link.closest('ul')) {
         contentCell.push(link);
       }
-    }
+    });
   }
+  // If nothing found, keep empty array (handled gracefully)
 
-  // Ensure at least one empty content if nothing was found
-  if (contentCell.length === 0) {
-    contentCell = [''];
-  }
+  const contentRow = [contentCell];
 
-  // Compose the table
-  const tableRows = [
-    headerRow,
-    [bgImgEl ? bgImgEl : ''],
-    [contentCell]
-  ];
+  // Compose the table structure
+  const cells = [headerRow, backgroundRow, contentRow];
 
-  // Create and replace
-  const table = WebImporter.DOMUtils.createTable(tableRows, document);
+  // Create table and replace original element
+  const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

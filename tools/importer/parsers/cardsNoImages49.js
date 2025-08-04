@@ -1,37 +1,38 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Prepare table rows
+  // Prepare table structure: header row, then one row per card
   const cells = [];
-  // Header row
-  cells.push(['Cards (cardsNoImages49)']);
+  // Block header must exactly match the example
+  const headerRow = ['Cards (cardsNoImages49)'];
+  cells.push(headerRow);
 
-  // Get the two card containers (columns)
-  const cols = element.querySelectorAll(':scope > div > div.row > div');
+  // Get the main card columns from the section
+  const row = element.querySelector('.container > .row');
+  if (!row) return;
 
-  // First card: News and Updates
-  if (cols[0]) {
-    // All content together in one div as in the source (heading, ul, button)
-    const cardDiv = document.createElement('div');
-    const h3 = cols[0].querySelector('h3');
-    if (h3) cardDiv.appendChild(h3);
-    const ul = cols[0].querySelector('ul');
-    if (ul) cardDiv.appendChild(ul);
-    const viewMore = cols[0].querySelector('p.text-left');
-    if (viewMore) cardDiv.appendChild(viewMore);
-    cells.push([cardDiv]);
-  }
-
-  // Second card: Managing Director Message
-  if (cols[1]) {
-    // The link wraps all content and should be preserved
-    const a = cols[1].querySelector('a');
-    if (a) {
-      // Instead of cloning, reference the a directly (which includes all its content)
-      cells.push([a]);
+  // Get left card: News and Updates (with links and a button)
+  const leftCol = row.querySelector('.col-lg-4');
+  if (leftCol) {
+    // The whole card including heading, list, and cta
+    const card = leftCol.querySelector('.bg-white.box-shadow.p-4');
+    if (card && card.textContent.trim()) {
+      cells.push([card]);
     }
   }
 
-  // Create the table and replace the element
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  // Get right card: Managing Director Message (clickable whole card)
+  const rightCol = row.querySelector('.col-lg-8');
+  if (rightCol) {
+    // This card is a link wrapping a div structure
+    const card = rightCol.querySelector('a');
+    if (card && card.textContent.trim()) {
+      cells.push([card]);
+    }
+  }
+
+  // Only create the table if there's anything to output
+  if (cells.length > 1) {
+    const table = WebImporter.DOMUtils.createTable(cells, document);
+    element.replaceWith(table);
+  }
 }

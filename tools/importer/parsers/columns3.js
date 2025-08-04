@@ -1,48 +1,48 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the .container > .row columns
-  const row = element.querySelector('.container > .row');
+  // Find the .row in the section
+  const row = element.querySelector('.row');
   if (!row) return;
-  const columns = Array.from(row.children);
-  // Defensive: Only process if at least two columns present
+
+  // Get immediate column divs
+  const columns = row.querySelectorAll(':scope > div');
   if (columns.length < 2) return;
 
-  // COLUMN 1: The image column
-  const colImg = columns[0];
-  let colImgContent = [];
-  if (colImg) {
-    // Find the main image: img.img-fluid
-    const img = colImg.querySelector('img');
-    if (img) colImgContent.push(img);
+  // col1: image
+  const col1 = columns[0];
+  const img = col1.querySelector('img');
+  const col1Content = img ? [img] : [];
+
+  // col2: title, subtitle, text, download link
+  const col2 = columns[1];
+  const col2Content = [];
+
+  // Title and subtitle
+  const borderLeft = col2.querySelector('.border-left');
+  if (borderLeft) {
+    col2Content.push(borderLeft);
   }
 
-  // COLUMN 2: The text/info column
-  const colInfo = columns[1];
-  let colInfoContent = [];
-  if (colInfo) {
-    // 1. The header div (border-left) with h1 and p (Chairman)
-    const headerDiv = colInfo.querySelector('.border-left');
-    if (headerDiv) colInfoContent.push(headerDiv);
+  // Description paragraphs (excluding download link)
+  const descParagraphs = col2.querySelectorAll('p.mb-3');
+  descParagraphs.forEach(p => col2Content.push(p));
 
-    // 2. The two paragraphs with biography text (class 'mb-3' but NOT in border-left)
-    // Only select <p.mb-3> that are directly under colInfo (not in .border-left)
-    Array.from(colInfo.querySelectorAll('p.mb-3')).forEach(p => {
-      // skip if inside the headerDiv
-      if (!headerDiv || !headerDiv.contains(p)) {
-        colInfoContent.push(p);
-      }
-    });
-    // 3. The download link (in p.mt-4)
-    const downloadP = colInfo.querySelector('p.mt-4');
-    if (downloadP) colInfoContent.push(downloadP);
+  // Download link (in its own p, if exists)
+  const downloadP = col2.querySelector('p.mt-4');
+  if (downloadP) {
+    col2Content.push(downloadP);
   }
 
-  // Table structure: header row, then one row with two columns
-  const cells = [
-    ['Columns (columns3)'],
-    [colImgContent, colInfoContent]
-  ];
+  // Header row: two columns, first cell has text, second is empty (matches example structure)
+  const headerRow = ['Columns (columns3)', ''];
+  const bodyRow = [col1Content, col2Content];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Build table
+  const table = WebImporter.DOMUtils.createTable([
+    headerRow,
+    bodyRow
+  ], document);
+
+  // Replace original section with the block
   element.replaceWith(table);
 }

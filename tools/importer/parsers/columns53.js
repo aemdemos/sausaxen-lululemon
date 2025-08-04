@@ -1,27 +1,28 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the immediate .container > .row inside the section
-  const row = element.querySelector('.container > .row');
+  // Header must match the block name exactly as specified
+  const headerRow = ['Columns (columns53)'];
+
+  // Find the container and row for columns
+  const container = element.querySelector('.container');
+  if (!container) return;
+  const row = container.querySelector('.row');
   if (!row) return;
 
-  // Find all direct child columns
-  const cols = Array.from(row.children)
-    .filter(col => col.classList.contains('col-lg-3') || col.className.match(/col-\w+-3/));
+  // Get all column divs (direct children - for robustness)
+  const columns = Array.from(row.children).filter(col => col.classList.contains('col-lg-3'));
 
-  // For each, get the direct content container (the card box)
-  const cellContents = cols.map(col => {
-    // The content box: usually the only or first child
-    let box = col.firstElementChild;
-    if (!box) box = col;
-    return box;
+  // For each column, use the first child div (the white box), or fallback to the column itself
+  const cells = columns.map(col => {
+    // get the direct <div> child (the box), not any deeper descendants
+    const box = Array.from(col.children).find(child => child.tagName === 'DIV');
+    return box || col;
   });
 
-  // Compose the rows for the columns block: header row, then content row
-  const cells = [
-    ['Columns (columns53)'],
-    cellContents,
-  ];
+  // Structure: header row, then a single row with a cell for each column
+  const tableData = [headerRow, cells];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  // Create and replace
+  const block = WebImporter.DOMUtils.createTable(tableData, document);
+  element.replaceWith(block);
 }

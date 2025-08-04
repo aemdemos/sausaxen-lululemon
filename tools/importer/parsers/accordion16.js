@@ -1,45 +1,62 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  const accordion = element.querySelector('.accordion');
-  if (!accordion) return;
+  // Header row exactly as required
+  const headerRow = ['Accordion (accordion16)'];
 
+  // Find the accordion container (prefer #accordion, fallback to first .accordion, fallback to self)
+  let accordion = element.querySelector('#accordion');
+  if (!accordion) accordion = element.querySelector('.accordion');
+  if (!accordion) accordion = element;
+
+  // For each .card in the accordion get title and content
+  const cards = accordion.querySelectorAll('.card');
   const rows = [];
-  // Header
-  rows.push(['Accordion (accordion16)']);
 
-  // Accordion items: .card-header[data-bs-toggle]
-  const headers = accordion.querySelectorAll('.card-header[data-bs-toggle]');
-  headers.forEach((header) => {
-    // Title cell: prefer .card-title inside header, fallback to header itself
-    let titleEl = header.querySelector('.card-title') || header;
-
-    // Find the next sibling .card-body
-    let sibling = header.nextElementSibling;
-    while (sibling && !(sibling.classList.contains('card-body'))) {
-      sibling = sibling.nextElementSibling;
-    }
-    let contentCell = null;
-    if (sibling) {
-      // Try to find all .container.mt-4 blocks in .card-body
-      const containers = Array.from(sibling.querySelectorAll(':scope > .p-4 > .container.mt-4, :scope > .container.mt-4'));
-      if (containers.length === 0) {
-        // No .container.mt-4, fallback to full .card-body
-        contentCell = sibling;
-      } else if (containers.length === 1) {
-        contentCell = containers[0];
+  cards.forEach((card) => {
+    // TITLE CELL
+    let titleNode = card.querySelector('.card-header');
+    let titleContent = '';
+    if (titleNode) {
+      // Prefer .card-title if exists (preserves possible formatting)
+      const cardTitle = titleNode.querySelector('.card-title');
+      if (cardTitle) {
+        titleContent = cardTitle.innerHTML;
       } else {
-        // Multiple containers: wrap in a div
-        const wrapper = document.createElement('div');
-        containers.forEach(c => wrapper.appendChild(c));
-        contentCell = wrapper;
+        titleContent = titleNode.innerHTML;
       }
-    } else {
-      // No content found, use an empty string
-      contentCell = document.createTextNode('');
     }
-    rows.push([titleEl, contentCell]);
+    // Create an element for the title cell
+    const titleDiv = document.createElement('div');
+    titleDiv.innerHTML = titleContent;
+
+    // CONTENT CELL
+    let contentNode = card.querySelector('.card-body');
+    let contentDiv = document.createElement('div');
+    if (contentNode) {
+      // Find all direct children containers OR if not, all children
+      const mainContainers = contentNode.querySelectorAll(':scope > .container.mt-4');
+      if (mainContainers.length > 0) {
+        mainContainers.forEach((c) => {
+          // Reference the existing node (not clone)
+          contentDiv.appendChild(c);
+        });
+      } else {
+        // If no .container.mt-4 found, include all children
+        Array.from(contentNode.childNodes).forEach((n) => {
+          // Reference the existing node (not clone)
+          contentDiv.appendChild(n);
+        });
+      }
+      // Remove empty wrappers (if no actual content)
+      if (!contentDiv.textContent.trim()) {
+        contentDiv = document.createElement('div');
+      }
+    }
+    rows.push([titleDiv, contentDiv]);
   });
 
-  const block = WebImporter.DOMUtils.createTable(rows, document);
+  // Compose the block table
+  const cells = [headerRow, ...rows];
+  const block = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(block);
 }

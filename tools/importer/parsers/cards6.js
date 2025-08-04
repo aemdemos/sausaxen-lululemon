@@ -1,18 +1,21 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Extract the select element (the only 'card' present in this block)
+  // Cards (cards6) block requires 2 columns for each card: image/icon (col 1), text content (col 2)
+  // The header row must have exactly one column
+
+  const headerRow = ['Cards (cards6)'];
   const select = element.querySelector('select');
-  const formGroup = element.querySelector('.form-group');
+  if (!select) return;
 
-  // Reference the full form-group (containing the select)
-  // This preserves all text and structure, and is robust for minor variations
-  let cardContent = formGroup || select || element;
+  // Place the select in the text cell, leave image cell empty
+  const cardRow = ['', select];
 
-  // Assemble the cells array per block structure
+  // Table structure: header (1 column), then each row (2 columns)
   const cells = [
-    ['Cards (cards6)'],
-    [cardContent],
+    headerRow,
+    cardRow
   ];
+
   const table = WebImporter.DOMUtils.createTable(cells, document);
   element.replaceWith(table);
 }

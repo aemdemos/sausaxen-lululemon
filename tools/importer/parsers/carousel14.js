@@ -1,47 +1,54 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the carousel area
-  const carousel = element.querySelector('.mainBanner .bootstrape-carousel');
-  if (!carousel) return;
+  // Find the mainBanner - this is the block we want to replace
+  const banner = element.querySelector('.mainBanner');
+  if (!banner) return;
 
-  // Find all slides in the carousel
-  const slideNodes = carousel.querySelectorAll('.bootstrape-stage-outer .bootstrape-item .item');
+  // Find the carousel slides container
+  const carousel = banner.querySelector('.bootstrape-carousel');
+  if (!carousel) return;
+  const stageOuter = carousel.querySelector('.bootstrape-stage-outer');
+  if (!stageOuter) return;
+  const stage = stageOuter.querySelector('.bootstrape-stage');
+  if (!stage) return;
+
+  // Each .bootstrape-item inside stage is a slide
+  const items = stage.querySelectorAll('.bootstrape-item');
+
+  // Prepare table rows
   const rows = [];
-  // Use the exact header per the example
+  // Block header, must match example exactly
   rows.push(['Carousel (carousel14)']);
 
-  slideNodes.forEach((item) => {
-    // Get the image element (direct reference)
-    const img = item.querySelector('.slider-content img');
+  items.forEach(item => {
+    // Actual slide content is inside .item > .slider-content
+    const slideContent = item.querySelector('.slider-content');
+    if (!slideContent) return;
 
-    // Text cell: gather all semantic text content under the slider-content, except for the image
-    let textCell = '';
-    const sliderContent = item.querySelector('.slider-content');
-    if (sliderContent) {
-      // Remove img for text extraction
-      const imgEl = sliderContent.querySelector('img');
-      if (imgEl) imgEl.remove();
-      // Gather all valid nodes (elements or text nodes with non-empty text)
-      const textNodes = Array.from(sliderContent.childNodes)
-        .filter(n => (n.nodeType === 1 && n.textContent.trim()) || (n.nodeType === 3 && n.textContent.trim()));
-      if (textNodes.length === 1) {
-        textCell = textNodes[0];
-      } else if (textNodes.length > 1) {
-        textCell = textNodes;
-      }
-      // If no text found, leave as ''
-    }
-    // Re-insert img in case DOM use is needed further (safety for subsequent iterations)
-    if (img && !sliderContent.contains(img)) {
-      sliderContent.insertBefore(img, sliderContent.firstChild);
-    }
-    // Only push if there's valid image
+    // Image (mandatory): first img in slideContent
+    const img = slideContent.querySelector('img');
+    let imgCell = '';
     if (img) {
-      rows.push([img, textCell]);
+      imgCell = img;
     }
+
+    // Text content (optional): find container with text
+    let textCell = '';
+    // The text is inside div > div.container > p
+    const containerDiv = slideContent.querySelector('div > .container');
+    if (containerDiv) {
+      // Reference the containerDiv, which may have <p> or more
+      textCell = containerDiv;
+    }
+
+    rows.push([
+      imgCell,
+      textCell,
+    ]);
   });
 
-  // Create and replace carousel block table
+  // Create the block table
   const table = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(table);
+  // Replace the original mainBanner with the new block table
+  banner.replaceWith(table);
 }

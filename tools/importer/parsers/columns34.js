@@ -1,23 +1,22 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get immediate children columns
-  const columns = Array.from(element.querySelectorAll(':scope > div'));
-  const colCount = columns.length;
+  // Create the header row as a single column, per the example
+  const headerRow = ['Columns (columns34)'];
 
-  // Gather column content
-  const colContents = columns.map((col) => {
-    // Use the first child div if present (to skip grid wrappers), else the col itself
-    const inner = col.querySelector(':scope > div');
-    if (inner) return inner;
-    return col;
+  // Extract the two columns directly under the .row
+  const columns = Array.from(element.querySelectorAll(':scope > div'));
+
+  // For each column, get the direct child div (which contains the actual content)
+  // If not available, fallback to the column itself
+  const cellElements = columns.map(col => {
+    const content = col.querySelector(':scope > div');
+    return content ? content : col;
   });
 
-  // Build cells: header row is a single cell, next row is colCount cells
-  const cells = [
-    ['Columns (columns34)'],
-    colContents
-  ];
+  // The table structure: header row (single cell), then a row with both columns
+  const tableRows = [headerRow, cellElements];
 
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  // Create and insert the block table
+  const block = WebImporter.DOMUtils.createTable(tableRows, document);
+  element.replaceWith(block);
 }

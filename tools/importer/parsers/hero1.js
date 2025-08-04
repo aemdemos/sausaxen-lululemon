@@ -1,39 +1,31 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The block to replace is the section inside the .pageContent
-  const section = element.querySelector('section') || element;
-  // The main content is inside .container but fallback to section if not present
-  const main = section.querySelector('.container') || section;
-  
-  // Header row must match exactly
-  const headerRow = ['Hero (hero1)'];
-  // No background image in supplied HTML
-  const imageRow = [''];
+  // Find the first <section> (root of main content)
+  const section = element.querySelector('section');
+  if (!section) return;
+  // Use the section's .container or the section itself
+  const container = section.querySelector('.container') || section;
 
-  // Collect all visible content (exclude .d-none and .loadMore)
-  const contentNodes = [];
-  for (const child of main.childNodes) {
-    if (child.nodeType === Node.ELEMENT_NODE) {
-      const el = child;
-      if (
-        el.classList && (el.classList.contains('d-none') || el.classList.contains('loadMore'))
-      ) continue;
-      contentNodes.push(el);
-    } else if (child.nodeType === Node.TEXT_NODE && child.textContent.trim()) {
-      // preserve text nodes that are not empty
-      contentNodes.push(document.createTextNode(child.textContent));
+  // Collect all visible (not .d-none, not .loadMore) direct child elements
+  const contentEls = Array.from(container.children).filter((child) => {
+    if (child.classList) {
+      if (child.classList.contains('d-none')) return false;
+      if (child.classList.contains('loadMore')) return false;
     }
-  }
-  
-  // Ensure all text content and visible HTML is included.
-  const contentRow = [contentNodes];
+    return true;
+  });
 
-  const table = WebImporter.DOMUtils.createTable([
-    headerRow,
-    imageRow,
-    contentRow
-  ], document);
+  // If no content remains, abort
+  if (!contentEls.length) return;
 
-  // Replace the original element (the div.pageContent)
-  element.replaceWith(table);
+  // Table rows as per block spec
+  const rows = [
+    ['Hero (hero1)'], // header (must match exactly)
+    [''],             // background image row (none in example/source)
+    [contentEls],     // all visible content as a single cell
+  ];
+
+  // Create and replace original element
+  const blockTable = WebImporter.DOMUtils.createTable(rows, document);
+  element.replaceWith(blockTable);
 }

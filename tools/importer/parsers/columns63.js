@@ -1,42 +1,37 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Table header as per requirements
+  // Header row as required by the block name
   const headerRow = ['Columns (columns63)'];
 
-  // Find all the columns (each .col-md-4 is a column cell)
-  const rowDiv = element.querySelector('.row');
-  const cols = Array.from(rowDiv ? rowDiv.querySelectorAll(':scope > .col-md-4') : []);
+  // Find the row of column blocks
+  const row = element.querySelector('.row');
+  if (!row) return;
 
-  // Group into rows of 3 columns, as in visual layout
-  const cellsPerRow = 3;
-  const dataRows = [];
-  for (let i = 0; i < cols.length; i += cellsPerRow) {
-    const group = cols.slice(i, i + cellsPerRow);
-    const row = group.map(col => {
-      // Use the actual <a> element, not a clone
-      const link = col.querySelector('a');
-      if (link) {
-        // To keep the link text, but not the inner div, create a new anchor reusing the same href
-        // But instead, we can create a new <a> and reference the original <p> for semantic meaning
-        const p = link.querySelector('p');
-        if (p) {
-          // Create a new <a> and reuse the original <p> for text
-          const a = document.createElement('a');
-          a.href = link.href;
-          a.textContent = p.textContent;
-          return a;
-        } else {
-          return link;
-        }
-      }
-      // If no link, just use the text
-      return col.textContent.trim();
-    });
-    dataRows.push(row);
+  // Each direct child div of .row is a column
+  const colDivs = Array.from(row.querySelectorAll(':scope > div'));
+
+  // Collect anchor elements from each column div
+  const anchors = colDivs.map(colDiv => {
+    const anchor = colDiv.querySelector('a');
+    return anchor || '';
+  });
+
+  // For a 3-column grid, break into rows of 3 (as in the screenshot)
+  const colsPerRow = 3;
+  const contentRows = [];
+  for (let i = 0; i < anchors.length; i += colsPerRow) {
+    // Always make a full row of 3 cells, pad with empty string if needed
+    const rowCells = anchors.slice(i, i + colsPerRow);
+    while (rowCells.length < colsPerRow) rowCells.push('');
+    contentRows.push(rowCells);
   }
 
-  // Create the table
-  const cells = [headerRow, ...dataRows];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  // Compose the table data
+  const tableData = [headerRow, ...contentRows];
+
+  // Create the block table
+  const block = WebImporter.DOMUtils.createTable(tableData, document);
+
+  // Replace the original element with the new block
+  element.replaceWith(block);
 }

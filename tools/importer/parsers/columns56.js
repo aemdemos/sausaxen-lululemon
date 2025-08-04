@@ -1,26 +1,27 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The block header row, exactly as required
+  // The header must be a single cell
   const headerRow = ['Columns (columns56)'];
 
-  // Find the columns inside the section
-  const row = element.querySelector('.row');
-  let columnDivs = [];
-  if (row) {
-    // Only consider direct div children of row
-    columnDivs = Array.from(row.children).filter((el) => el.tagName === 'DIV');
+  // Extract the columns
+  let columnCells = [];
+  const container = element.querySelector('.container');
+  if (container) {
+    const row = container.querySelector('.row');
+    if (row) {
+      // Only direct children are columns
+      const cols = Array.from(row.children);
+      // Only use the first two columns as per expected layout
+      columnCells = cols.slice(0, 2);
+    }
+  }
+  // Fallback: if not found, fill with empty divs
+  while (columnCells.length < 2) {
+    columnCells.push(document.createElement('div'));
   }
 
-  // For each column, grab the entire div (to ensure all content is included)
-  const columns = columnDivs.map((col) => col);
-
-  // Build the cells array as required: header row is a single cell, then one row with all columns as cells
-  const cells = [
-    headerRow,
-    columns
-  ];
-
-  // Create and replace
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+  // Compose the table
+  const tableRows = [headerRow, columnCells];
+  const table = WebImporter.DOMUtils.createTable(tableRows, document);
   element.replaceWith(table);
 }

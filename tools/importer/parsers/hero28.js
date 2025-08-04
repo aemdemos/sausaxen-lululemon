@@ -1,24 +1,25 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Hero (hero28) block table: 1 column x 3 rows
-  // 1. Header row (exact name)
+  // Header row as per the block name specification
   const headerRow = ['Hero (hero28)'];
 
-  // 2. Background image (none in the source HTML, so empty string)
-  const backgroundRow = [''];
+  // Background image row (empty since none is present in given html)
+  const imageRow = [''];
 
-  // 3. Content row: all content from the element must be included (icon + text + link)
-  // Place the actual element in the cell to preserve all its content
-  const contentRow = [element];
+  // Content row: ensure all text and child content from the element is included
+  // This includes the <a> and any of its children (icon, text)
+  const contentRow = [Array.from(element.childNodes)];
 
-  // Compose the table as per block requirements
+  // Compose cells array for createTable
   const cells = [
     headerRow,
-    backgroundRow,
+    imageRow,
     contentRow
   ];
 
-  // Create the table and replace the original element
+  // Create the block table
   const table = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Replace the original element with the new table block
   element.replaceWith(table);
 }

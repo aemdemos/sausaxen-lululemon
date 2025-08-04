@@ -1,20 +1,41 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get all tab <li> elements (immediate children)
-  const tabItems = Array.from(element.querySelectorAll(':scope > li'));
-  // Build rows: [tab label, tab content (blank since missing)]
-  const rows = tabItems.map(li => {
-    const a = li.querySelector('a');
-    const label = a ? a.textContent.trim() : '';
-    // Tab content: not present in provided HTML, so leave blank
-    const content = '';
-    return [label, content];
+  // 1. Build header row exactly as in the example (single cell 'Tabs')
+  const rows = [['Tabs']];
+
+  // 2. Get tab links (labels)
+  const tabLinks = Array.from(element.querySelectorAll('li > a'));
+
+  // 3. Find the closest '.tab-content' sibling for tab panes (if present)
+  let tabContentRoot = null;
+  let curr = element.nextElementSibling;
+  while (curr) {
+    if (curr.classList.contains('tab-content')) {
+      tabContentRoot = curr;
+      break;
+    }
+    curr = curr.nextElementSibling;
+  }
+
+  // 4. For each tab, add a row: [label, content], even if content is empty
+  tabLinks.forEach(tabLink => {
+    const label = tabLink.textContent.trim();
+    let content = '';
+    if (
+      tabContentRoot &&
+      tabLink.hasAttribute('href') &&
+      tabLink.getAttribute('href').startsWith('#')
+    ) {
+      const paneId = tabLink.getAttribute('href').slice(1);
+      const pane = tabContentRoot.querySelector(`#${paneId}`);
+      if (pane) {
+        content = pane;
+      }
+    }
+    rows.push([label, content]);
   });
-  // Construct cells: header row is one cell, then multiple rows with two cells each
-  const cells = [
-    ['Tabs'], // Header row (only one column)
-    ...rows
-  ];
-  const table = WebImporter.DOMUtils.createTable(cells, document);
+
+  // 5. Create table and replace element
+  const table = WebImporter.DOMUtils.createTable(rows, document);
   element.replaceWith(table);
 }

@@ -1,28 +1,40 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Get the container and row that contain the columns
-  const container = element.querySelector(':scope > div.container');
-  if (!container) return;
-  const row = container.querySelector(':scope > div.row');
-  if (!row) return;
-  const cols = Array.from(row.children);
+  // Header row is always a single column
+  const headerRow = ['Columns (columns54)'];
 
-  // Extract all valid content from each column
-  const contentCells = cols.map(col => {
-    // Filter out empty text nodes
-    const nodes = Array.from(col.childNodes).filter(n => 
-      n.nodeType === Node.ELEMENT_NODE || (n.nodeType === Node.TEXT_NODE && n.textContent.trim() !== '')
-    );
-    if (nodes.length === 1) return nodes[0];
-    if (nodes.length > 1) return nodes;
-    return '';
-  });
+  // Find the columns in the source HTML
+  const row = element.querySelector('.container > .row');
+  let columns = [];
 
-  // Create the table: first row is single header cell
-  const table = WebImporter.DOMUtils.createTable([
-    ['Columns (columns54)'],
-    contentCells
-  ], document);
+  if (row) {
+    // Each .col-lg-6 is a column
+    const colDivs = Array.from(row.children).filter(div => div.classList.contains('col-lg-6'));
+    columns = colDivs.map(col => {
+      // Use all *direct* children of col, ignoring empty text nodes
+      const children = Array.from(col.childNodes).filter(node => node.nodeType !== 3 || node.textContent.trim().length > 0);
+      if (children.length === 1) {
+        return children[0];
+      }
+      const fragment = document.createDocumentFragment();
+      children.forEach(child => fragment.appendChild(child));
+      return fragment;
+    });
+  }
 
+  // Fallback: if no columns found, put the whole element in one cell
+  if (columns.length === 0) {
+    const fragment = document.createDocumentFragment();
+    Array.from(element.childNodes).forEach(node => {
+      if (node.nodeType !== 3 || node.textContent.trim().length > 0) {
+        fragment.appendChild(node);
+      }
+    });
+    columns = [fragment];
+  }
+
+  // Build the table: header row (single column), then columns row (N columns)
+  const tableRows = [headerRow, columns];
+  const table = WebImporter.DOMUtils.createTable(tableRows, document);
   element.replaceWith(table);
 }

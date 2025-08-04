@@ -1,90 +1,65 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find the form and section
-  const form = element.querySelector('form.account-form');
+  // Find the main content section
+  const contentSection = element.querySelector('.contentSection.homepage');
+  if (!contentSection) return;
+
+  // Get breadcrumb section (top heading area)
+  const breadcrumbSection = contentSection.querySelector('.breadcrumb-sub-layout');
+  // Get main form
+  const form = contentSection.querySelector('form.account-form');
   if (!form) return;
-  const section = form.querySelector('section.py-5.bg-white1');
-  if (!section) return;
-  const container = section.querySelector(':scope > .container');
-  if (!container) return;
 
-  // COL 1: All main form fields, headings, instructions (excluding download links)
-  const leftColumn = [];
-  // COL 2: Download links only
-  const rightColumn = [];
+  // Get the main content section inside the form
+  const mainSection = form.querySelector('section.py-5.bg-white1');
+  if (!mainSection) return;
+  const mainChildren = Array.from(mainSection.children);
 
-  // All container children for easy traversal
-  const children = Array.from(container.children);
-
-  // Helper function to get the next sibling that matches a filter
-  function nextOf(idx, filterFn) {
-    for (let i = idx + 1; i < children.length; i++) {
-      if (filterFn(children[i])) return children[i];
+  // Find indexes for logical groupings
+  let uploadIdx = -1, manualIdx = -1, disclaimerIdx = -1;
+  mainChildren.forEach((child, idx) => {
+    const h2 = child.querySelector && child.querySelector('h2');
+    if (h2) {
+      if (h2.textContent.includes('Upload Payment against Invoice document')) uploadIdx = idx;
+      if (h2.textContent.includes('Enter Invoice Details Manually')) manualIdx = idx;
     }
-    return null;
+    const p = child.querySelector && child.querySelector('p.small');
+    if (p && p.textContent.includes('reasonable efforts')) disclaimerIdx = idx;
+  });
+  if (uploadIdx === -1) uploadIdx = mainChildren.length;
+  if (manualIdx === -1) manualIdx = mainChildren.length;
+  if (disclaimerIdx === -1) disclaimerIdx = mainChildren.length;
+
+  // Helper to aggregate nodes into a div
+  function collectNodes(nodes) {
+    const wrapper = document.createElement('div');
+    nodes.forEach(n => wrapper.appendChild(n));
+    return wrapper;
   }
 
-  // --- Bank Details Section ---
-  const bankHeadingIdx = children.findIndex(el => el.tagName === 'H2' && el.textContent.includes('Bank Details'));
-  if (bankHeadingIdx > -1) {
-    leftColumn.push(children[bankHeadingIdx]);
-    const bankRow = nextOf(bankHeadingIdx, el => el.classList.contains('row'));
-    if (bankRow) leftColumn.push(bankRow);
-  }
-  // --- Company Details ---
-  const compHeadingIdx = children.findIndex(el => el.tagName === 'H2' && el.textContent.includes('Company Details'));
-  if (compHeadingIdx > -1) {
-    leftColumn.push(children[compHeadingIdx]);
-    const compRow = nextOf(compHeadingIdx, el => el.classList.contains('row'));
-    if (compRow) leftColumn.push(compRow);
-  }
-  // --- Payment Details ---
-  const payHeadingIdx = children.findIndex(el => el.tagName === 'H2' && el.textContent.includes('Payment Details'));
-  if (payHeadingIdx > -1) {
-    leftColumn.push(children[payHeadingIdx]);
-    const payRow = nextOf(payHeadingIdx, el => el.classList.contains('row'));
-    if (payRow) leftColumn.push(payRow);
-  }
-  // --- Upload Payment Section (heading & file input col) ---
-  const uploadHeadingIdx = children.findIndex(el => el.tagName === 'H2' && el.textContent.includes('Upload Payment'));
-  if (uploadHeadingIdx > -1) {
-    leftColumn.push(children[uploadHeadingIdx]);
-    // The upload input is in the next .col-lg-6
-    const uploadCol = container.querySelector('.custom-file')?.closest('.col-lg-6');
-    if (uploadCol) leftColumn.push(uploadCol);
-  }
-  // --- Enter Invoice Section (heading & invoice entry cols) ---
-  const invHeadingIdx = children.findIndex(el => el.tagName === 'H2' && el.textContent.includes('Enter Invoice Details'));
-  if (invHeadingIdx > -1) {
-    leftColumn.push(children[invHeadingIdx]);
-    // All .col-lg-2.col-md-6.mb-2 cols between this heading and next H2 or end
-    // We'll take all such fields
-    const invoiceCols = Array.from(container.querySelectorAll('.col-lg-2.col-md-6.mb-2'));
-    invoiceCols.forEach(col => leftColumn.push(col));
-    // Add the Add More Invoice button
-    const addMoreBtn = section.querySelector('button.Add_More_Invoice_Fields');
-    if (addMoreBtn) {
-      const addMoreContainer = addMoreBtn.closest('.removeinvoice');
-      if (addMoreContainer) leftColumn.push(addMoreContainer);
-    }
-  }
-  // --- Disclaimer (first .small p) ---
-  const disclaimer = section.querySelector('p.small');
-  if (disclaimer) leftColumn.push(disclaimer);
-  // --- Contact info ---
-  const contact = Array.from(section.querySelectorAll('p')).find(p => /queries related/i.test(p.textContent));
-  if (contact) leftColumn.push(contact);
+  // Row 1, Col 1: Breadcrumb and all up to Upload Payment against Invoice doc
+  const row1col1 = [];
+  if (breadcrumbSection) row1col1.push(breadcrumbSection);
+  for (let i = 0; i < uploadIdx; i++) row1col1.push(mainChildren[i]);
 
-  // --- Download links (right column) ---
-  const downloadLinks = Array.from(container.querySelectorAll('a.btn.btn-secondary'));
-  if (downloadLinks.length) rightColumn.push(...downloadLinks);
+  // Row 1, Col 2: Upload Payment against Invoice doc section (uploadIdx to manualIdx)
+  const row1col2 = [];
+  for (let i = uploadIdx; i < manualIdx; i++) row1col2.push(mainChildren[i]);
 
-  // Compose table (two columns)
+  // Row 2, Col 1: Enter Invoice Details Manually (manualIdx to disclaimerIdx)
+  const row2col1 = [];
+  for (let i = manualIdx; i < disclaimerIdx; i++) row2col1.push(mainChildren[i]);
+
+  // Row 2, Col 2: Disclaimer and everything after (disclaimerIdx to end)
+  const row2col2 = [];
+  for (let i = disclaimerIdx; i < mainChildren.length; i++) row2col2.push(mainChildren[i]);
+
+  // Compose block with two rows, two columns, header row
   const cells = [
     ['Columns (columns36)'],
-    [leftColumn, rightColumn]
+    [collectNodes(row1col1), collectNodes(row1col2)],
+    [collectNodes(row2col1), collectNodes(row2col2)]
   ];
-
-  const table = WebImporter.DOMUtils.createTable(cells, document);
-  element.replaceWith(table);
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  element.replaceWith(block);
 }

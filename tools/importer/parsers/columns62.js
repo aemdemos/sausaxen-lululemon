@@ -1,32 +1,39 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // The header row must be a single-cell row with the block name
-  const headerRow = ['Columns (columns62)'];
-
-  // Get the .row containing the columns
+  // Locate the row containing the columns
   const row = element.querySelector('.row');
-  if (!row) return;
+  let columns = [];
+  if (row) {
+    const colDivs = Array.from(row.children);
+    columns = colDivs.map(col => {
+      let contentDiv = col.querySelector('.bg-white, .boxzoom');
+      if (!contentDiv) contentDiv = col;
+      return contentDiv;
+    });
+  }
+  if (columns.length === 0) {
+    columns = [''];
+  }
 
-  // Find all the immediate child .col-lg-4 elements
-  const cols = Array.from(row.children).filter(col => col.classList.contains('col-lg-4'));
-
-  // For each column, extract the anchor if present, else the content div
-  const cellsRow = cols.map(col => {
-    const contentDiv = col.querySelector('.bg-white');
-    if (!contentDiv) return '';
-    const anchor = contentDiv.querySelector('a');
-    if (anchor && contentDiv.children.length === 1) {
-      return anchor;
-    }
-    return contentDiv;
-  });
-
-  // The cells array: header is a single cell, the content row has one cell per column
+  // Table cells: header and content row
   const cells = [
-    headerRow,
-    cellsRow
+    ['Columns (columns62)'],
+    columns
   ];
-
   const table = WebImporter.DOMUtils.createTable(cells, document);
+
+  // Fix the header row's colspan to match the number of columns (critical fix)
+  const allRows = table.querySelectorAll('tr');
+  const headerRow = allRows[0];
+  const dataRow = allRows[1];
+  if (
+    headerRow &&
+    headerRow.children.length === 1 &&
+    dataRow &&
+    dataRow.children.length > 1
+  ) {
+    headerRow.children[0].setAttribute('colspan', dataRow.children.length);
+  }
+
   element.replaceWith(table);
 }

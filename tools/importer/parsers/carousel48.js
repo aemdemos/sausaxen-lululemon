@@ -1,54 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Header row must match exactly
-  const headerRow = ['Carousel (carousel48)'];
-
-  // Find the carousel column (the col that contains .bootstrape-carousel)
-  const cols = element.querySelectorAll(':scope > div > div > div');
-  let carouselCol = null;
-  for (const col of cols) {
-    if (col.querySelector('.bootstrape-carousel')) {
-      carouselCol = col;
-      break;
-    }
-  }
-  if (!carouselCol) return;
-
-  const carousel = carouselCol.querySelector('.bootstrape-carousel');
+  // Find the carousel container
+  const carousel = element.querySelector('.bootstrape-carousel');
   if (!carousel) return;
 
-  // Find all slides in the carousel
-  const items = carousel.querySelectorAll('.bootstrape-item .item');
-  if (!items.length) return;
+  // Get all slides
+  const slideNodes = carousel.querySelectorAll('.bootstrape-item .item');
+  const rows = [];
 
-  const cells = [headerRow];
-  items.forEach((item) => {
-    // First cell: the <img> element (reference only, do not clone)
+  slideNodes.forEach((item) => {
+    // First cell: Image (mandatory)
     const img = item.querySelector('img');
+    const imageElem = img || '';
 
-    // Second cell: All non-image content, preserving headings, paragraphs, formatting
-    // We'll use the .vertical-fourth div inside the slide, if present, else all non-image children
-    let textContent = '';
-    const textContainer = item.querySelector('.vertical-fourth') || Array.from(item.children).find(child => child.tagName !== 'IMG');
-    if (textContainer) {
-      // Collect all childNodes (including text nodes and elements)
-      const nodes = Array.from(textContainer.childNodes).filter(node => {
-        // Only add elements or text, skip empty text
-        return node.nodeType !== Node.TEXT_NODE || node.textContent.trim() !== '';
+    // Second cell: All text content preserving source order and structure
+    const contentDiv = item.querySelector('div.vertical-fourth');
+    let cellContent = '';
+    if (contentDiv) {
+      // If there is any content, append all child nodes (preserve existing elements)
+      const children = Array.from(contentDiv.childNodes).filter(node => {
+        if (node.nodeType === 3) {
+          // Text node with visible text
+          return node.textContent.trim().length > 0;
+        }
+        // element nodes
+        return true;
       });
-      if (nodes.length > 0) {
-        textContent = nodes;
+      if (children.length > 0) {
+        cellContent = children;
       }
     }
-    cells.push([
-      img,
-      textContent && textContent.length ? textContent : ''
-    ]);
+    rows.push([imageElem, cellContent && cellContent.length > 0 ? cellContent : '']);
   });
 
-  // Create and replace with the block table
-  if (cells.length > 1) {
-    const table = WebImporter.DOMUtils.createTable(cells, document);
-    element.replaceWith(table);
-  }
+  // Table header per the example (exact text)
+  const tableRows = [
+    ['Carousel (carousel48)'],
+    ...rows
+  ];
+
+  const table = WebImporter.DOMUtils.createTable(tableRows, document);
+  element.replaceWith(table);
 }

@@ -1,32 +1,44 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // HEADER: block name, one column
+  // Block header row exactly as required
   const headerRow = ['Columns (columns31)'];
 
-  // Find columns (usually two in this layout)
+  // Find the row containing the columns
   const row = element.querySelector('.row');
-  let col1 = undefined, col2 = undefined;
-  if (row) {
-    const cols = row.querySelectorAll(':scope > div');
-    if (cols[0]) {
-      // Use the full left block, which contains the image
-      col1 = cols[0].querySelector('.slideItem') || cols[0];
-    }
-    if (cols[1]) {
-      col2 = cols[1].querySelector('.video-content') || cols[1];
-    }
+  if (!row) return;
+  const cols = row.querySelectorAll(':scope > div');
+  if (cols.length < 2) return;
+
+  // ---- COLUMN 1 extraction ----
+  // (Image)
+  // The image is nested inside: .slideItem.gallery-main-img > .video-section1 > img
+  let col1Img = cols[0].querySelector('img');
+  let col1Content = [];
+  if (col1Img) {
+    col1Content.push(col1Img);
   }
 
-  // Only add the content row if we have at least one column
-  const rows = [headerRow];
-  if (col1 || col2) {
-    // For a two-column row, both should be present, but if not, keep by position
-    rows.push([
-      col1 ? col1 : '',
-      col2 ? col2 : ''
-    ]);
+  // ---- COLUMN 2 extraction ----
+  // (Heading, paragraphs, link)
+  // All content is inside .video-content
+  const col2Content = [];
+  const col2ContentDiv = cols[1].querySelector('.video-content');
+  if (col2ContentDiv) {
+    // Reference all <h3>, <p> and <a> in order
+    Array.from(col2ContentDiv.childNodes).forEach(node => {
+      if (node.nodeType === Node.ELEMENT_NODE) {
+        col2Content.push(node);
+      }
+    });
   }
 
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(table);
+  // Build the cells array for the block
+  const cells = [
+    headerRow,
+    [col1Content, col2Content]
+  ];
+
+  // Create and replace the block table
+  const block = WebImporter.DOMUtils.createTable(cells, document);
+  element.replaceWith(block);
 }
